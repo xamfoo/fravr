@@ -33,7 +33,10 @@ Data.profile = {
 }
 
 Data.cart = {
-	total: 0,
+	total: 0
+}
+
+Data.products = {
 	item:	{
 		name: "Default Name",
 		price: 0,
