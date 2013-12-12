@@ -59,16 +59,40 @@
 </script>
 <script data-name="body" type="text/x-handlebars-template">
 	<div class="container fravr-body">
-		<p>
-		<!--
-		{{#each products}}
-		{{#get_img this 0 2}}
-		{{/get_img}}
-		{{/each}}
-		-->
-		</p>
-		<div></div>
-		
+		<div class = "row product-page-content"> 
+			<div class ="col-md-8 col-md-offset-2"> <!--main content container-->  
+				<div class="product-title"> <!--product title-->
+					<h4><strong> {{products.mug.name}} </strong></h4> 
+					<h5>from <span class="merchant-name"><em>{{products.mug.merchant}}</em></span>  </h5> 
+				</div>
+				<div class ="row"> <!--img container--> 
+					<div class ="col-md-9"> <!--main image-->
+						<img src ="{{products.mug.img_urls.0.url}}" class = "product-img-main">
+					</div>
+					<div class ="col-md-3"> <!--side images-->
+						<div class ="row col-md-12">
+							<img src ="{{products.mug.img_urls.1.url}}" class = "product-img-side">
+						</div>
+						<div class ="row col-md-12">
+							<img src ="{{products.mug.img_urls.2.url}}" class = "product-img-side">
+						</div>
+						<div class ="row col-md-12">
+							<img src ="{{products.mug.img_urls.3.url}}" class = "product-img-side">
+						</div>
+						<div class ="row col-md-12">
+							<img src ="{{products.mug.img_urls.4.url}}" class = "product-img-side">
+						</div>
+					</div>					
+				</div>
+				<div class ="row col-md-12"> <!--product description-->
+					<div class="product-description">
+						{{{products.mug.description}}}
+					</div>
+				</div> 
+				
+				
+			</div> 
+		</div>
 	</div> 
 </script>
 <script src=js/main.js></script>

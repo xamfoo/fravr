@@ -1,10 +1,9 @@
 // Custom Handlebars helpers
-// access individual img_array entries in data.product json struct
-Handlebars.registerHelper ("get_img", function (product_value,index_1, index_2) {
-	return product_value.img_urls.slice(index_1,index_2); 
-});
-
-
+//failed handle bars 
+/* Handlebars.registerHelper ("set_product", function (products, product_type) {
+	products.item = products[product_type];
+});  */
+ 
 // Declare global namespace
 var Main = {},
 	Data = {};
@@ -27,25 +26,46 @@ Data.fravrs = {
 	unread: 0
 };
 
+//product database 
 Data.products = {
+	item:
+		{
+		name: "Default Name",
+		price: 0,
+		currency: "SGD",
+		merchant: "Default Merchant",
+		description: "Text",
+		img_urls: [{url:"empty"}]
+		comments: {}
+		reviews: {}
+		},
 	mug: 
 		{
-		product_name: "Mighty Mug (Grip Base Mug)",
+		name: "Mighty Mug (Grip Base Mug)",
 		price: 29.9,
 		currency: "SGD",
 		merchant: "theheartdirector",
-		product_description: "",
-		img_urls: ["img/Mighty Mug 01.jpg", "img/Mighty Mug 02.jpg", "img/Mighty Mug 03.jpg", "img/Mighty Mug 04.jpg"]
-		//img_urls: ["url01", "url02", "url03"]
+		description: "<p>The Mighty Mug features a Smart-Grip technology that latches on to your desk by creating a powerful airlock and prevents clumsy spills. When you pick up the cup by the soft ergonomic handle, however, it lifts up effortlessly.</p>\
+		<p>To activate the Mighty Mug's Smartgrip base &#45; Bend and flex the grippy pad with your fingers. If the mug starts to lose its grippiness, simply repeat the flexing process.</p>\
+		<p>Only works on flat surfaces</p>\
+		<p>Microwave safe (remove the lid first)</p>\
+		<p>Inner body and lid are both top rack dishwasher safe</p>\
+		<p>Measures approximately 14cm(W) x 16cm(H) x 10cm(D)</p>\
+		<p><strong>Please allow 1 week for shipping.</strong></p> ",
+		img_urls: [{url:"img/Mighty Mug 01.jpg"}, {url:"img/Mighty Mug 02.jpg"}, {url:"img/Mighty Mug 03.jpg"}, {url:"img/Mighty Mug 04.jpg"}, {url:"img/Mighty Mug 05.jpg"}]
+		comments: {}
+		reviews: {}
 		},
 	cup:
 		{
-		product_name: "cup",
+		name: "cup",
 		price: 29,
 		currency: "SGD",
 		merchant: "some merchant",
-		product_description: "",
+		description: "",
 		img_urls: ["url01", "url02", "url03"]
+		comments: {}
+		reviews: {}
 		}
 };
 
