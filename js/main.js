@@ -3,10 +3,11 @@
 /* Handlebars.registerHelper ("set_product", function (products, product_type) {
 	products.item = products[product_type];
 });  */
- 
+
 // Declare global namespace
 var Main = {},
-	Data = {};
+	Data = {},
+	Template = {};
 
 // Define default data
 Data.header = {
@@ -22,25 +23,28 @@ Data.messages = {
 	unread: 0
 };
 
-Data.fravrs = {
+Data.wishlist = {
 	unread: 0
-};
+}
 
 //product database 
-Data.products = {
-	item:
-		{
+Data.profile = {
+	name: 'Pak Lun'
+}
+
+Data.cart = {
+	total: 0,
+	item:	{
 		name: "Default Name",
 		price: 0,
 		currency: "SGD",
 		merchant: "Default Merchant",
 		description: "Text",
-		img_urls: [{url:"empty"}]
-		comments: {}
+		img_urls: [{url:"empty"}],
+		comments: {},
 		reviews: {}
 		},
-	mug: 
-		{
+	mug: 	{
 		name: "Mighty Mug (Grip Base Mug)",
 		price: 29.9,
 		currency: "SGD",
@@ -52,24 +56,38 @@ Data.products = {
 		<p>Inner body and lid are both top rack dishwasher safe</p>\
 		<p>Measures approximately 14cm(W) x 16cm(H) x 10cm(D)</p>\
 		<p><strong>Please allow 1 week for shipping.</strong></p> ",
-		img_urls: [{url:"img/Mighty Mug 01.jpg"}, {url:"img/Mighty Mug 02.jpg"}, {url:"img/Mighty Mug 03.jpg"}, {url:"img/Mighty Mug 04.jpg"}, {url:"img/Mighty Mug 05.jpg"}]
-		comments: {}
+		img_urls: [{url:"img/Mighty Mug 01.jpg"}, {url:"img/Mighty Mug 02.jpg"}, {url:"img/Mighty Mug 03.jpg"}, {url:"img/Mighty Mug 04.jpg"}, {url:"img/Mighty Mug 05.jpg"}],
+		comments: {},
 		reviews: {}
 		},
-	cup:
-		{
+	cup:	{
 		name: "cup",
 		price: 29,
 		currency: "SGD",
 		merchant: "some merchant",
 		description: "",
-		img_urls: ["url01", "url02", "url03"]
-		comments: {}
+		img_urls: ["url01", "url02", "url03"],
+		comments: {},
 		reviews: {}
 		}
 };
 
+Data.clipping = {
+	total: 0
+}
 //Default data end
+
+//Compile and store template function in closure
+Template = function () {
+	var that = {};
+	var template = Handlebars.compile( $('script[data-body]').html() );
+
+	that.render = function () {
+		var html = template(Data);
+		$('body').html(html);
+	}
+	return that;
+}();
 
 Main.updateData = function () {
 	for (var obj in amplify.store()) {
@@ -91,13 +109,8 @@ Main.ready = function () {
 	$("script[data-name][type='text/x-handlebars-template']").each(function(){
 		Handlebars.registerPartial($(this).attr('data-name'), $(this).html());
 	});
-
-	var source   = $('script[data-body]').html();
-	var template = Handlebars.compile(source);
-
-	var html = template(Data);
-	// var html = template();
-	$('body').html(html);
+	
+	Template.render();
 };
 
 // Execute when DOM is ready
