@@ -24,6 +24,14 @@ Data.wishlist = {
 Data.profile = {
 	name: 'Pak Lun'
 }
+
+Data.cart = {
+	total: 0
+}
+
+Data.clipping = {
+	total: 0
+}
 //Default data end
 
 //Compile and store template function in closure

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"> -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/main.css">
 <!-- <script src=js/underscore-min.js></script> -->
 <!-- <script src=js/backbone-min.js></script> -->
 <script src=http://code.jquery.com/jquery-2.0.3.min.js></script>
-<!-- <script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script> -->
-<script src=js/bootstrap.min.js></script>
+<script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
 <script src=js/handlebars-v1.1.2.js></script>
 <script src=js/amplify.min.js></script>
 
@@ -28,7 +29,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="./" class="navbar-brand">FRAVR</a>
+	  <a href="./" class="navbar-brand"><img src="img/fravr.png"></a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
@@ -55,6 +56,16 @@
         <input type="text" class="form-control" placeholder="Search">
       </div>
     </form>
+      <ul class="nav navbar-nav navbar-right nav-icon">
+        <li>
+		  <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>{{#if cart.total}}<sub>{{cart.total}}</sub>{{/if}}</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right nav-icon">
+        <li>
+		  <a href="#"><span class="glyphicon glyphicon-paperclip"></span>{{#if clipping.total}}<sub>{{clipping.total}}</sub>{{/if}}</a>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
 		  <a href="./profile.htm">{{profile.name}}</a>
@@ -65,9 +76,9 @@
 </header>
 </script>
 <script data-name="body" type="text/x-handlebars-template">
-<div class="container">
-	<div class="page-header">
-		<h2>Everything</h2>
+<div class="page-header">
+	<div class="container">
+		<a href="#"><h2>Everything <img src="img/fravr-dropdown.png"></h2></a>
 	</div>
 </div>
 </script>
