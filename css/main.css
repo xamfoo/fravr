@@ -1,3 +1,5 @@
+@media (min-width: 980px) { body { padding-top: 60px; } }
+
 .fravr-nav {
 background-color: #00896b;
 border-color: #32665b;
