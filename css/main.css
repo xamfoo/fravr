@@ -27,28 +27,49 @@ border-color: #32665b;
 	background-color: #fffff;
 	border-style: solid;
 	border-width: thin;
-	border-radius: 10px;
-	/* border-color: red; */
+	border-radius: 8px;
+	border-color: #b3b3b3;
 }
-
 .product-page-content .product-title {
 	margin-top:30px
 }
-
-.product-page-content .product-title .merchant-name {
+.product-title .merchant-name {
 	color:#36d792;
 }
-
+.product-title .price {
+	text-align:right;
+}
 .product-page-content .product-img-main {
 	width: 100%;
 	margin-bottom: 12%;
 }
-
 .product-page-content .product-img-side {
 	width: 100%;
 	margin-bottom: 12%;
 }
 
 .product-page-content .product-description {
-
+	margin-bottom: 30px;  
 }
+.product-page-content .comments-divider{
+	height: 1px;
+	background-color: #d7c7c7;
+}
+.comments-divider .icons {
+	background-color: #ffffff;
+	text-align:center;
+	color: green;
+	position: relative;
+	top: -2em;
+}
+.comments-divider  .icon-reviews{
+	left: -1em;
+	width: 11%;
+}
+.comments-divider .icon-comments{
+	left: -1em;
+	width: 12.5%;
+}
+
+
+
