@@ -29,7 +29,8 @@ Data.wishlist = {
 
 //product database 
 Data.profile = {
-	name: 'Pak Lun'
+	name: 'Pak Lun',
+	img: 'img/Sonic.jpg'
 }
 
 Data.cart = {
@@ -42,7 +43,7 @@ Data.products = {
 		price: 0,
 		currency: "SGD",
 		merchant: "Default Merchant",
-		merchant_url: null,
+		merchant_url: "#",
 		description: "Text",
 		img_urls: [{url:"empty"}],
 		comments: [{commenter: null,
@@ -56,6 +57,7 @@ Data.products = {
 		price: 29.9,
 		currency: "SGD",
 		merchant: "theheartdirector",
+		merchant_url: "#",
 		description: "<p>The Mighty Mug features a Smart-Grip technology that latches on to your desk by creating a powerful airlock and prevents clumsy spills. When you pick up the cup by the soft ergonomic handle, however, it lifts up effortlessly.</p>\
 		<p>To activate the Mighty Mug's Smartgrip base &#45; Bend and flex the grippy pad with your fingers. If the mug starts to lose its grippiness, simply repeat the flexing process.</p>\
 		<p>Only works on flat surfaces</p>\
@@ -64,8 +66,35 @@ Data.products = {
 		<p>Measures approximately 14cm(W) x 16cm(H) x 10cm(D)</p>\
 		<p><strong>Please allow 1 week for shipping.</strong></p> ",
 		img_urls: [{url:"img/Mighty Mug 01.jpg"}, {url:"img/Mighty Mug 02.jpg"}, {url:"img/Mighty Mug 03.jpg"}, {url:"img/Mighty Mug 04.jpg"}, {url:"img/Mighty Mug 05.jpg"}],
-		comments: null,
-		reviews: null
+		comments: [{	commenter: "Farhan Herab",
+						merchant: false,
+						img_url: "img/sonic.jpg",
+						comment: "this is so cool! how much liquid can it store?"
+					},
+					{	commenter: "theheartdirector",
+						merchant: true,
+						img_url: "img/sonic.jpg",
+						comment: "Hi Farhan, thanks for your interest! This is a 450ml mug."
+					},
+					{	commenter: "Wanhui",
+						merchant: false,
+						img_url: "img/sonic.jpg",
+						comment: "I just got this mug yesterday! It's grip is indeed wonderful!"
+					},
+					{	commenter: "Mighty Mouse",
+						merchant: false,
+						img_url: "img/sonic.jpg",
+						comment: "Mighty indeed."
+					}
+					],
+		reviews: [	{	reviewer: "Frank Thompson",
+						review: "Simply Ingenious. The most useful mug I will ever need"},
+					{	reviewer: "Sally Anderson",
+						review: "I have sweaty palms and this mug is just what I needed"},
+					{	reviewer: "TheProductMagazine",
+						review: "Practical design with a touch of elegance"}
+					],
+		product_url: null
 		},
 	cup:	{
 		name: "cup",
