@@ -76,15 +76,136 @@
 </header>
 </script>
 <script data-name="body" type="text/x-handlebars-template">
-<div class="page-header">
+<div class="page-header" style="background:#fff">
 	<div class="container">
-		<a href="#"><h2>Everything <img src="img/fravr-dropdown.png"></h2></a>
+		<div class="dropdown">
+			<a href="#" data-toggle="dropdown"><h2>Everything <img src="img/fravr-dropdown.png"></h2></a>
+			<ul class="dropdown-menu">
+				<li><a href="#">Everything</a></li>
+				<li><a href="#">Social</a></li>
+				<li><a href="#">Recommended</a></li>
+			</ul>
+		</div>
 	</div>
+</div>
+<div class="fravr-timeline">
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+</div>
 </div>
 </script>
 <script src=js/main.js></script>
+<!-- Events -->
+<script>
+$( document ).ready(function () {
+	// $('.page-header a').each(function(){
+	$('a[data-toggle]').on('click', function (event) {
+		event.preventDefault();
+	});
+});
+</script>
 </head>
 
-<body>
+<body style="background:#f1f1f1">
 </body>
 </html>
