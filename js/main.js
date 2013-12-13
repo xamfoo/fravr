@@ -3,10 +3,11 @@
 /* Handlebars.registerHelper ("set_product", function (products, product_type) {
 	products.item = products[product_type];
 });  */
- 
+
 // Declare global namespace
 var Main = {},
-	Data = {};
+	Data = {},
+	Template = {};
 
 // Define default data
 Data.header = {
@@ -22,14 +23,21 @@ Data.messages = {
 	unread: 0
 };
 
-Data.fravrs = {
+Data.wishlist = {
 	unread: 0
-};
+}
 
 //product database 
+Data.profile = {
+	name: 'Pak Lun'
+}
+
+Data.cart = {
+	total: 0
+}
+
 Data.products = {
-	item:
-		{
+	item:	{
 		name: "Default Name",
 		price: 0,
 		currency: "SGD",
@@ -43,8 +51,7 @@ Data.products = {
 					review: null}],
 		product_url: null
 		},
-	mug: 
-		{
+	mug: 	{
 		name: "Mighty Mug (Grip Base Mug)",
 		price: 29.9,
 		currency: "SGD",
@@ -60,8 +67,7 @@ Data.products = {
 		comments: null,
 		reviews: null
 		},
-	cup:
-		{
+	cup:	{
 		name: "cup",
 		price: 29,
 		currency: "SGD",
@@ -73,7 +79,22 @@ Data.products = {
 		}
 };
 
+Data.clipping = {
+	total: 0
+}
 //Default data end
+
+//Compile and store template function in closure
+Template = function () {
+	var that = {};
+	var template = Handlebars.compile( $('script[data-body]').html() );
+
+	that.render = function () {
+		var html = template(Data);
+		$('body').html(html);
+	}
+	return that;
+}();
 
 Main.updateData = function () {
 	for (var obj in amplify.store()) {
@@ -95,13 +116,8 @@ Main.ready = function () {
 	$("script[data-name][type='text/x-handlebars-template']").each(function(){
 		Handlebars.registerPartial($(this).attr('data-name'), $(this).html());
 	});
-
-	var source   = $('script[data-body]').html();
-	var template = Handlebars.compile(source);
-
-	var html = template(Data);
-	// var html = template();
-	$('body').html(html);
+	
+	Template.render();
 };
 
 // Execute when DOM is ready

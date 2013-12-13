@@ -1,22 +1,66 @@
+body {
+	padding-top: 50px;
+}
+
+/* Overide bootstrap heading style */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: 300;
+}
+
+/* Overide bootstrap page header style */
+.page-header {
+	/* padding-bottom: 9px; */
+	/* margin: 40px 0 20px; */
+	margin: 10px 0 20px;
+	/* border-bottom: 1px solid #eeeeee; */
+}
+.page-header a:hover {
+	
+}
+
+.nav-icon > li > a {
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
 .fravr-nav {
-background-color: #00896b;
-border-color: #32665b;
+	background-color: #00896b;
+	border-color: #32665b;
 }
 /* .fravr-nav { */
-/*   text-shadow: 0 -1px 0 rgba(0,0,0,.15); */
+/*   text-shadow:C:\Program Files (x86)\KDiff3 0 -1px 0 rgba(0,0,0,.15); */
 /*   background-color: #563d7c; */
 /*   border-color: #463265; */
 /*   box-shadow: 0 1px 0 rgba(255,255,255,.1); */
 }
 .fravr-nav .navbar-collapse {
-  border-color: #463265;
+	border-color: #463265;
 }
-.fravr-nav .navbar-brand {
-  color: #fff;
+/* .fravr-nav .navbar-brand { */
+/* 	color: #fff; */
+/* } */
+.fravr-nav .navbar-brand > img {
+	vertical-align: top;
 }
 .fravr-nav .navbar-nav > li > a {
-  color: #cbf2ea;
+	color: #cbf2ea;
 }
+/* Overide bootstrap glyphicon style */
+.fravr-nav .navbar-nav .glyphicon {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+	/* position: relative; */
+	/* top: 1px; */
+	/* display: inline-block; */
+	/* font-family: 'Glyphicons Halflings'; */
+	/* font-style: normal; */
+	/* font-weight: normal; */
+	/* line-height: 1; */
+	/* -webkit-font-smoothing: antialiased; */
+	/* -moz-osx-font-smoothing: grayscale; */
+}
+
 
 .fravr-body {
 	margin-top:100px
