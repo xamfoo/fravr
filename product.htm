@@ -76,10 +76,15 @@
 	<div class="container fravr-body">
 		<div class = "row product-page-content"> 
 			<div class ="col-md-8 col-md-offset-2"> <!--main content container-->  
-				<div class="product-title"> <!--product title-->
-					<h4><strong> {{products.mug.name}} </strong></h4> 
-					<h5>from <span class="merchant-name"><em>{{products.mug.merchant}}</em></span>  </h5> 
-				</div>
+				<div class ="row col-md-12"> <!--product title-->
+					<div class="product-title"> 
+						<h4><strong> {{products.mug.name}} </strong></h4> 
+						<h5>
+							from <a href=# class="merchant-name"><em>{{products.mug.merchant}}</em></a>  
+							<span class="price">{{products.mug.price}} {{products.mug.currency}}</spam>
+						</h5> 
+					</div>
+				</div> 
 				<div class ="row"> <!--img container--> 
 					<div class ="col-md-9"> <!--main image-->
 						<img src ="{{products.mug.img_urls.0.url}}" class = "product-img-main">
@@ -102,6 +107,19 @@
 				<div class ="row col-md-12"> <!--product description-->
 					<div class="product-description">
 						{{{products.mug.description}}}
+					</div>
+					<div class="row comments-divider"> <!--horizontal line / divider-->
+						<div class="col-md-1 col-md-offset-8 icons icon-reviews">  <!-- reviews icon -->
+							<span class="glyphicon glyphicon-align-left"></span>
+							<p class="para">Reviews</p>
+						</div> 
+						<div class="col-md-1 col-md-offset-1 icons icon-comments"> <!-- comments icon -->
+							<span class="glyphicon glyphicon-align-left"></span>
+							<p class="para">Comments</p>
+						</div>
+					</div> 
+					<div class="row">
+						<h1>some text</h1>
 					</div>
 				</div> 
 				

@@ -42,10 +42,14 @@ Data.products = {
 		price: 0,
 		currency: "SGD",
 		merchant: "Default Merchant",
+		merchant_url: null,
 		description: "Text",
 		img_urls: [{url:"empty"}],
-		comments: {},
-		reviews: {}
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
 		},
 	mug: 	{
 		name: "Mighty Mug (Grip Base Mug)",
@@ -60,8 +64,8 @@ Data.products = {
 		<p>Measures approximately 14cm(W) x 16cm(H) x 10cm(D)</p>\
 		<p><strong>Please allow 1 week for shipping.</strong></p> ",
 		img_urls: [{url:"img/Mighty Mug 01.jpg"}, {url:"img/Mighty Mug 02.jpg"}, {url:"img/Mighty Mug 03.jpg"}, {url:"img/Mighty Mug 04.jpg"}, {url:"img/Mighty Mug 05.jpg"}],
-		comments: {},
-		reviews: {}
+		comments: null,
+		reviews: null
 		},
 	cup:	{
 		name: "cup",
@@ -70,8 +74,8 @@ Data.products = {
 		merchant: "some merchant",
 		description: "",
 		img_urls: ["url01", "url02", "url03"],
-		comments: {},
-		reviews: {}
+		comments: null,
+		reviews: null
 		}
 };
 
