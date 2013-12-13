@@ -90,9 +90,16 @@ body {
 }
 .fravr-timeline .item .title{
 	display: inline-block;
+	width: 100%;
 	font-weight: 600;
 	color: #243136;
-	margin: 7px;
+	margin: 7px 7px 0;
+}
+.fravr-timeline .item .subtitle{
+	display: inline-block;
+	font-weight: 600;
+	color: #585a5c;
+	margin: 0 7px 7px;
 }
 
 .fravr-body {
