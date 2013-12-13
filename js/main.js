@@ -30,7 +30,7 @@ Data.wishlist = {
 //product database 
 Data.profile = {
 	name: 'Pak Lun',
-	img: 'img/Sonic.jpg'
+	img_url: 'img/Sonic.jpg'
 }
 
 Data.cart = {
@@ -63,7 +63,7 @@ Data.products = {
 		<p>Only works on flat surfaces</p>\
 		<p>Microwave safe (remove the lid first)</p>\
 		<p>Inner body and lid are both top rack dishwasher safe</p>\
-		<p>Measures approximately 14cm(W) x 16cm(H) x 10cm(D)</p>\
+		<p>Measures approximately 14cm(W) x 16cm(H) x 10cm(D)</p><br>\
 		<p><strong>Please allow 1 week for shipping.</strong></p> ",
 		img_urls: [{url:"img/Mighty Mug 01.jpg"}, {url:"img/Mighty Mug 02.jpg"}, {url:"img/Mighty Mug 03.jpg"}, {url:"img/Mighty Mug 04.jpg"}, {url:"img/Mighty Mug 05.jpg"}],
 		comments: [{	commenter: "Farhan Herab",

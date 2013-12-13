@@ -73,58 +73,115 @@
 </header>
 </script>
 <script data-name="body" type="text/x-handlebars-template">
+	<div class="fravr-productpage">
 	<div class="container fravr-body">
-		<div class = "row product-page-content"> 
-			<div class ="col-md-8 col-md-offset-2"> <!--main content container-->  
-				<div class ="row col-md-12 product-title"> <!--product title-->
-					<h4><strong> {{products.mug.name}} </strong></h4> 						
-					<div class ="row"> 
-						<div class ="col-md-9">
-								<h5> from <a class="merchant-name" href={{products.mug.merchant_url}} ><em>{{products.mug.merchant}}</em></a> </h5> 
-						</div> 
-						<div class ="col-md-3 price">
-								<h5><strong>{{products.mug.price}} {{products.mug.currency}}</strong></h5>
+		<div class = "row"> 
+			<!--main content container-->
+			<div class ="col-md-8 col-md-offset-2 content-body">  
+				<!--product title-->
+				<div class ="row"> 
+					<div class ="col-md-12">
+						<h4><strong> {{products.mug.name}} </strong></h4> 
+						<div class ="row"> 
+							<!--merchant name-->
+							<div class ="col-md-9">
+									<h5> from <a class="merchant-name" href={{products.mug.merchant_url}} ><em>{{products.mug.merchant}}</em></a> </h5> 
+							</div> 
+							<!--price info-->
+							<div class ="col-md-3 price">
+									<h5><strong>{{products.mug.price}} {{products.mug.currency}}</strong></h5>
+							</div>
 						</div>
-					</div>
-				</div>
-				
-				<div class ="row"> <!--img container--> 
-					<div class ="col-md-9"> <!--main image-->
+					</div>	
+				</div> 
+				<!--img container--> 
+				<div class ="row"> 
+					<!--main image-->
+					<!-- <div class ="col-md-8 col-md-offset-1">  -->
+					<div class ="col-md-9"> 
 						<img src ="{{products.mug.img_urls.0.url}}" class = "product-img-main">
 					</div>
-					<div class ="col-md-3"> <!--side images-->
-						<div class ="row col-md-12">
-							<img src ="{{products.mug.img_urls.1.url}}" class = "product-img-side">
+					<!--side images-->
+					<div class ="col-md-3"> 
+						<div class ="row">
+							<div class ="col-md-12">
+								<img src ="{{products.mug.img_urls.1.url}}" class = "product-img-side pull-right">
+							</div>
 						</div>
-						<div class ="row col-md-12">
-							<img src ="{{products.mug.img_urls.2.url}}" class = "product-img-side">
+						<div class ="row">
+							<div class ="col-md-12">
+								<img src ="{{products.mug.img_urls.2.url}}" class = "product-img-side pull-right">
+							</div>
 						</div>
-						<div class ="row col-md-12">
-							<img src ="{{products.mug.img_urls.3.url}}" class = "product-img-side">
+						<div class ="row">
+							<div class ="col-md-12">
+								<img src ="{{products.mug.img_urls.3.url}}" class = "product-img-side pull-right">
+							</div>
 						</div>
-						<div class ="row col-md-12">
-							<img src ="{{products.mug.img_urls.4.url}}" class = "product-img-side">
+						<div class ="row">
+							<div class ="col-md-12">
+								<img src ="{{products.mug.img_urls.4.url}}" class = "product-img-side pull-right">
+							</div>
 						</div>
-					</div>					
-				</div>
-				<div class ="row col-md-12"> <!--product description-->
-					<div class="product-description">
-						{{{products.mug.description}}}
 					</div>
-					<div class="row comments-divider"> <!--horizontal line / divider-->
-						<div class="col-md-1 col-md-offset-8 icons icon-reviews">  <!-- reviews icon -->
-							<span class="glyphicon glyphicon-align-left"></span>
-							<p class="para">Reviews</p>
-						</div> 
-						<div class="col-md-1 col-md-offset-1 icons icon-comments"> <!-- comments icon -->
-							<span class="glyphicon glyphicon-align-left"></span>
-							<p class="para">Comments</p>
+					<div class="clearfix"></div>
+				</div>
+				<!--product description-->
+				<div class ="row"> 
+					<div class ="col-md-12">
+						<div class="product-description">
+							{{{products.mug.description}}}
 						</div>
-					</div> 
+					</div>
+				</div>
+				<!--horizontal line / divider-->
+				<div class="row"> 
+					<div class="col-md-12">
+						<div class="comments-divider">
+							<div class="col-md-1 col-md-offset-8 icons icon-reviews">  <!-- reviews icon -->
+								<span class="glyphicon glyphicon-align-left"></span>
+								<p class="para">Reviews</p>
+							</div> 
+							<div class="col-md-1 col-md-offset-1 icons icon-comments"> <!-- comments icon -->
+								<span class="glyphicon glyphicon-align-left"></span>
+								<p class="para">Comments</p>
+							</div>
+						</div>
+					</div>
 				</div> 
-
-<!-- reviews content area -->
-<!-- 				<div class="row comments-content"> 
+	 
+				<!-- comments content area -->
+				<div class="comments">
+					<div class="row">
+						<ul class="col-md-12 list-unstyled comment-box">
+							{{#each products.mug.comments}}
+								<li>
+									<div class="col-md-1">
+										<img src = "{{img_url}}" class="img-responsive comment-img">
+									</div>
+									<dl class="col-md-11">
+										{{#if merchant}}
+											<dt><a class="commenter-text-merchant" href="#"><em>{{commenter}}</em></a></dt>
+										{{else}}
+											<dt><a class="commenter-text-user" href="#">{{commenter}}</a></dt>
+										{{/if}}
+											<dd>{{comment}}</dd>
+									</dl>
+									<div class="clearfix"></div>
+								</li>
+							{{/each}}
+							<!-- user comment box -->
+							<div class="col-md-1">
+								<img src = "{{profile.img_url}}" class="img-responsive comment-img">
+							</div>
+							<div class="col-md-11">
+								<input type="text" class="form-control" placeholder="Write a comment...">
+							</div>
+						</ul>
+					</div>
+				</div> 
+				<!-- reviews content area -->
+				<!-- <div class="row comments-content"> 
 					<ul class="reviews col-md-12">
 						{{#each products.mug.reviews}}
 							<li>
@@ -138,29 +195,10 @@
 				<div class="row col-md-4 col-md-offset-4 add-review">
 					<button type="button" class="btn btn-primary review-button">Add a review</button>
 				</div> -->
-				
-<!-- comments content area -->
-				<div class="row comments-content">
-				<ul class="comments col-md-12">
-					{{#each products.mug.comments}}
-						<li>
-							<div class="comment-box">
-								<div class="col-md-1"><img src = "{{img_url}}" class="img-responsive comment-img"></div>
-								<div class="col-md-11">
-									{{#if merchant}}
-										<a class="commenter-text-merchant" href="#"><strong><em>{{commenter}}</em></strong></a>
-									{{else}}
-										<a class="commenter-text-user" href="#"><strong>{{commenter}}</strong></a>
-									{{/if}}
-									<p class="comment-text">{{comment}}</p>
-								</div>
-							</div>
-						</li>
-					{{/each}}
-				</ul>
-			</div> 
-		</div>
-	</div> 
+			</div>
+		</div> 
+	</div>
+	</div>
 </script>
 <script src=js/main.js></script>
 </head>
