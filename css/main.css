@@ -1,5 +1,6 @@
 body {
 	padding-top: 50px;
+	background:#f1f1f1;
 }
 
 /* Overide bootstrap heading style */
@@ -102,58 +103,89 @@ body {
 	margin: 0 7px 7px;
 }
 
-.fravr-body {
-	margin-top:100px
-}
 
 /* product page styles */ 
-.product-page-content {
-	background-color: #fffff;
+.fravr-productpage {
+}
+.fravr-productpage .fravr-body {
+	margin-top:30px;
+	background: #FFFFFF;
 	border-style: solid;
 	border-width: thin;
 	border-radius: 8px;
 	border-color: #b3b3b3;
+	margin-bottom: 100px;
 }
-.product-page-content .product-title {
-	margin-top:30px
+.fravr-productpage  .content-body {
+	margin-top: 30px;
+	margin-bottom: 50px;
 }
-.product-title .merchant-name {
-	color:#36d792;
+.fravr-productpage .merchant-name {
+	color:#36d792; 
 }
-.product-title .price {
+.fravr-productpage .price {
 	text-align:right;
 }
-.product-page-content .product-img-main {
+.fravr-productpage .product-img-main {
 	width: 100%;
 	margin-bottom: 12%;
 }
-.product-page-content .product-img-side {
-	width: 100%;
-	margin-bottom: 12%;
+.fravr-productpage .product-img-side {
+	width: 80%;
+	margin-bottom: 13%;
 }
-
-.product-page-content .product-description {
-	margin-bottom: 30px;  
+.fravr-productpage .product-description {
+	margin-bottom: 50px;  
 }
-.product-page-content .comments-divider{
+.fravr-productpage .comments-divider{
 	height: 1px;
 	background-color: #d7c7c7;
 }
-.comments-divider .icons {
+.fravr-productpage .comments-divider .icons {
 	background-color: #ffffff;
 	text-align:center;
-	color: green;
+	color: #36d792;
 	position: relative;
 	top: -2em;
 }
-.comments-divider  .icon-reviews{
-	left: -1em;
+.fravr-productpage .comments-divider  .icon-reviews{
 	width: 11%;
 }
-.comments-divider .icon-comments{
-	left: -1em;
+.fravr-productpage .comments-divider .icon-comments{
+	left: -1.1em;
 	width: 12.5%;
 }
-
-
+.fravr-productpage .comments {
+	background-color:#e1ffe1;
+}
+.fravr-productpage .comment-box {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.fravr-productpage .comment-img {
+	width:100%;
+}
+.fravr-productpage .commenter-text-merchant {
+	color: green;
+}
+.fravr-productpage .commenter-text-user {
+	color: blue;
+}
+/* .reviews .review-text {
+	text-align:left;
+}
+.reviews .reviewer-text {
+	text-align:right;
+	color: #36d792;
+}
+.add-review{
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:center;
+}
+.add-review .review-button {
+	background-color:#36d792;
+	border-color: #36d792;
+}
+ */
 
