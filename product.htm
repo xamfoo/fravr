@@ -26,15 +26,15 @@
 				<!--product title-->
 				<div class ="row"> 
 					<div class ="col-md-12">
-						<h4><strong> {{products.mug.name}} </strong></h4> 
+						<h4><strong> {{products.mightymug.name}} </strong></h4> 
 						<div class ="row"> 
 							<!--merchant name-->
 							<div class ="col-md-9">
-									<h5> from <a class="merchant-name" href={{products.mug.merchant_url}} ><em>{{products.mug.merchant}}</em></a> </h5> 
+									<h5> from <a class="merchant-name" href={{products.mightymug.merchant_url}} ><em>{{products.mightymug.merchant}}</em></a> </h5> 
 							</div> 
 							<!--price info-->
 							<div class ="col-md-3 price">
-									<h5><strong>{{products.mug.price}} {{products.mug.currency}}</strong></h5>
+									<h5><strong>{{products.mightymug.price}} {{products.mightymug.currency}}</strong></h5>
 							</div>
 						</div>
 					</div>	
@@ -44,28 +44,28 @@
 					<!--main image-->
 					<!-- <div class ="col-md-8 col-md-offset-1">  -->
 					<div class ="col-md-9"> 
-						<img src ="{{products.mug.img_urls.0.url}}" class = "product-img-main">
+						<img src ="{{products.mightymug.img_urls.0.url}}" class = "product-img-main">
 					</div>
 					<!--side images-->
 					<div class ="col-md-3"> 
 						<div class ="row">
 							<div class ="col-md-12">
-								<img src ="{{products.mug.img_urls.1.url}}" class = "product-img-side pull-right">
+								<img src ="{{products.mightymug.img_urls.1.url}}" class = "product-img-side pull-right">
 							</div>
 						</div>
 						<div class ="row">
 							<div class ="col-md-12">
-								<img src ="{{products.mug.img_urls.2.url}}" class = "product-img-side pull-right">
+								<img src ="{{products.mightymug.img_urls.2.url}}" class = "product-img-side pull-right">
 							</div>
 						</div>
 						<div class ="row">
 							<div class ="col-md-12">
-								<img src ="{{products.mug.img_urls.3.url}}" class = "product-img-side pull-right">
+								<img src ="{{products.mightymug.img_urls.3.url}}" class = "product-img-side pull-right">
 							</div>
 						</div>
 						<div class ="row">
 							<div class ="col-md-12">
-								<img src ="{{products.mug.img_urls.4.url}}" class = "product-img-side pull-right">
+								<img src ="{{products.mightymug.img_urls.4.url}}" class = "product-img-side pull-right">
 							</div>
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 				<div class ="row"> 
 					<div class ="col-md-12">
 						<div class="product-description">
-							{{{products.mug.description}}}
+							{{{products.mightymug.description}}}
 						</div>
 					</div>
 				</div>
@@ -99,7 +99,7 @@
 				<div class="comments">
 					<div class="row">
 						<ul class="col-md-12 list-unstyled comment-box">
-							{{#each products.mug.comments}}
+							{{#each products.mightymug.comments}}
 								<li>
 									<div class="col-md-1">
 										<img src = "{{img_url}}" class="img-responsive comment-img">
@@ -128,7 +128,7 @@
 				<!-- reviews content area -->
 				<!-- <div class="row comments-content"> 
 					<ul class="reviews col-md-12">
-						{{#each products.mug.reviews}}
+						{{#each products.mightymug.reviews}}
 							<li>
 								<p class="review-text">"{{review}}"</p>
 								<p class="reviewer-text">- {{reviewer}}</p>
@@ -146,6 +146,7 @@
 	</div>
 </script>
 <script src=js/main.js></script>
+<script src=data/data.js></script>
 </head>
 
 <body>
