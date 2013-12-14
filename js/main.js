@@ -6,7 +6,6 @@
 
 // Declare global namespace
 var Main = {},
-	Data = {};
 	Template = {};
 
 //Compile and store template function in closure

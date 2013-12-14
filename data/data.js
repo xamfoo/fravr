@@ -1,4 +1,6 @@
 // Define default data
+var Data = {};
+
 Data.header = {
 	title: "My New Post",
 	body: "This is my first post!"
