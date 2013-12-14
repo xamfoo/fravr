@@ -6,7 +6,7 @@
 
 // Declare global namespace
 var Main = {},
-	Data = {},
+	Data = {};
 	Template = {};
 
 // Define default data
@@ -143,6 +143,9 @@ Main.clearData = function () {
 Main.ready = function () {
 	//Register all Handlebars partials
 	$("script[data-name][type='text/x-handlebars-template']").each(function(){
+		Handlebars.registerPartial($(this).attr('data-name'), $(this).html());
+	});
+	$("script[data-name][src]").each(function(){
 		Handlebars.registerPartial($(this).attr('data-name'), $(this).html());
 	});
 	
