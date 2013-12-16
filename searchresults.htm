@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/main.css">
+<script src=http://code.jquery.com/jquery-2.0.3.min.js></script>
+<script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
+<script src=js/handlebars-v1.1.2.js></script>
+<script src=js/amplify.min.js></script>
+
+<!-- Define default template -->
+<script data-body type="text/x-handlebars-template">
+{{>header}}
+{{>body}}
+</script>
+<!-- Include header -->
+<script data-name="header" src="tmpl/header.tmpl"></script>
+
+<script data-name="body" type="text/x-handlebars-template">
+<div class="page-header" style="background:#fff">
+	<div class="search-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="dropdown">
+							<a href="#" data-toggle="dropdown">
+								<div class="row">
+									<div class="col-md-9">
+										<h4>Results for White Shirt (35) 
+										</h4>
+									</div>
+									<div class="col-md-3">
+										<img src="img/fravr-dropdown.png">
+									</div>
+								</div>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Men (23) </a></li>
+								<li><a href="#">Women (12) </a></li>
+								<li><a href="#">Working (20)</a></li>
+								<li><a href="#">Fashion (12)</a></li>
+								<li><a href="#">Casual (15) </a></li>
+								<li><a href="#">T-shirts (8) </a></li> 
+								<li><a href="#">Zara (3) </a></li>
+							</ul>
+					</div>	
+				</div>
+				<div class="col-md-7 tags-bar">
+					<h4> some tags here </h4> 
+				</div>
+			</div>
+<!-- 				<div class="col-md-2 col-md-offset-1">
+					<span class="search-text"> results for white shirt </span>
+				</div>
+				<div class="col-md-2 col-md-offset-6">
+					<span class="search-no"> x results found </span> 
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>
+<div class="fravr-timeline">
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<img src="img/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
+				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
+				<span class="subtitle">by Sinn</span>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</script>
+<script src=data/data.js></script>
+<script src=js/main.js></script>
+<!-- Page specific script -->
+<script>
+</script>
+</head>
+
+<body>
+</body>
+</html>
