@@ -82,7 +82,7 @@ body {
 	padding: 0;
 	border-bottom: 1px solid #c9c9c9;
 }
-.fravr-timeline .item > img {
+.fravr-timeline .item  img {
 	width: 100%;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -219,4 +219,15 @@ body {
 	position: relative;
 	left: -20px;
 	/* width:100%; */
+}
+.search-page .item .title:hover{
+	text-decoration: underline;
+}
+.search-page .item .subtitle >a{
+	display: inline-block;
+	font-weight: 600;
+	color: #585a5c;
+}
+.search-page .item .subtitle >a:hover{
+	text-decoration: underline;
 }

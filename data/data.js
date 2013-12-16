@@ -292,7 +292,7 @@ leathercollarDH:
 		<p><strong>Trim: 100% leather</strong></p>\
 		<p><strong>Made in Italy</strong></p>\
 		",
-		img_urls: [{url:"img/products/diorhomme leathercollar $622.jpg"},{url:"img/products/diorhomme leathercollar $622 -2.jpg"}],
+		img_urls: [{url:"img/products/diorhomme leathercollar $622.jpg"},{url:"img/products/diorhomme leathercollared $622 -2.jpg"}],
 		comments: null,
 		reviews: null
 		},
@@ -319,7 +319,7 @@ basicwhiteslimfit:
 		description: "<p>There can never be enough white shirts in a man's wardrobe. Go back to basics with Bombayduck's Basic Mens regular cut shirt.</p>\
 		<p>The shirt looks smart enough for work and casual enough for a good dinner gathering in the evening. Made to be comfortable with 100% cotton and matched with white buttons.</p>\
 		<p><strong>Sizes: XS - XXL</strong></p>\ ",
-		img_urls: [{url:"img/products/Basics white slimfit $37-3.jpg"},{url:"img/products/Basics white slimfit $37.jpg"},{url:"img/products/Basics white slimfit $37-2.jpg"}],
+		img_urls: [{url:"img/products/Basics white slimfit $37-3.jpg"},{url:"img/products/Basics white slimfit $37.jpg"},{url:"img/products/Basics white slimfit $37 -2.jpg"}],
 		comments: null,
 		reviews: null
 		},
