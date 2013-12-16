@@ -147,6 +147,15 @@
 </script>
 <script src=data/data.js></script>
 <script src=js/main.js></script>
+<!-- Page specific script -->
+<script>
+Main.ready(function () {
+	//If valid product exists in query string, show product
+	if (Main.url.get('product') && typeof Data.products[Main.url.get('product')] != 'undefined') {
+		Data.products.item = Data.products[Main.url.get('product')];
+	}
+});
+</script>
 </head>
 
 <body>

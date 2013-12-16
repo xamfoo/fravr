@@ -368,7 +368,6 @@ mightymug:
 		reviews: null
 		}
 };
-Data.products.item = Data.products.mightymug; //Set Default product
 
 Data.clipping = {
 	total: 0
