@@ -31,21 +31,6 @@ Template = function () {
 	return that;
 }();
 
-// Session = function () {
-// 	var that = {};
-// 	var data = {};
-// 
-// 	that.get = function (key) {
-// 		return data[key];
-// 	}
-// 
-// 	that.set = function (key, val) {
-// 		data[key] = val;
-// 	}
-// 
-// 	return that;
-// }();
-
 Main = function () {
 	var that = {};
 	var ready = function () {};
@@ -103,6 +88,7 @@ Main.url = function () {
 	return that;
 }();
 
+// Load all data from storage and replace existing data
 Main.loadData = function () {
 	for (var obj in amplify.store()) {
 		// If modified data exists in storage, update data
@@ -112,12 +98,14 @@ Main.loadData = function () {
 	}
 }
 
+// Save specified data to storage
 Main.saveData = function (key) {
 	if (typeof Data[key] != 'undefined') {
 		amplify.store('key', Data[key]);
 	}
 }
 
+// Clear all data from storage
 Main.clearData = function () {
 	for (var obj in amplify.store()) {
 		amplify.store(obj, null);
