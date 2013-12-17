@@ -1,9 +1,3 @@
-// Custom Handlebars helpers
-//failed handle bars 
-/* Handlebars.registerHelper ("set_product", function (products, product_type) {
-	products.item = products[product_type];
-});  */
-
 // Declare global namespace
 var Main = {},
 	Template = {},
@@ -111,3 +105,13 @@ Main.clearData = function () {
 		amplify.store(obj, null);
 	}
 }
+
+// Custom Handlebars helpers
+Handlebars.registerHelper ("ifequals", function (obj, val, options) {
+	console.log(obj);
+	if (obj === val) {
+		return options.fn(this);
+	} else {
+		return "";
+	}
+});

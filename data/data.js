@@ -212,7 +212,7 @@ kingoftokyo:
 		},
 brickwatchstrap:
 		{
-		name: "Brick FullLeather Nato Watch Strap 22mm",
+		name: "Brick Full Leather Nato Watch Strap 22mm",
 		price: 85,
 		currency: "SGD",
 		merchant: "Worn_Wound",
@@ -384,7 +384,7 @@ Data.timeline = {
 	everything: [
 		{
 			product: Data.products['brickwatchstrap'],
-			action: [
+			actions: [
 				{
 					user: Data.users['paklun'],
 					action: 'purchase'
@@ -393,9 +393,9 @@ Data.timeline = {
 		},
 		{
 			product: Data.products['NarutoTee'],
-			action: [
+			actions: [
 				{
-					user: Data.users['paklun'],
+					user: Data.users['wenting'],
 					action: 'fravd'
 				}
 			]
