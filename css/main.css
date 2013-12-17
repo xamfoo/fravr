@@ -15,6 +15,7 @@ body {
 	margin: 0 0 20px;
 	/* border-bottom: 1px solid #eeeeee; */
 	border-bottom: 1px solid #c9c9c9;
+	/* height: 80px; */
 }
 .page-header > h1,h2,h3,h4,h5,h6{
 	font-weight: 300;
@@ -81,7 +82,7 @@ body {
 	padding: 0;
 	border-bottom: 1px solid #c9c9c9;
 }
-.fravr-timeline .item > img {
+.fravr-timeline .item  img {
 	width: 100%;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -188,4 +189,45 @@ body {
 	border-color: #36d792;
 }
  */
-
+.search-page {
+}
+.search-page .dropdown {
+	padding-top: 10px;
+}
+.search-page .tags-bar {
+	/* border-bottom: 1px solid #c9c9c9; */
+	padding-top: 10px;
+	padding-bottom: 15px;
+	vertical-align: top;
+} 
+.search-page .free-line {
+	position:absolute;
+}
+.search-page .search-text {
+	position:absolute;
+	z-index: 100;
+}
+.search-page .search-no {
+	position:absolute;
+	z-index:100;
+}
+.search-page .dropdown >h4 {
+	display: block;
+}
+.search-page .dropdown  img {
+	padding-top: 10px;
+	position: relative;
+	left: -20px;
+	/* width:100%; */
+}
+.search-page .item .title:hover{
+	text-decoration: underline;
+}
+.search-page .item .subtitle >a{
+	display: inline-block;
+	font-weight: 600;
+	color: #585a5c;
+}
+.search-page .item .subtitle >a:hover{
+	text-decoration: underline;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/main.css">
+<script src=http://code.jquery.com/jquery-2.0.3.min.js></script>
+<script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
+<script src=js/handlebars-v1.1.2.js></script>
+<script src=js/amplify.min.js></script>
+
+<!-- Define default template -->
+<script data-body type="text/x-handlebars-template">
+{{>header}}
+{{>body}}
+</script>
+<!-- Include header -->
+<script data-name="header" src="tmpl/header.tmpl"></script>
+
+<script data-name="body" type="text/x-handlebars-template">
+<div class="page-header" style="background:#fff">
+	<div class="search-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="dropdown">
+							<a href="#" data-toggle="dropdown">
+								<div class="row">
+									<div class="col-md-9">
+										<h4>Results for White Shirt (35) 
+										</h4>
+									</div>
+									<div class="col-md-3">
+										<img src="img/fravr-dropdown.png">
+									</div>
+								</div>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Men (23) </a></li>
+								<li><a href="#">Women (12) </a></li>
+								<li><a href="#">Working (20)</a></li>
+								<li><a href="#">Fashion (12)</a></li>
+								<li><a href="#">Casual (15) </a></li>
+								<li><a href="#">T-shirts (8) </a></li> 
+								<li><a href="#">Zara (3) </a></li>
+							</ul>
+					</div>	
+				</div>
+				<div class="col-md-7 tags-bar">
+					<h4> some tags here </h4> 
+				</div>
+			</div>
+<!-- 				<div class="col-md-2 col-md-offset-1">
+					<span class="search-text"> results for white shirt </span>
+				</div>
+				<div class="col-md-2 col-md-offset-6">
+					<span class="search-no"> x results found </span> 
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>
+<div class="fravr-timeline">
+<div class="search-page">
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<a href="./product.htm?product=topmanshirt">
+					<img src="{{products.topmanshirt.img_urls.0.url}}">
+					<span class="title">{{products.topmanshirt.name}}</span>
+				</a>
+				<span class="subtitle"> by <a href="#">{{products.topmanshirt.merchant}}</a> </span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<a href="./product.htm?product=NarutoTee">
+					<img src="{{products.NarutoTee.img_urls.0.url}}">
+					<span class="title">{{products.NarutoTee.name}}</span>
+				</a>
+				<span class="subtitle">by <a href="#">{{products.NarutoTee.merchant}}</a></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="item">
+				<a href="./product.htm?product=womenlongformalshirt">
+					<img src="{{products.womenlongformalshirt.img_urls.0.url}}">
+					<span class="title">{{products.womenlongformalshirt.name}}</span>
+				</a>
+				<span class="subtitle"> by <a href="#">{{products.womenlongformalshirt.merchant}}</a> </span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="item">
+				<a href="./product.htm?product=poloralphlauren">
+					<img src="{{products.poloralphlauren.img_urls.0.url}}">
+					<span class="title">{{products.poloralphlauren.name}}</span>
+				</a>
+				<span class="subtitle"> by <a href="#">{{products.poloralphlauren.merchant}}</a> </span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="item">
+				<a href="./product.htm?product=leathercollarDH">
+					<img src="{{products.leathercollarDH.img_urls.0.url}}">
+					<span class="title">{{products.leathercollarDH.name}}</span>
+				</a>
+				<span class="subtitle"> by <a href="#">{{products.leathercollarDH.merchant}}</a> </span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="item">
+				<a href="./product.htm?product=mathsnerdwhitetee">
+					<img src="{{products.mathsnerdwhitetee.img_urls.0.url}}">
+					<span class="title">{{products.mathsnerdwhitetee.name}}</span>
+				</a>
+				<span class="subtitle"> by <a href="#">{{products.mathsnerdwhitetee.merchant}}</a> </span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="item">
+				<a href="./product.htm?product=basicwhiteslimfit">
+					<img src="{{products.basicwhiteslimfit.img_urls.0.url}}">
+					<span class="title">{{products.basicwhiteslimfit.name}}</span>
+				</a>
+				<span class="subtitle"> by <a href="#">{{products.basicwhiteslimfit.merchant}}</a> </span>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</script>
+<script src=data/data.js></script>
+<script src=js/main.js></script>
+<!-- Page specific script -->
+<script>
+</script>
+</head>
+
+<body>
+</body>
+</html>
