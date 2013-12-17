@@ -155,6 +155,14 @@ Main.ready(function () {
 		Data.products.item = Data.products[Main.url.get('product')];
 	}
 });
+
+$(document).ready(function () {
+	$(".product-img-side").click( function(){
+			var replacement_src = $(this).attr('src');
+			console.log(replacement_src);
+			$(".product-img-main").attr('src',replacement_src);
+		});
+});
 </script>
 </head>
 
