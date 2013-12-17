@@ -30,12 +30,11 @@
 		</div>
 	</div>
 </div>
+<!--
 <div class="fravr-timeline">
 <div class="container">
-{{#with timeline.everything}}
 	<div class="row">
 		<div class="col-md-6">
-			{{#with 0}}{{>item}}{{/with}}
 		</div>
 		<div class="col-md-6">
 			<div class="item">
@@ -130,11 +129,11 @@
 			</div>
 		</div>
 	</div>
-{{/with}}
 </div>
 </div>
+-->
 </script>
-<script data-name="item" type="text/x-handlebars-template">
+<script data-item type="text/x-handlebars-template">
 <div class="item">
 	<img src="{{product.img_urls.0.url}}">
 	<span class="title">{{product.name}}</span>
@@ -159,12 +158,48 @@
 <script src=js/main.js></script>
 <!-- Events -->
 <script>
+//Compile timeline template
+// Template.set('timeline', $('script[data-item]').html());
+
+//Generate html code in body and register partial 'timeline'
+var Timeline = function (type) {
+	var that = {};
+	var timeline = $("<div class='fravr-timeline'></div>"),
+		container = $("<div class='container'></div>"),
+		row = $("<div class='row'></div>"),
+		count = Data.timeline[type].length,
+		row1x2 = function () {
+		},
+		row1x3 = function () {
+		},
+		row1x4 = function () {
+		},
+		pointer = 0,
+		buffer = {};
+
+	that.loadSize = function (num, successCallback) {
+		for (var i=0; i<num; i+=1) {
+			var image = new Image();
+			$(image).load(function () {
+				Data.timeline[type];
+			}).appendTo( body );
+			$( body ).append("<img src='"+ Data.timeline[type][pointer].product.img_urls.0.url +"'>");
+		}
+		pointer+=num;
+	}
+
+	that.create = function () {
+	}
+}();
+
 Main.ready(function () {
 	$('a[data-toggle]').on('click', function (event) {
 		event.preventDefault();
 	});
+});
 
-	//Generate html code in body and register partial 'timeline'
+$( document ).on('load', function () {
+	Main.createTimeline('everything');
 });
 </script>
 </head>
