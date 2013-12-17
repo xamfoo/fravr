@@ -200,6 +200,31 @@ body {
 	padding-bottom: 15px;
 	vertical-align: top;
 } 
+.search-page .tags-bar .search-tags {
+	display: inline-block;
+	position: relative;
+	top: 8px;
+}
+.search-page .tags-bar .search-tags .tag-img {
+	position: relative;
+	height: 100%;
+	margin-right: 5px;
+}
+.search-page .tags-bar .search-tags .img-close {
+	position: absolute;
+	margin: 0px;
+	top: 17%;
+	right: 10%;
+	z-index: 1;
+}
+.search-page .tags-bar .search-tags h5 {
+	position: absolute;
+	margin: 0px;
+	top: 20%;
+	left: 5%;
+	width: 68%;
+	z-index: 2;
+}
 .search-page .free-line {
 	position:absolute;
 }

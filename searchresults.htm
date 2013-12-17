@@ -22,15 +22,15 @@
 	<div class="search-page">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					<div class="dropdown">
 							<a href="#" data-toggle="dropdown">
 								<div class="row">
-									<div class="col-md-9">
+									<div class="col-md-9 col-sm-9 col-xs-9">
 										<h4>Results for White Shirt (35) 
 										</h4>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-3 col-sm-3 col-xs-3">
 										<img src="img/fravr-dropdown.png">
 									</div>
 								</div>
@@ -47,7 +47,21 @@
 					</div>	
 				</div>
 				<div class="col-md-7 tags-bar">
-					<h4> some tags here </h4> 
+					<div class="search-tags">
+						<img class="tag-img" src="./img/search-tags.png">
+						<h5> Women </h5>
+						<button type="button" class="close img-close" aria-hidden="true">&times;</button> 
+					</div> 
+					<div class="search-tags">
+						<img class="tag-img" src="./img/search-tags.png">
+						<h5> Working </h5>
+						<button type="button" class="close img-close" aria-hidden="true">&times;</button> 
+					</div> 
+					<div class="search-tags">
+						<img class="tag-img" src="./img/search-tags.png">
+						<h5> Business </h5>
+						<button type="button" class="close img-close" aria-hidden="true">&times;</button> 
+					</div>
 				</div>
 			</div>
 <!-- 				<div class="col-md-2 col-md-offset-1">
@@ -140,6 +154,12 @@
 <script src=js/main.js></script>
 <!-- Page specific script -->
 <script>
+$(document).ready(function () {
+	$("button.img-close").click(function() {
+		<!-- $(this).parent().hide(); -->
+		$(this).parent().fadeOut(90);
+	});
+});
 </script>
 </head>
 
