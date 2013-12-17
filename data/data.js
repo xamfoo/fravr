@@ -29,10 +29,198 @@ Data.users = {
 	alexkhow: {
 		name: 'Alex',
 		img_url: 'img/users/alex.jpg'
+	},
+	Sera: {
+		name: 'Sera',
+		img_url: 'img/users/Sera.jpg'
+	},
+	Singh: {
+		name: 'Jasper Singh',
+		img_url: 'img/users/Singh.jpg'
+	},
+	Genevieve: {
+		name: 'Genevieve Goh',
+		img_url: 'img/users/Genevieve.jpg'
+	},
+	Samantha: {
+		name: 'Samantha',
+		img_url: 'img/users/Samantha.jpg'
+	},
+	Max: {
+		name: 'Max Foo',
+		img_url: 'img/users/max.jpg'
+	},
+	Vince: {
+		name: 'Vince Van',
+		img_url: 'img/users/Vince.jpg'
+	},
+	Jesslyn: {
+		name: 'Jesslyn Tai',
+		img_url: 'img/users/Jesslyn.jpg'
+	},
+	Theresa: {
+		name: 'Theresa Tong',
+		img_url: 'img/users/Theresa.jpg'
+	},
+	Cynthia: {
+		name: 'Cynthia',
+		img_url: 'img/users/Cynthia.jpg'
+	},
+	ColinTan: {
+		name: 'Colin Tan',
+		img_url: 'img/users/ColinTan.jpg'
+	},
+	yuri: {
+		name: 'Yuri',
+		img_url: 'img/users/yuri.jpg'
+		}
+	Liza: {
+		name: 'Liza Smith',
+		img_url: 'img/users/Liza.jpg'
+	},
+	Tiffany: {
+		name: 'Tiffany',
+		img_url: 'img/users/Tiffany.jpg'
+	},
+	sethrogen: {
+		name: 'Seth Rogen',
+		img_url: 'img/users/sethrogen.jpg'
+	},
+	mizutani: {
+		name: 'Masako Mizutani',
+		img_url: 'img/users/Mizutani.jpg'
+	},
+	Tkimura: {
+		name: 'Takuya Kimura',
+		img_url: 'img/users/TKimura.jpg'
+	},
+	JulieBowen: {
+		name: 'Julie Bowen',
+		img_url: 'img/users/JulieBowen.jpg'
+	},
+	Hyori: {
+		name: 'Lee Hyori',
+		img_url: 'img/users/Hyorilee.jpg'
+	},
+	TakuyaS: {
+		name: 'Takuya Shimizu',
+		img_url: 'img/users/TakuyaS.jpg'
+	},
+	Boa: {
+		name: 'BoA',
+		img_url: 'img/users/BoA.jpg'
+	},
+	takeshi: {
+		name: 'Takeshi Kaneshiro',
+		img_url: 'img/users/takeshiro.jpg'
+	},
+	Tyra: {
+		name: 'Tyra',
+		img_url: 'img/users/Tyra.jpg'
+	},
+	bernetta: {
+		name: 'Bernetta',
+		img_url: 'img/users/Bernetta.jpg'
+	},
+	kleine: {
+		name: 'Kleine',
+		img_url: 'img/users/kleine.jpg'
+	},
+	priya: {
+		name: 'Priya',
+		img_url: 'img/users/priya.jpg'
+	},
+	xiaoqian: {
+		name: 'Xiao Qian',
+		img_url: 'img/users/xiaoqian.jpg'
+	},
+	bridgette: {
+		name: 'Bridgette',
+		img_url: 'img/users/bridgette.jpg'
+	},
+	Kloc: {
+		name: 'Kloc',
+		img_url: 'img/users/Kloc.jpg'
+	},
+	Riyanti: {
+		name: 'Riyanti',
+		img_url: 'img/users/Riyanti.jpg'
+	},
+	Damien: {
+		name: 'Damien Chung',
+		img_url: 'img/users/Damien.jpg'
+	},
+	Linh: {
+		name: 'Melissa Linh',
+		img_url: 'img/users/Linh.jpg'
+	},
+	Shakir: {
+		name: 'Shakir',
+		img_url: 'img/users/Shakir.jpg'
+	},
+	Kapoor: {
+		name: 'Kapoor',
+		img_url: 'img/users/Kapoor.jpg'
+	},
+	Marie: {
+		name: 'Marie',
+		img_url: 'img/users/Marie.jpg'
+	},
+	Xavier: {
+		name: 'Xavier,
+		img_url: 'img/users/Xavier.jpg'
 	}
-}
-
+}	
 Data.profile = Data.users['paklun'];
+
+Data.profile = {
+	name: 'Pak Lun',
+	img_url: 'img/pak lun.jpg'
+}
+Data.profile.following = {
+	Data.users.yuri,
+	Data.users.Liza,
+	Data.users.Tiffany,
+	Data.users.sethrogen,
+	Data.users.mizutani,
+	Data.users.Tkimura,
+	Data.users.JulieBowen,
+	Data.users.Hyori,
+	Data.users.TakuyaS,
+	Data.users.Boa,
+	Data.users.takeshi,
+	Data.users.Tyra
+}
+Data.profile.friends = {
+	Data.users.wenting,
+	Data.users.Sera,
+	Data.users.Max,
+	Data.users.jiahe,
+	Data.users.alexkhow,
+	Data.users.Samantha,
+	Data.users.Singh,
+	Data.users.Genevieve,
+	Data.users.Jesslyn,
+	Data.users.Cynthia,
+	Data.users.ColinTan,
+	Data.users.Theresa,
+	Data.users.Vince
+}
+Data.profile.followers = {
+	Data.users.Xavier,
+	Data.users.Marie,
+	Data.users.Kapoor,
+	Data.users.Shakir,
+	Data.users.Linh,
+	Data.users.Damien,
+	Data.users.Riyanti,
+	Data.users.Kloc,
+	Data.users.bridgette,
+	Data.users.xiaoqian,
+	Data.users.Priya,
+	Data.users.kleine,
+	Data.users.bernetta
+}
 
 Data.cart = {
 	total: 0
@@ -54,6 +242,78 @@ Data.products = {
 					review: null}],
 		product_url: null
 		},
+CrochetHighNeck:
+		{
+		name: "Crochet Lace High Neck Top",
+		price: 20.00,
+		currency: "SGD",
+		merchant: "Esgesee",
+		merchant_url: "#",
+		description: "<p>Full cotton 3/4 sleeved top with crochet lace high neck. Intricate crochet pattern and pearl adornments brings sophistication and elegance.</p>\
+		<p><strong>Sizes: S - XL</strong></p>\",
+		img_urls: [{url:"img/products/crochet lace highneck white top1.jpg"},{url:"img/products/crochet lace highneck white top2.jpg"},{url:"img/products/crochet lace highneck white top3.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
+		},
+WhiteLaceTop:
+		{
+		name: "Elegant Lace Long Sleeved Top",
+		price: 14.00,
+		currency: "SGD",
+		merchant: "Esgesee",
+		merchant_url: "#",
+		description: "<p>Full cotton long sleeved top with lace collar. Intricate lace embroidery with adornments lend an air of sophistication and understated elegance to a casual white top.</p>\
+		<p><strong>Sizes: S - XXL</strong></p>\ ",
+		img_urls: [{url:"img/products/esgesee white lace collar top1.jpg"},{url:"img/products/esgesee white lace collar top2.jpg"},{url:"img/products/esgesee white lace collar top3.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
+		}
+Owlhalfsleeve:
+		{
+		name: "Owl Print Vintage Half Sleeve",
+		price: 18.90,
+		currency: "SGD",
+		merchant: "East Knitting",
+		description: "<p>Vintage-styled Half Sleeve Tee shirt made of 100% cotton with elastic cuffs. Owl design print. O-collar of color matching with cuffs.</p>\
+		<p>Available in Teal, Cyan, Fuchsia, Orange, White and Black</p>\
+		<p><strong>Sizes: XS - XL</strong></p>\
+		",
+		img_urls: [{url:"img/products/Vintage loose tee white owl print halfsleeve.jpg"}],
+		comments: null,
+		reviews: null
+		}
+WhiteEmbroideredDress:
+		{
+		name: "Timeless White Embroidered Dress",
+		price: 20.0,
+		currency: "SGD",
+		merchant: "Ella",
+		description: "<p>A simple white dress can be a timeless fashion piece. Ella brings you another wardrobe must-haves with this lightweight, embroidered babydoll dress. Contrasted tribal lines of embroidery paired with like-colored lace pattern on the chest complete the look.</p>\
+		<p><strong>Sizes: XS - XXL</p>\
+		",
+		img_urls: [{url:"img/products/Ella Timeless White Embroidered Dress 20.jpg"}],
+		comments: null,
+		reviews: null
+		}
+Tuxedotee:
+		{
+		name: "Tuxedo White Tee",
+		price: 39.9,
+		currency: "SGD",
+		merchant: "Lazy Oaf",
+		description: "<p>Dress like a sir even while you're in a simple tee shirt. Be smartly casual with this tee shirt with a tuxedo print, topped off with a big bright bowtie.</p>\
+		<p><strong>Sizes: XXS - XXL</strong></p>\
+		",
+		img_urls: [{url:"img/products/Lazy Oaf Tuxedo White Slob T-shirt (Lazy Oaf) 39.9.jpg"}],
+		comments: null,
+		reviews: null
+		}
 CannondaleRacer:
 		{
 		name: "SuperX SRAM Red Carbon Racer",
