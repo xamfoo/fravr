@@ -73,7 +73,7 @@ Data.users = {
 	yuri: {
 		name: 'Yuri',
 		img_url: 'img/users/yuri.jpg'
-		}
+	},
 	Liza: {
 		name: 'Liza Smith',
 		img_url: 'img/users/Liza.jpg'
@@ -167,17 +167,13 @@ Data.users = {
 		img_url: 'img/users/Marie.jpg'
 	},
 	Xavier: {
-		name: 'Xavier,
+		name: 'Xavier',
 		img_url: 'img/users/Xavier.jpg'
 	}
 }	
 Data.profile = Data.users['paklun'];
 
-Data.profile = {
-	name: 'Pak Lun',
-	img_url: 'img/pak lun.jpg'
-}
-Data.profile.following = {
+Data.profile.following = [
 	Data.users.yuri,
 	Data.users.Liza,
 	Data.users.Tiffany,
@@ -190,8 +186,8 @@ Data.profile.following = {
 	Data.users.Boa,
 	Data.users.takeshi,
 	Data.users.Tyra
-}
-Data.profile.friends = {
+]
+Data.profile.friends = [
 	Data.users.wenting,
 	Data.users.Sera,
 	Data.users.Max,
@@ -205,8 +201,8 @@ Data.profile.friends = {
 	Data.users.ColinTan,
 	Data.users.Theresa,
 	Data.users.Vince
-}
-Data.profile.followers = {
+]
+Data.profile.followers = [
 	Data.users.Xavier,
 	Data.users.Marie,
 	Data.users.Kapoor,
@@ -220,7 +216,7 @@ Data.profile.followers = {
 	Data.users.Priya,
 	Data.users.kleine,
 	Data.users.bernetta
-}
+]
 
 Data.cart = {
 	total: 0
@@ -250,7 +246,7 @@ CrochetHighNeck:
 		merchant: "Esgesee",
 		merchant_url: "#",
 		description: "<p>Full cotton 3/4 sleeved top with crochet lace high neck. Intricate crochet pattern and pearl adornments brings sophistication and elegance.</p>\
-		<p><strong>Sizes: S - XL</strong></p>\",
+		<p><strong>Sizes: S - XL</strong></p>",
 		img_urls: [{url:"img/products/crochet lace highneck white top1.jpg"},{url:"img/products/crochet lace highneck white top2.jpg"},{url:"img/products/crochet lace highneck white top3.jpg"}],
 		comments: [{commenter: null,
 					comment: null}],
@@ -273,7 +269,7 @@ WhiteLaceTop:
 		reviews: [{	reviewer: null,
 					review: null}],
 		product_url: null
-		}
+		},
 Owlhalfsleeve:
 		{
 		name: "Owl Print Vintage Half Sleeve",
@@ -287,7 +283,7 @@ Owlhalfsleeve:
 		img_urls: [{url:"img/products/Vintage loose tee white owl print halfsleeve.jpg"}],
 		comments: null,
 		reviews: null
-		}
+		},
 WhiteEmbroideredDress:
 		{
 		name: "Timeless White Embroidered Dress",
@@ -300,7 +296,7 @@ WhiteEmbroideredDress:
 		img_urls: [{url:"img/products/Ella Timeless White Embroidered Dress 20.jpg"}],
 		comments: null,
 		reviews: null
-		}
+		},
 Tuxedotee:
 		{
 		name: "Tuxedo White Tee",
@@ -313,7 +309,7 @@ Tuxedotee:
 		img_urls: [{url:"img/products/Lazy Oaf Tuxedo White Slob T-shirt (Lazy Oaf) 39.9.jpg"}],
 		comments: null,
 		reviews: null
-		}
+		},
 CannondaleRacer:
 		{
 		name: "SuperX SRAM Red Carbon Racer",
