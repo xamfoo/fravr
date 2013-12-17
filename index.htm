@@ -180,10 +180,21 @@ var Timeline = function (type) {
 	that.loadSize = function (num, successCallback) {
 		for (var i=0; i<num; i+=1) {
 			var image = new Image();
+			// var imgId = 'invis-' + pointer.toString();
 			$(image).load(function () {
-				Data.timeline[type];
-			}).appendTo( body );
-			$( body ).append("<img src='"+ Data.timeline[type][pointer].product.img_urls.0.url +"'>");
+					Data.timeline[type][pointer].product.img_urls[0].size = {
+						width: $(this).width(),
+						height: $(this).height()
+					}
+					$(this).remove(); //Remove this image from DOM
+				})
+				.css('display','none')
+				.attr('src',
+					Data.timeline[type][pointer].product.img_urls[0].url)
+				.appendTo('body');
+
+			$( body ).append("<img id='invis-0' style='display:none' src='"+
+					 +"'>");
 		}
 		pointer+=num;
 	}
