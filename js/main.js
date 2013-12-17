@@ -6,7 +6,8 @@ var Main = {},
 //Compile and store template function in closure
 Template = function () {
 	var that = {};
-	var template = Handlebars.compile( $('script[data-body]').html() );
+	var body = Handlebars.compile( $('script[data-body]').html() );
+	var template = {};
 
 	//Register all Handlebars partials
 	that.registerPartials = function () {
@@ -19,9 +20,23 @@ Template = function () {
 	}
 
 	that.render = function () {
-		var html = template(Data);
+		var html = body(Data);
 		$('body').html(html);
 	}
+
+	that.set = function (name, html) {
+		if (typeof name === 'string' && typeof html === 'string') {
+			template[name] = Handlebars.compile(html);
+			return template[name];
+		}
+	}
+
+	that.get = function (name) {
+		if (typeof template[name] != 'undefined') {
+			return template[name];
+		}
+	}
+
 	return that;
 }();
 
