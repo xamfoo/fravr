@@ -44,7 +44,7 @@ Main = function () {
 	var that = {};
 	var ready = function () {};
 	
-	that.ready = function (f) {
+	Data.ready = function (f) {
 		if (typeof f === 'function') ready = f;
 	}
 
