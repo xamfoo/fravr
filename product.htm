@@ -43,11 +43,16 @@
 				<div class ="row"> 
 					<!--main image-->
 					<!-- <div class ="col-md-8 col-md-offset-1">  -->
-					<div class ="col-md-9"> 
+					<div class ="col-md-10 col-sm-10"> 
 						<img src ="{{products.item.img_urls.0.url}}" class = "product-img-main">
 					</div>
 					<!--side images-->
-					<div class ="col-md-3"> 
+					<div class ="col-md-2 col-sm-2"> 
+						<div class ="row">
+							<div class ="col-md-12">
+								<img src ="{{products.item.img_urls.0.url}}" class = "product-img-side pull-right">
+							</div>
+						</div>
 						<div class ="row">
 							<div class ="col-md-12">
 								<img src ="{{products.item.img_urls.1.url}}" class = "product-img-side pull-right">
@@ -81,13 +86,13 @@
 				</div>
 				<!--horizontal line / divider-->
 				<div class="row"> 
-					<div class="col-md-12">
+					<div class="col-md-12 col-sm-12">
 						<div class="comments-divider">
-							<div class="col-md-1 col-md-offset-8 icons icon-reviews">  <!-- reviews icon -->
+							<div class="col-md-1 col-md-offset-8 col-sm-1 col-sm-offset-8 icons icon-reviews">  <!-- reviews icon -->
 								<span class="glyphicon glyphicon-align-left"></span>
 								<p class="para">Reviews</p>
 							</div> 
-							<div class="col-md-1 col-md-offset-1 icons icon-comments"> <!-- comments icon -->
+							<div class="col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 icons icon-comments"> <!-- comments icon -->
 								<span class="glyphicon glyphicon-align-left"></span>
 								<p class="para">Comments</p>
 							</div>
@@ -98,13 +103,13 @@
 				<!-- comments content area -->
 				<div class="comments">
 					<div class="row">
-						<ul class="col-md-12 list-unstyled comment-box">
+						<ul class="col-md-12 col-sm-12 list-unstyled comment-box">
 							{{#each products.item.comments}}
 								<li>
-									<div class="col-md-1">
+									<div class="col-md-1 col-sm-1">
 										<img src = "{{img_url}}" class="img-responsive comment-img">
 									</div>
-									<dl class="col-md-11">
+									<dl class="col-md-11 col-sm-11">
 										{{#if merchant}}
 											<dt><a class="commenter-text-merchant" href="#"><em>{{commenter}}</em></a></dt>
 										{{else}}
@@ -116,10 +121,10 @@
 								</li>
 							{{/each}}
 							<!-- user comment box -->
-							<div class="col-md-1">
+							<div class="col-md-1 col-sm-1">
 								<img src = "{{profile.img_url}}" class="img-responsive comment-img">
 							</div>
-							<div class="col-md-11">
+							<div class="col-md-11 col-sm-11">
 								<input type="text" class="form-control" placeholder="Write a comment...">
 							</div>
 						</ul>
@@ -154,6 +159,15 @@ Data.ready(function () {
 	if (Main.url.get('product') && typeof Data.products[Main.url.get('product')] != 'undefined') {
 		Data.products.item = Data.products[Main.url.get('product')];
 	}
+});
+
+$(document).ready(function () {
+	// swap main image with side image
+	$(".product-img-side").click( function(){
+			<!-- var temp_src = $(".product-img-main").attr('src'); --> // uncomment for replacement
+			$(".product-img-main").attr('src',$(this).attr('src'));
+			<!-- $(this).attr('src',temp_src); -->	// uncomment for replacement 
+		});
 });
 </script>
 </head>
