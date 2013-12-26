@@ -349,36 +349,6 @@ var Timeline = function (type) {
 		}
 	}
 
-	that.create = function () {
-		var loadNum = 2;
-		// loadNum, number of images to load
-		that.loadSize(loadNum, function (pointer) {
-			for (var i=pointer-loadNum; i<pointer; i+=1) {
-				buffer.push(Data.timeline[type][i].product.img_urls[0].size)
-				var x = that.getRW({
-					h: buffer[buffer.length-1].height,
-					w: buffer[buffer.length-1].width
-				});
-				buffer[buffer.length-1].r = x.r;
-				buffer[buffer.length-1].w = x.w;
-				buffer[buffer.length-1].timelineIndex = i;
-				x.t= i;
-				buffer[buffer.length-1].pLeft = that.getPLeft(x);
-			}
-			// Check and update possibilities for both images
-			buffer[0].pLeft = that.getPLeft({
-				r: buffer[1].r,
-				w: buffer[1].w,
-				t: buffer[1].timelineIndex
-			}, buffer[0].pLeft);
-			buffer[1].pLeft = that.getPLeft({
-				r: buffer[0].r,
-				w: buffer[0].w,
-				t: buffer[0].timelineIndex
-			}, buffer[1].pLeft);
-		});
-	}
-
 	that.loadNext = function (callBack) {
 		that.loadSize(1, function (pointer) {
 			// Add image to buffer
@@ -418,7 +388,6 @@ var Timeline = function (type) {
 	}
 
 	that.addPatternToDom = function () {
-		console.log(that.getCP());
 		console.log('adding pattern...');
 		var cp = that.getCP();
 
@@ -449,12 +418,10 @@ var Timeline = function (type) {
 		for (var i=0; i<cp.length; i+=1) {
 			// If pattern is same as last used pattern in DOM and has all same numbers
 			if (arraysEqual(lastPattern,cp[i].op) && isRepeatPattern(cp[i].op)) {
-				console.log('same');
+				console.log('same pattern as last');
 			} else {
-				console.log('diff');
 				for (var j=0; j<cp[i].wt.length; j+=1) {
 					if (typeof bestCP.t === 'undefined') {
-						console.log('init undefined');
 						bestCP.t = cp[i].wt[j].t;
 						bestCP.i = i;
 					} else if (bestCP.t > cp[i].wt[j].t) {
@@ -464,11 +431,11 @@ var Timeline = function (type) {
 				}
 			}
 		}
-		console.log('bestCP');
-		console.log(bestCP);
 
 		// If a valid pattern is selected
 		if (typeof bestCP.i != 'undefined') {
+			console.log("Valid pattern: ");
+			console.log(cp[bestCP.i]);
 			var wt = cp[bestCP.i].wt;
 
 			// Add pattern to DOM
@@ -495,7 +462,7 @@ var Timeline = function (type) {
 			}
 			row.appendTo(".fravr-timeline .container");
 
-			that.onUsePattern(0);
+			that.onUsePattern(bestCP.i);
 		}
 	}
 
