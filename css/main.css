@@ -79,16 +79,15 @@ body {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	overflow: hidden;
 	padding: 0;
 	border-bottom: 1px solid #c9c9c9;
 }
+.fravr-timeline .crop {
+	overflow: hidden;
+}
 .fravr-timeline .item  img {
 	width: 100%;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
 }
 .fravr-timeline .item .title{
 	display: inline-block;
