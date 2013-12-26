@@ -479,9 +479,10 @@ var Timeline = function (type) {
 				var size = Data.timeline[type][wt[i].t].product.img_urls[0].size;
 				if (size.hdw < wt[i].r) {
 					// Crop width
-					var width = (wt[i].r - size.hdw)/wt[i].r*100;
+					var width = (wt[i].r - size.hdw)/wt[i].r*100+100;
 					var wCrop = (wt[i].r - size.hdw)/size.hdw*100/-2;
-					item.find('img').css("width",width).css("margin","0 0 0 " + wCrop);
+					console.log(wCrop);
+					item.find('img').css("width",width+'%').css("margin","0 0 0 " + wCrop + '%');
 				} else if (wt[i].r < size.hdw) {
 					// Crop height
 					var hCrop = (size.hdw - wt[i].r)/size.hdw*100/-2;
@@ -506,7 +507,8 @@ var Timeline = function (type) {
 		console.log(cp);
 		console.log(buffer);
 
-		completePattern = null; // Reset completePattern
+		lastPattern = completePattern[cpIndex].op.slice(0);
+		completePattern = []; // Reset completePattern
 		// completePattern.splice(cpIndex,1); // Remove pattern used
 		// // For each complete pattern used, check if image is used
 		// for (var i=0; i<completePattern.length; i+=1) {
@@ -566,7 +568,8 @@ var Timeline = function (type) {
 	return that;
 };
 
-var timeline;
+var timeline,
+	loadLoop;
 
 $( document ).ready(function () {
 	$('a[data-toggle]').on('click', function (event) {
@@ -575,7 +578,7 @@ $( document ).ready(function () {
 
 	timeline = new Timeline('everything');
 	// timeline.create();
-	var loadLoop = function () {
+	loadLoop = function () {
 		timeline.loadNext({
 			done: function () {
 				// Check for completed patterns
@@ -588,7 +591,7 @@ $( document ).ready(function () {
 				} else {
 				}
 				if (timeline.allSizesLoaded === false) {
-					// loadLoop();
+					loadLoop();
 				}
 			}
 		});
