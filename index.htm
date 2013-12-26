@@ -172,7 +172,8 @@ var Timeline = function (type) {
 		pointer = 0,
 		buffer = [],
 		completePattern = [],
-		maxRDiff = 0.05;
+		maxRDiff = 0.05,
+		lastPattern = [];
 
 	that.allSizesLoaded = false; // flag to stop loop
 
@@ -420,70 +421,145 @@ var Timeline = function (type) {
 		console.log(that.getCP());
 		console.log('adding pattern...');
 		var cp = that.getCP();
-		// Need to decide which pattern to use
-		var wt = cp[0].wt;
-		var row = $("<div class='row'></div>");
-		for (var i=0; i<wt.length; i+=1) {
-			var col=$("<div class='col-md-" + wt[i].w +"'></div>");
-			var item = $(Template.get('timeline')(Data.timeline[type][wt[i].t]));
-			var size = Data.timeline[type][wt[i].t].product.img_urls[0].size;
-			if (size.hdw < wt[i].r) {
-				// Crop width
-				var width = (wt[i].r - size.hdw)/wt[i].r*100;
-				var wCrop = (wt[i].r - size.hdw)/size.hdw*100/-2;
-				item.find('img').css("width",width).css("margin","0 0 0 " + wCrop);
-			} else if (wt[i].r < size.hdw) {
-				// Crop height
-				var hCrop = (size.hdw - wt[i].r)/size.hdw*100/-2;
-				item.find('img').css("margin",hCrop +"% 0 " + hCrop + "% 0");
-			} else {
-				console.log(size.hdw + '=' + wt[i].r);
+
+		var isRepeatPattern = function (pattern) {
+			var repeated = true;
+			for (var i=1; i<pattern.length; i+=1) {
+				if (pattern[0] != pattern[i]) {
+					repeated = false;
+					break;
+				}
 			}
-			col.append(item);
-			row.append(col);
+			return repeated;
+		};
+		
+		var arraysEqual = function (arr1, arr2) {
+			if(arr1.length !== arr2.length)
+				return false;
+			for(var i = arr1.length; i--;) {
+				if(arr1[i] !== arr2[i])
+					return false;
+			}
+
+			return true;
 		}
-		row.appendTo(".fravr-timeline .container");
-		// Need to invalidate complete patterns
-		// Need to update data when pattern is used
-		that.onUsePattern(0);
+
+		// Decide which pattern to use
+		var bestCP = {};
+		for (var i=0; i<cp.length; i+=1) {
+			// If pattern is same as last used pattern in DOM and has all same numbers
+			if (arraysEqual(lastPattern,cp[i].op) && isRepeatPattern(cp[i].op)) {
+				console.log('same');
+			} else {
+				console.log('diff');
+				for (var j=0; j<cp[i].wt.length; j+=1) {
+					if (typeof bestCP.t === 'undefined') {
+						console.log('init undefined');
+						bestCP.t = cp[i].wt[j].t;
+						bestCP.i = i;
+					} else if (bestCP.t > cp[i].wt[j].t) {
+						bestCP.t = cp[i].wt[j].t;
+						bestCP.i = i;
+					};
+				}
+			}
+		}
+		console.log('bestCP');
+		console.log(bestCP);
+
+		// If a valid pattern is selected
+		if (typeof bestCP.i != 'undefined') {
+			var wt = cp[bestCP.i].wt;
+
+			// Add pattern to DOM
+			var row = $("<div class='row'></div>");
+			for (var i=0; i<wt.length; i+=1) {
+				var col=$("<div class='col-md-" + wt[i].w +"'></div>");
+				var item = $(Template.get('timeline')(Data.timeline[type][wt[i].t]));
+				var size = Data.timeline[type][wt[i].t].product.img_urls[0].size;
+				if (size.hdw < wt[i].r) {
+					// Crop width
+					var width = (wt[i].r - size.hdw)/wt[i].r*100;
+					var wCrop = (wt[i].r - size.hdw)/size.hdw*100/-2;
+					item.find('img').css("width",width).css("margin","0 0 0 " + wCrop);
+				} else if (wt[i].r < size.hdw) {
+					// Crop height
+					var hCrop = (size.hdw - wt[i].r)/size.hdw*100/-2;
+					item.find('img').css("margin",hCrop +"% 0 " + hCrop + "% 0");
+				} else {
+					console.log(size.hdw + '=' + wt[i].r);
+				}
+				col.append(item);
+				row.append(col);
+			}
+			row.appendTo(".fravr-timeline .container");
+
+			that.onUsePattern(0);
+		}
 	}
 
+	// Invalidate complete patterns and update data when pattern is used
 	that.onUsePattern = function (cpIndex) {
 		// Copy completed pattern for reference
 		var cp = $.extend(true, {}, completePattern[cpIndex]);
 		console.log('onUsePattern');
 		console.log(cp);
 		console.log(buffer);
+
+		completePattern = null; // Reset completePattern
+		// completePattern.splice(cpIndex,1); // Remove pattern used
+		// // For each complete pattern used, check if image is used
+		// for (var i=0; i<completePattern.length; i+=1) {
+		// 	// For each used image in the pattern
+		// 	for (var j=0; j<completePattern[i].wt.length; j+=1) {
+		// 		// If index matches any of the used image
+		// 		for (var k=0; k<cp.wt.length; k+=1) {
+		// 			if (completePattern[i].wt[j].t === cp.wt[k].t) {
+		// 				// Add back possibility
+		// 				completePattern[i]
+		// 			}
+		// 		}
+		// 	}
+		// }
 		// For each image in used pattern
 		for (var i=0; i<cp.wt.length; i+=1) {
 			for (var j=0; j<buffer.length; j+=1) {
 				if (buffer[j].timelineIndex === cp.wt[i].t) {
-					buffer.splice(j,1); // Remove matching image in buffer
+					console.log('matched in cp');
+					console.log(buffer.splice(j,1)); // Remove matching image in buffer
 					break; // Go to next image in used pattern
 				}
 			}
 		}
 		// For each image left in buffer, re-add possibility from used images
 		for (var i=0; i<buffer.length; i+=1) {
-			for (var j=0; j<buffer[i].wt.length; j+=1) {
-				// Check index if matches any of the used image
-				for (var k=0; k<cp.wt.length; k+=1) {
-					if (buffer[i].wt[j].t === cp.wt[k].t) {
-						// Add back possibility
-						buffer[i].pr.push({
-							p: buffer[i].wt[j].w,
-							r: buffer[i].wt[j].r
-						});
-						// Remove from used possibility
-						buffer[i].wt.splice(j,1);
-						j-=1;
-						break;
+			// For each pattern
+			for (var i2=0; i2<buffer[i].pLeft.length; i2+=1) {
+				// For each used image in the pattern
+				for (var j=0; j<buffer[i].pLeft[i2].wt.length; j+=1) {
+					// Check index if matches any of the used image
+					for (var k=0; k<cp.wt.length; k+=1) {
+						if (buffer[i].pLeft[i2].wt[j].t === cp.wt[k].t) {
+							// Add back possibility
+							buffer[i].pLeft[i2].pr.push({
+								p: buffer[i].pLeft[i2].wt[j].w,
+								r: buffer[i].pLeft[i2].wt[j].r
+							});
+							// Remove from used possibility
+							buffer[i].pLeft[i2].wt.splice(j,1);
+							j-=1; // Drop counter by 1 as current is removed
+							break; // Break and move to next used image
+						}
 					}
+				}
+				// If pattern is still complete, add it back to completed patterns
+				if (buffer[i].pLeft[i2].pr.length === 0) {
+					completePattern.push(buffer[i].pLeft[i2]);
 				}
 			}
 		}
 		console.log('clean up complete');
-		console.log(cp);
+		console.log(completePattern);
 		console.log(buffer);
 	}
 
