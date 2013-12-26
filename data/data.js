@@ -646,83 +646,19 @@ mightymug:
 					{	reviewer: "TheProductMagazine",
 						review: "Practical design with a touch of elegance"}
 					],
-		product_url: null
-		},
+		}
 };
 
-Data.timeline = {
-	everything: [
-		{
-			product: Data.products['brickwatchstrap'],
-			actions: [
-				{
-					user: Data.users['paklun'],
-					action: 'purchase'
-				}
-			]
-		},
-		{
-			product: Data.products['NarutoTee'],
-			actions: [
-				{
-					user: Data.users['wenting'],
-					action: 'fravd'
-				}
-			]
-		},
-		{
-			product: Data.products['CannondaleRacer']
-		},
-		{
-			product: Data.products['Classicblazerladies']
-		},
-		{
-			product: Data.products['CrochetDaisySweater']
-		},
-		{
-			product: Data.products['IWCbigpilot']
-		},
-		{
-			product: Data.products['Jumpwithpuppet']
-		},
-		{
-			product: Data.products['MiaPinkFloralDress']
-		},
-		{
-			product: Data.products['Sandwichcutter']
-		},
-		{
-			product: Data.products['basicwhiteslimfit']
-		},
-		{
-			product: Data.products['cup']
-		},
-		{
-			product: Data.products['kingoftokyo']
-		},
-		{
-			product: Data.products['leathercollarDH']
-		},
-		{
-			product: Data.products['mathsnerdwhitetee']
-		},
-		{
-			product: Data.products['mightymug']
-		},
-		{
-			product: Data.products['poloralphlauren']
-		},
-		{
-			product: Data.products['spacerockettent']
-		},
-		{
-			product: Data.products['topmanshirt']
-		},
-		{
-			product: Data.products['womenlongformalshirt']
-		}
-	]
-}
+Data.timeline = function () {
+	var that = {};
+	that.everything = [];
+	for (var product in Data.products) {
+		that.everything.push({product: Data.products[product]});
+	}
+	that.everything.shift();
+
+	return that;
+}();
 
 Data.clipping = {
 	total: 0
