@@ -1,18 +1,32 @@
+/* set default styles */
+html, body {
+	overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
 body {
-	padding-top: 50px;
+	padding-top: 80px;
 	background:#f1f1f1;
+}
+footer {
+  padding: 60px 0;
+}
+a:link, a:visited, a:active {
+	text-decoration: none;
+	color:blue;
+}
+a:hover {
+	text-decoration: underline;
+	color:blue;
 }
 
 /* Overide bootstrap heading style */
 /* h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { */
 /* 	font-weight: 300; */
 /* } */
-
 /* Overide bootstrap page header style */
 .page-header {
 	/* padding-bottom: 9px; */
 	/* margin: 40px 0 20px; */
-	margin: 0 0 20px;
+	margin: -30px 0 20px 0;
 	/* border-bottom: 1px solid #eeeeee; */
 	border-bottom: 1px solid #c9c9c9;
 	/* height: 80px; */
@@ -68,8 +82,7 @@ body {
 	/* -moz-osx-font-smoothing: grayscale; */
 }
 
-.fravr-timeline {
-}
+.fravr-timeline {}
 .fravr-timeline .row > div{
 	padding:10px;
 }
@@ -91,35 +104,54 @@ body {
 	border-bottom-right-radius: 0;
 }
 .fravr-timeline .item .title{
-	display: inline-block;
+	display: block;
 	width: 100%;
 	font-weight: 600;
 	color: #243136;
-	margin: 7px 7px 0;
+	padding: 7px 7px 0 7px;
+	white-space:nowrap; 
+	overflow: hidden;
+	text-overflow:ellipsis;
 }
 .fravr-timeline .item .subtitle{
-	display: inline-block;
+	display: block;
 	font-weight: 600;
 	color: #585a5c;
-	margin: 0 7px 7px;
+	padding: 0 7px 7px 7px;
+	white-space:nowrap; 
+	overflow: hidden;
+	text-overflow:ellipsis;
 }
-
+.fravr-timeline .item .title:hover{
+	text-decoration: underline;
+}
+.fravr-timeline .item .subtitle >a{
+	font-weight: 600;
+	color: #585a5c;
+	white-space:nowrap; 
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+.fravr-searchpage .item .subtitle >a:hover{
+	text-decoration: underline;
+}
 
 /* product page styles */ 
 .fravr-productpage {
 }
-.fravr-productpage .fravr-body {
-	margin-top:30px;
+.fravr-productpage .product-page-container {
 	background: #FFFFFF;
 	border-style: solid;
 	border-width: thin;
-	border-radius: 8px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
 	border-color: #b3b3b3;
 	margin-bottom: 100px;
 }
-.fravr-productpage  .content-body {
+.fravr-productpage .content-body {
 	margin-top: 30px;
-	margin-bottom: 50px;
+	margin-bottom: 60px;
 }
 .fravr-productpage .merchant-name {
 	color:#36d792; 
@@ -189,35 +221,37 @@ body {
 	border-color: #36d792;
 }
  */
-.search-page {
+
+/*  search page styles */
+.fravr-searchpage {
 }
-.search-page .dropdown {
+.fravr-searchpage .dropdown {
 	padding-top: 10px;
 }
-.search-page .tags-bar {
+.fravr-searchpage .tags-bar {
 	/* border-bottom: 1px solid #c9c9c9; */
 	padding-top: 10px;
 	padding-bottom: 15px;
 	vertical-align: top;
 } 
-.search-page .tags-bar .search-tags {
+.fravr-searchpage .tags-bar .search-tags {
 	display: inline-block;
 	position: relative;
 	top: 8px;
 }
-.search-page .tags-bar .search-tags .tag-img {
+.fravr-searchpage .tags-bar .search-tags .tag-img {
 	position: relative;
 	height: 100%;
 	margin-right: 5px;
 }
-.search-page .tags-bar .search-tags .img-close {
+.fravr-searchpage .tags-bar .search-tags .img-close {
 	position: absolute;
 	margin: 0px;
 	top: 17%;
 	right: 10%;
 	z-index: 1;
 }
-.search-page .tags-bar .search-tags h5 {
+.fravr-searchpage .tags-bar .search-tags h5 {
 	position: absolute;
 	margin: 0px;
 	top: 20%;
@@ -225,34 +259,119 @@ body {
 	width: 68%;
 	z-index: 2;
 }
-.search-page .free-line {
+.fravr-searchpage .free-line {
 	position:absolute;
 }
-.search-page .search-text {
+.fravr-searchpage .search-text {
 	position:absolute;
 	z-index: 100;
 }
-.search-page .search-no {
+.fravr-searchpage .search-no {
 	position:absolute;
 	z-index:100;
 }
-.search-page .dropdown >h4 {
+.fravr-searchpage .dropdown >h4 {
 	display: block;
 }
-.search-page .dropdown  img {
+.fravr-searchpage .dropdown  img {
 	padding-top: 10px;
 	position: relative;
 	left: -20px;
 	/* width:100%; */
 }
-.search-page .item .title:hover{
-	text-decoration: underline;
+
+/* profile page styles */
+.fravr-profile .profile-banner {
+  padding: 0;
+  margin-bottom: 30px;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  max-width: 100%;
 }
-.search-page .item .subtitle >a{
-	display: inline-block;
+@media screen and (min-width: 768px){}
+.fravr-profile  .rm-right-padding {
+	padding-right: 0px;
+}
+.fravr-profile  .rm-left-padding {
+	padding-left: 0px;
+}
+.fravr-profile .profile-banner .profile-text {
+	text-align: center;
+}
+.fravr-profile .profile-banner .profile-text .name-title {
 	font-weight: 600;
-	color: #585a5c;
 }
-.search-page .item .subtitle >a:hover{
-	text-decoration: underline;
+
+.fravr-profile .profile-fravlist .row {
+	padding: 0 5px;
+}
+.fravr-profile .following-container {
+	padding: 0 5px;
+}
+.fravr-profile .row .users-col {
+	padding:10px;
+}
+.fravr-profile .users {
+	padding: 10px;
+	background-color: #FFF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.fravr-profile .users .users-pic {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.fravr-profile .users .users-banner {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.fravr-profile .users .name {
+	white-space:nowrap; 
+	overflow: hidden;
+	text-overflow:ellipsis;
+	font-weight: 600;
+}
+.fravr-profile .users .fravs {
+	display: block;
+}
+.fravr-profile .activities {
+	padding: 400px 100px;
+	background-color: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* profile page - off canvas */
+@media screen and (max-width: 767px) {
+.fravr-profile  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+.fravr-profile  .row-offcanvas-right .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+.fravr-profile  .row-offcanvas-left .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+.fravr-profile  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+.fravr-profile .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+.fravr-profile  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
 }

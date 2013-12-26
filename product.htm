@@ -18,29 +18,29 @@
 <script data-name="header" src="tmpl/header.tmpl"></script>
 
 <script data-name="body" type="text/x-handlebars-template">
-	<div class="fravr-productpage">
-	<div class="container fravr-body">
-		<div class = "row"> 
-			<!--main content container-->
-			<div class ="col-md-8 col-md-offset-2 content-body">  
-				<!--product title-->
-				<div class ="row"> 
-					<div class ="col-md-12">
-						<h4><strong> {{products.item.name}} </strong></h4> 
-						<div class ="row"> 
-							<!--merchant name-->
-							<div class ="col-md-9">
-									<h5> from <a class="merchant-name" href={{products.item.merchant_url}} ><em>{{products.item.merchant}}</em></a> </h5> 
-							</div> 
-							<!--price info-->
-							<div class ="col-md-3 price">
-									<h5><strong>{{products.item.price}} {{products.item.currency}}</strong></h5>
-							</div>
+<div class="fravr-productpage">
+<div class="container product-page-container">
+	<div class = "row"> 
+		<!--main content container-->
+		<div class ="col-md-8 col-md-offset-2 content-body">  
+			<!--product title-->
+			<div class ="row"> 
+				<div class ="col-md-12">
+					<h4><strong> {{products.item.name}} </strong></h4> 
+					<div class ="row"> 
+						<!--merchant name-->
+						<div class ="col-md-9">
+								<h5> from <a class="merchant-name" href={{products.item.merchant_url}} ><em>{{products.item.merchant}}</em></a> </h5> 
+						</div> 
+						<!--price info-->
+						<div class ="col-md-3 price">
+								<h5><strong>{{products.item.price}} {{products.item.currency}}</strong></h5>
 						</div>
-					</div>	
-				</div> 
-				<!--img container--> 
-				<div class ="row"> 
+					</div>
+				</div>	
+			</div> 
+			<!--img container--> 
+			<div class ="row"> 
 					<!--main image-->
 					<!-- <div class ="col-md-8 col-md-offset-1">  -->
 					<div class ="col-md-10 col-sm-10"> 
@@ -130,25 +130,26 @@
 						</ul>
 					</div>
 				</div> 
-				<!-- reviews content area -->
-				<!-- <div class="row comments-content"> 
-					<ul class="reviews col-md-12">
-						{{#each products.item.reviews}}
-							<li>
-								<p class="review-text">"{{review}}"</p>
-								<p class="reviewer-text">- {{reviewer}}</p>
-								<hr>
-							</li>
-						{{/each}}
-					</ul>
-				</div>
-				<div class="row col-md-4 col-md-offset-4 add-review">
-					<button type="button" class="btn btn-primary review-button">Add a review</button>
-				</div> -->
+			<!-- reviews content area -->
+			<!-- <div class="row comments-content"> 
+				<ul class="reviews col-md-12">
+					{{#each products.item.reviews}}
+						<li>
+							<p class="review-text">"{{review}}"</p>
+							<p class="reviewer-text">- {{reviewer}}</p>
+							<hr>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+			<div class="row col-md-4 col-md-offset-4 add-review">
+				<button type="button" class="btn btn-primary review-button">Add a review</button>
+			</div> -->
 			</div>
 		</div> 
 	</div>
-	</div>
+</div>
+</div>
 </script>
 <script src=data/data.js></script>
 <script src=js/main.js></script>

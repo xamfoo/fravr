@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/main.css">
+<script src=http://code.jquery.com/jquery-2.0.3.min.js></script>
+<script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
+<script src=js/handlebars-v1.1.2.js></script>
+<script src=js/amplify.min.js></script>
+
+<!-- Define default template -->
+<script data-body type="text/x-handlebars-template">
+{{>header}}
+{{>body}}
+</script>
+<!-- Include header -->
+<script data-name="header" src="tmpl/header.tmpl"></script>
+
+<script data-name="body" type="text/x-handlebars-template">
+<div class="fravr-profile">
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-right">
+	<div class="col-xs-12 col-sm-9">
+	  <!--Toggle button for sidebar for small screen-->
+	  <p class="pull-right visible-xs">
+		<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+	  </p> <!--/end toggle--> 
+	  
+	  <!--banner-->
+		<div class="profile-banner">
+			<div class="row">
+				<!--montage-->
+				<div class="col-sm-9 rm-right-padding">
+					<img class="img-responsive" src="{{profile.banner_img_url}}">
+					<!-- to do: load img of different size for different screen width--> 
+				</div>
+				<!--profile details-->
+				<div class="col-sm-3 rm-left-padding">
+					<div class="thumbnail">
+						<img src="{{profile.img_url}}" alt="profile pic">
+							<div class="profile-text">
+								<h3 class="name-title">{{profile.name}}</h3>
+								<h5 class="name-subtitle"><a href="#">{{fravlist.total}} Fravs</a> : <a href="#">{{owned.total}} Owned</a></h5>
+							</div>
+					</div><!--thumbnail-->
+				</div><!--/col-->
+			</div><!--/row-->
+		</div><!--/.profile-banner-->
+		
+		<div class="tab-content">
+			<!--fravlist tab-->
+			<div class="tab-pane active" id="fravlist">
+				<div class="fravr-timeline profile-fravlist">
+					<div class="row">
+						{{#each fravlist.fravlist_items}}
+						<div class="col-xs-4 col-md-3">
+							<div class="item">
+								<a href="./product.htm?product=mightymug">
+									<img src="{{this.img_urls.0.url}}">
+									<span class="title">{{this.name}}</span>
+								</a>
+								<span class="subtitle"> by <a href="#">{{this.merchant}}</a> </span>
+							</div>
+						</div><!--/col-->
+						{{/each}}
+					</div><!--/fravr-timeline-->
+				</div><!--/row-->
+			</div><!--/fravlist tab-->
+			<!--following tab-->
+			<div class="tab-pane" id="following"> 
+				<div class="row following-container">
+					{{#each profile.following}}
+					<div class="col-sm-6 col-md-4 users-col">
+						<div class="users">
+							<div class="row">
+							<!--other users profile pic-->
+								<div class="col-xs-6 rm-right-padding">									
+										<img class="img-responsive users-pic" src="{{this.img_url}}">
+								</div>
+								<!--other users info-->
+								<div class="col-xs-6 ">
+								<img class="img-responsive users-banner" src="img/profile-banner.jpg">
+									<div class="name"> {{this.name}} </div>
+									<span class="fravs"> {{this.fravs}} Fravs </span>
+									<button type="button" class="btn btn-default">Following</button>
+								</div>
+							</div>
+						</div>
+					</div><!--/col-->
+					{{/each}}
+				</div><!--/row-->
+			</div><!--/following tab-->
+			<!--followers tab-->
+			<div class="tab-pane" id="followers"> 
+				<div class="row following-container">
+					{{#each profile.followers}}
+					<div class="col-sm-6 col-md-4 users-col">
+						<div class="users">
+							<div class="row">
+							<!--other users profile pic-->
+								<div class="col-xs-6 rm-right-padding">									
+										<img class="img-responsive users-pic" src="{{this.img_url}}">
+								</div>
+								<!--other users info-->
+								<div class="col-xs-6 ">
+								<img class="img-responsive users-banner" src="img/profile-banner.jpg">
+									<div class="name"> {{this.name}} </div>
+									<span class="fravs"> {{this.fravs}} Fravs </span>
+									<button type="button" class="btn btn-default">Following</button>
+								</div>
+							</div>
+						</div>
+					</div><!--/col-->
+					{{/each}}
+				</div><!--/row-->
+			</div><!--/followers tab--> 
+		</div><!--/tab-content-->
+	</div><!--/span-->
+
+		<!-- to do: change styles of side panel -->
+		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+			<div class="list-group">
+				<a href="#fravlist" data-toggle="tab" class="list-group-item active">{{fravlist.total}} Fravs </a>
+				<a href="#following" data-toggle="tab" class="list-group-item">{{#arraylength profile.following}}{{/arraylength}} Following </a>
+				<a href="#followers" data-toggle="tab" class="list-group-item">{{#arraylength profile.followers}}{{/arraylength}} Followers </a>
+			</div>
+			<div class="activities">
+				Activities
+			</div>
+		</div><!--/span-->
+	</div><!--/row-->
+	<footer>
+	</footer>
+</div><!--/.container-->
+</div><!--/.fravr-profile-->
+</script>
+<script src=data/data.js></script>
+<script src=js/main.js></script>
+<!-- Page specific script -->
+<script>
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -9,169 +9,208 @@ Data.messages = {
 	unread: 0
 };
 
-Data.fravlist = {
-	unread: 0
-};
-
 Data.users = {
 	paklun: {
 		name: 'Pak Lun',
-		img_url: 'img/users/pak lun.jpg'
+		img_url: 'img/users/pak lun.jpg',
+		fravs: 10
 	},
 	wenting: {
 		name: 'Wen Ting',
-		img_url: 'img/users/wenting.jpg'
+		img_url: 'img/users/wenting.jpg',
+		fravs: 6
 	},
 	jiahe: {
 		name: 'Jiahe',
-		img_url: 'img/users/jiahe.jpg'
+		img_url: 'img/users/jiahe.jpg',
+		fravs: 10
 	},
 	alexkhow: {
 		name: 'Alex',
-		img_url: 'img/users/alex.jpg'
+		img_url: 'img/users/alex.jpg',
+		fravs: 32
 	},
 	Sera: {
 		name: 'Sera',
-		img_url: 'img/users/Sera.jpg'
+		img_url: 'img/users/Sera.jpg',
+		fravs: 31
 	},
 	Singh: {
 		name: 'Jasper Singh',
-		img_url: 'img/users/Singh.jpg'
+		img_url: 'img/users/Singh.jpg',
+		fravs: 33
 	},
 	Genevieve: {
 		name: 'Genevieve Goh',
-		img_url: 'img/users/Genevieve.jpg'
+		img_url: 'img/users/Genevieve.jpg',
+		fravs: 15
 	},
 	Samantha: {
 		name: 'Samantha',
-		img_url: 'img/users/Samantha.jpg'
+		img_url: 'img/users/Samantha.jpg',
+		fravs: 10
 	},
 	Max: {
 		name: 'Max Foo',
-		img_url: 'img/users/max.jpg'
+		img_url: 'img/users/max.jpg',
+		fravs: 22
 	},
 	Vince: {
 		name: 'Vince Van',
-		img_url: 'img/users/Vince.jpg'
+		img_url: 'img/users/Vince.jpg',
+		fravs: 10
 	},
 	Jesslyn: {
 		name: 'Jesslyn Tai',
-		img_url: 'img/users/Jesslyn.jpg'
+		img_url: 'img/users/Jesslyn.jpg',
+		fravs: 19
 	},
 	Theresa: {
 		name: 'Theresa Tong',
-		img_url: 'img/users/Theresa.jpg'
+		img_url: 'img/users/Theresa.jpg',
+		fravs: 10
 	},
 	Cynthia: {
 		name: 'Cynthia',
-		img_url: 'img/users/Cynthia.jpg'
+		img_url: 'img/users/Cynthia.jpg',
+		fravs: 19
 	},
 	ColinTan: {
 		name: 'Colin Tan',
-		img_url: 'img/users/ColinTan.jpg'
+		img_url: 'img/users/ColinTan.jpg',
+		fravs: 10
 	},
 	yuri: {
 		name: 'Yuri',
-		img_url: 'img/users/yuri.jpg'
+		img_url: 'img/users/yuri.jpg',
+		fravs: 10
 	},
 	Liza: {
 		name: 'Liza Smith',
-		img_url: 'img/users/Liza.jpg'
+		img_url: 'img/users/Liza.jpg',
+		fravs: 10
 	},
 	Tiffany: {
 		name: 'Tiffany',
-		img_url: 'img/users/Tiffany.jpg'
+		img_url: 'img/users/Tiffany.jpg',
+		fravs: 67
 	},
 	sethrogen: {
 		name: 'Seth Rogen',
-		img_url: 'img/users/sethrogen.jpg'
+		img_url: 'img/users/sethrogen.jpg',
+		fravs: 21
 	},
 	mizutani: {
 		name: 'Masako Mizutani',
-		img_url: 'img/users/Mizutani.jpg'
+		img_url: 'img/users/Mizutani.jpg',
+		fravs: 31
 	},
 	Tkimura: {
 		name: 'Takuya Kimura',
-		img_url: 'img/users/TKimura.jpg'
+		img_url: 'img/users/TKimura.jpg',
+		fravs: 46
 	},
 	JulieBowen: {
 		name: 'Julie Bowen',
-		img_url: 'img/users/JulieBowen.jpg'
+		img_url: 'img/users/JulieBowen.jpg',
+		fravs: 8
 	},
 	Hyori: {
 		name: 'Lee Hyori',
-		img_url: 'img/users/Hyorilee.jpg'
+		img_url: 'img/users/Hyorilee.jpg',
+		fravs: 10
 	},
 	TakuyaS: {
 		name: 'Takuya Shimizu',
-		img_url: 'img/users/TakuyaS.jpg'
+		img_url: 'img/users/TakuyaS.jpg',
+		fravs: 14
 	},
 	Boa: {
 		name: 'BoA',
-		img_url: 'img/users/BoA.jpg'
+		img_url: 'img/users/BoA.jpg',
+		fravs: 20
 	},
 	takeshi: {
 		name: 'Takeshi Kaneshiro',
-		img_url: 'img/users/takeshiro.jpg'
+		img_url: 'img/users/takeshiro.jpg',
+		fravs: 31
 	},
 	Tyra: {
 		name: 'Tyra',
-		img_url: 'img/users/Tyra.jpg'
+		img_url: 'img/users/Tyra.jpg',
+		fravs: 12
 	},
 	bernetta: {
 		name: 'Bernetta',
-		img_url: 'img/users/Bernetta.jpg'
+		img_url: 'img/users/Bernetta.jpg',
+		fravs: 49
 	},
 	kleine: {
 		name: 'Kleine',
-		img_url: 'img/users/kleine.jpg'
+		img_url: 'img/users/kleine.jpg',
+		fravs: 16
 	},
 	priya: {
 		name: 'Priya',
-		img_url: 'img/users/priya.jpg'
+		img_url: 'img/users/priya.jpg',
+		fravs: 44
 	},
 	xiaoqian: {
 		name: 'Xiao Qian',
-		img_url: 'img/users/xiaoqian.jpg'
+		img_url: 'img/users/xiaoqian.jpg',
+		fravs: 62
 	},
 	bridgette: {
 		name: 'Bridgette',
-		img_url: 'img/users/bridgette.jpg'
+		img_url: 'img/users/bridgette.jpg',
+		fravs: 76
 	},
 	Kloc: {
 		name: 'Kloc',
-		img_url: 'img/users/Kloc.jpg'
+		img_url: 'img/users/Kloc.jpg',
+		fravs: 13
 	},
 	Riyanti: {
 		name: 'Riyanti',
-		img_url: 'img/users/Riyanti.jpg'
+		img_url: 'img/users/Riyanti.jpg',
+		fravs: 56
 	},
 	Damien: {
 		name: 'Damien Chung',
-		img_url: 'img/users/Damien.jpg'
+		img_url: 'img/users/Damien.jpg',
+		fravs: 18
 	},
 	Linh: {
 		name: 'Melissa Linh',
-		img_url: 'img/users/Linh.jpg'
+		img_url: 'img/users/Linh.jpg',
+		fravs: 17
 	},
 	Shakir: {
 		name: 'Shakir',
-		img_url: 'img/users/Shakir.jpg'
+		img_url: 'img/users/Shakir.jpg',
+		fravs: 10
 	},
 	Kapoor: {
 		name: 'Kapoor',
-		img_url: 'img/users/Kapoor.jpg'
+		img_url: 'img/users/Kapoor.jpg',
+		fravs: 12
 	},
 	Marie: {
 		name: 'Marie',
-		img_url: 'img/users/Marie.jpg'
+		img_url: 'img/users/Marie.jpg',
+		fravs: 10
 	},
 	Xavier: {
 		name: 'Xavier',
-		img_url: 'img/users/Xavier.jpg'
+		img_url: 'img/users/Xavier.jpg',
+		fravs: 11
 	}
 }	
 Data.profile = Data.users['paklun'];
+
+Data.profile.banner_img_url = 'img/profile-banner.jpg';
+
+Data.profile.status = "I'm just some random guys with random fravrs";
 
 Data.profile.following = [
 	Data.users.yuri,
@@ -187,6 +226,7 @@ Data.profile.following = [
 	Data.users.takeshi,
 	Data.users.Tyra
 ]
+
 Data.profile.friends = [
 	Data.users.wenting,
 	Data.users.Sera,
@@ -213,7 +253,7 @@ Data.profile.followers = [
 	Data.users.Kloc,
 	Data.users.bridgette,
 	Data.users.xiaoqian,
-	Data.users.Priya,
+	Data.users.priya,
 	Data.users.kleine,
 	Data.users.bernetta
 ]
@@ -286,10 +326,10 @@ Owlhalfsleeve:
 		},
 WhiteEmbroideredDress:
 		{
-		name: "Timeless White Embroidered Dress",
+		name: "Timeless White Embroidered Dress Dress Dress Dress Dress Dress Dress Dress",
 		price: 20.0,
 		currency: "SGD",
-		merchant: "Ella",
+		merchant: "Ella Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress ",
 		description: "<p>A simple white dress can be a timeless fashion piece. Ella brings you another wardrobe must-haves with this lightweight, embroidered babydoll dress. Contrasted tribal lines of embroidery paired with like-colored lace pattern on the chest complete the look.</p>\
 		<p><strong>Sizes: XS - XXL</p>\
 		",
@@ -713,4 +753,57 @@ Data.timeline = {
 Data.clipping = {
 	total: 0
 }
+
+Data.owned = {
+	total: 1
+}
+
+Data.owned.ownedlist_items = [
+	Data.products.brickwatchstrap
+]
+
+Data.fravlist = {
+	total: 7,
+};
+
+Data.fravlist.fravlist_items = [
+	Data.products.mightymug,
+	Data.products.brickwatchstrap,
+	Data.products.basicwhiteslimfit,
+	Data.products.Sandwichcutter,
+	Data.products.kingoftokyo,
+	Data.products.NarutoTee,
+	Data.products.IWCbigpilot
+]
 //Default data end
+
+Data.chat = [ 
+	{	conversation_name: "chat 01",
+		conversation_participants: [
+			Data.users.wenting,
+			Data.users.Sera,
+			Data.users.Max,			],
+		conversation_msges: [
+			{	by: "Wen Ting",
+				msg: "Test01"	},
+			{	by: "Max",
+				msg: "Test01"	},
+			{	by: "Pak Lun",
+				msg: "Test01"	},
+		]
+	},
+	{	conversation_name: null,
+		conversation_participants: [
+			Data.users.wenting,
+			Data.users.Sera,
+			Data.users.Max,			],
+		conversation_msges: [
+			{	by: "Alex",
+				msg: "Test01"	},
+			{	by: "Jiahe",
+				msg: "Test01"	},
+			{	by: "Sheena",
+				msg: "Test01"	},
+		]
+	}
+]

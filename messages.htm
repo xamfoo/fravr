@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/main.css">
+<script src=http://code.jquery.com/jquery-2.0.3.min.js></script>
+<script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
+<script src=js/handlebars-v1.1.2.js></script>
+<script src=js/amplify.min.js></script>
+
+<!-- Define default template -->
+<script data-body type="text/x-handlebars-template">
+{{>header}}
+{{>body}}
+</script>
+<!-- Include header -->
+<script data-name="header" src="tmpl/header.tmpl"></script>
+
+<script data-name="body" type="text/x-handlebars-template">
+
+{{#each chat}}
+	<div>
+		<h4>
+			{{this.conversation_name}}
+		</h4>
+	</div>
+	<div><h5>
+		{{#each this.conversation_participants}}
+			{{this.name}}, 
+		{{/each}}
+	</h5></div>
+	<div>
+		{{#each this.conversation_msges}}
+		<p><span style="color:red">{{this.by}}</span> : {{this.msg}} </p>
+		{{/each}}
+	</div>
+	<hr style="border-color:red">
+{{/each}}
+
+
+</script>
+<script src=data/data.js></script>
+<script src=js/main.js></script>
+<!-- Page specific script -->
+<script>
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+</script>
+</head>
+
+<body>
+</body>
+</html>

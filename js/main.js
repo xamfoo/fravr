@@ -115,3 +115,7 @@ Handlebars.registerHelper ("ifequals", function (obj, val, options) {
 		return "";
 	}
 });
+
+Handlebars.registerHelper ("arraylength", function (obj) {
+	return obj.length;
+});
