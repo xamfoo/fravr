@@ -213,6 +213,19 @@ Data.profile.banner_img_url = 'img/profile-banner.jpg';
 Data.profile.status = "I'm just some random guys with random fravrs";
 
 Data.profile.following = [
+	
+	Data.users.Sera,
+	Data.users.Max,
+	Data.users.jiahe,
+	Data.users.alexkhow,
+	Data.users.Samantha,
+	
+	Data.users.Genevieve,
+	Data.users.Jesslyn,
+	Data.users.Cynthia,
+	Data.users.ColinTan,
+	Data.users.Theresa,
+	Data.users.Vince,
 	Data.users.yuri,
 	Data.users.Liza,
 	Data.users.Tiffany,
@@ -223,8 +236,10 @@ Data.profile.following = [
 	Data.users.Hyori,
 	Data.users.TakuyaS,
 	Data.users.Boa,
+	Data.users.Singh,
 	Data.users.takeshi,
-	Data.users.Tyra
+	Data.users.Tyra,
+	Data.users.wenting,
 ]
 
 Data.profile.friends = [
@@ -243,6 +258,19 @@ Data.profile.friends = [
 	Data.users.Vince
 ]
 Data.profile.followers = [
+	Data.users.wenting,
+	Data.users.Sera,
+	Data.users.Max,
+	Data.users.jiahe,
+	Data.users.alexkhow,
+	Data.users.Samantha,
+	Data.users.Singh,
+	Data.users.Genevieve,
+	Data.users.Jesslyn,
+	Data.users.Cynthia,
+	Data.users.ColinTan,
+	Data.users.Theresa,
+	Data.users.Vince,
 	Data.users.Xavier,
 	Data.users.Marie,
 	Data.users.Kapoor,
