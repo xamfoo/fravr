@@ -265,6 +265,7 @@ Data.cart = {
 Data.products = {
 	item:
 		{
+		id: "item",
 		name: "Default Name",
 		price: 0,
 		currency: "SGD",
@@ -280,6 +281,7 @@ Data.products = {
 		},
 CrochetHighNeck:
 		{
+		id: "CrochetHighNeck",
 		name: "Crochet Lace High Neck Top",
 		price: 20.00,
 		currency: "SGD",
@@ -296,6 +298,7 @@ CrochetHighNeck:
 		},
 WhiteLaceTop:
 		{
+		id: "WhiteLaceTop",
 		name: "Elegant Lace Long Sleeved Top",
 		price: 14.00,
 		currency: "SGD",
@@ -312,6 +315,7 @@ WhiteLaceTop:
 		},
 Owlhalfsleeve:
 		{
+		id: "Owlhalfsleeve",
 		name: "Owl Print Vintage Half Sleeve",
 		price: 18.90,
 		currency: "SGD",
@@ -326,7 +330,8 @@ Owlhalfsleeve:
 		},
 WhiteEmbroideredDress:
 		{
-		name: "Timeless White Embroidered Dress Dress Dress Dress Dress Dress Dress Dress",
+		id: "WhiteEmbroideredDress",
+		name: "Timeless White Embroidered Dress",
 		price: 20.0,
 		currency: "SGD",
 		merchant: "Ella Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress Dress ",
@@ -339,6 +344,7 @@ WhiteEmbroideredDress:
 		},
 Tuxedotee:
 		{
+		id: "Tuxedotee",
 		name: "Tuxedo White Tee",
 		price: 39.9,
 		currency: "SGD",
@@ -352,6 +358,7 @@ Tuxedotee:
 		},
 CannondaleRacer:
 		{
+		id: "CannondaleRacer",
 		name: "SuperX SRAM Red Carbon Racer",
 		price: 5300,
 		currency: "SGD",
@@ -371,6 +378,7 @@ CannondaleRacer:
 		},
 Sandwichcutter:
 		{
+		id: "Sandwichcutter",
 		name: "Puzzle Sandwich Cutter",
 		price: 14.90,
 		currency: "SGD",
@@ -384,6 +392,7 @@ Sandwichcutter:
 		},
 spacerockettent:
 		{
+		id: "spacerockettent",
 		name: "Space Rocket Tent",
 		price: 422,
 		currency: "SGD",
@@ -399,6 +408,7 @@ spacerockettent:
 		},
 MiaPinkFloralDress:
 		{
+		id: "MiaPinkFloralDress",
 		name: "Mia Pink Based Floral Dress",
 		price: 30.0,
 		currency: "SGD",
@@ -413,6 +423,7 @@ MiaPinkFloralDress:
 		},
 CrochetDaisySweater:
 		{
+		id: "CrochetDaisySweater",
 		name: "Crochet Daisy Sweater",
 		price: 35.60,
 		currency: "SGD",
@@ -428,6 +439,7 @@ CrochetDaisySweater:
 		},
 Jumpwithpuppet:
 		{
+		id: "Jumpwithpuppet",
 		name: "Jump with the Puppet Handphone Pouch",
 		price: 24.90,
 		currency: "SGD",
@@ -441,6 +453,7 @@ Jumpwithpuppet:
 		},
 IWCbigpilot:
 		{
+		id: "IWCbigpilot",
 		name: "IWC Big Pilot Perpetual Calender 2011 Edition RoseGold",
 		price: 18500.0,
 		currency: "SGD",
@@ -478,6 +491,7 @@ IWCbigpilot:
 		},
 Classicblazerladies:
 		{
+		id: "Classicblazerladies",
 		name: "Ladies Classic Coco Blazer",
 		price: 35,
 		currency: "SGD",
@@ -494,6 +508,7 @@ Classicblazerladies:
 		},
 kingoftokyo:
 		{
+		id: "kingoftokyo",
 		name: "King of Tokyo",
 		price: 40.90,
 		currency: "SGD",
@@ -508,6 +523,7 @@ kingoftokyo:
 		},
 brickwatchstrap:
 		{
+		id: "brickwatchstrap",
 		name: "Brick Full Leather Nato Watch Strap 22mm",
 		price: 85,
 		currency: "SGD",
@@ -522,6 +538,7 @@ brickwatchstrap:
 		},
 topmanshirt:
 		{
+		id: "topmanshirt",
 		name: "Mens Contrast Checkered Slim",
 		price: 79,
 		currency: "SGD",
@@ -536,6 +553,7 @@ topmanshirt:
 		},
 NarutoTee:
 		{
+		id: "NarutoTee",
 		name: "Naruto Kyubi Seal Custom White Tee",
 		price: 39.9,
 		currency: "SGD",
@@ -549,6 +567,7 @@ NarutoTee:
 		},
 womenlongformalshirt:
 		{
+		id: "womenlongformalshirt",
 		name: "Ladies Long Sleeve Formal Shirt",
 		price: 23.9,
 		currency: "SGD",
@@ -563,6 +582,7 @@ womenlongformalshirt:
 		},
 poloralphlauren:
 		{
+		id: "poloralphlauren",
 		name: "Polo Ralph Lauren Slimfit Polo Tee",
 		price: 99.0,
 		currency: "SGD",
@@ -579,6 +599,7 @@ poloralphlauren:
 		},
 leathercollarDH:
 		{
+		id: "leathercollarDH",
 		name: "Dior Homme LeatherNeck",
 		price: 622.0,
 		currency: "SGD",
@@ -594,6 +615,7 @@ leathercollarDH:
 		},
 mathsnerdwhitetee:
 		{
+		id: "mathsnerdwhitetee",
 		name: "Maths Nerd Tee (white)",
 		price: 39.9,
 		currency: "SGD",
@@ -608,6 +630,7 @@ mathsnerdwhitetee:
 		},
 basicwhiteslimfit:
 		{
+		id: "basicwhiteslimfit",
 		name: "Mens Basic White Shirt regular",
 		price: 37,
 		currency: "SGD",
@@ -621,6 +644,7 @@ basicwhiteslimfit:
 		},
 mightymug: 
 		{
+		id: "mightymug:",
 		name: "Mighty Mug (Grip Base Mug)",
 		price: 29.9,
 		currency: "SGD",
@@ -662,93 +686,19 @@ mightymug:
 					{	reviewer: "TheProductMagazine",
 						review: "Practical design with a touch of elegance"}
 					],
-		product_url: null
-		},
-	cup:	{
-		name: "cup",
-		price: 29,
-		currency: "SGD",
-		merchant: "some merchant",
-		description: "",
-		img_urls: ["url01", "url02", "url03"],
-		comments: null,
-		reviews: null
 		}
 };
 
-Data.timeline = {
-	everything: [
-		{
-			product: Data.products['brickwatchstrap'],
-			actions: [
-				{
-					user: Data.users['paklun'],
-					action: 'purchase'
-				}
-			]
-		},
-		{
-			product: Data.products['NarutoTee'],
-			actions: [
-				{
-					user: Data.users['wenting'],
-					action: 'fravd'
-				}
-			]
-		},
-		{
-			product: Data.products['CannondaleRacer']
-		},
-		{
-			product: Data.products['Classicblazerladies']
-		},
-		{
-			product: Data.products['CrochetDaisySweater']
-		},
-		{
-			product: Data.products['IWCbigpilot']
-		},
-		{
-			product: Data.products['Jumpwithpuppet']
-		},
-		{
-			product: Data.products['MiaPinkFloralDress']
-		},
-		{
-			product: Data.products['Sandwichcutter']
-		},
-		{
-			product: Data.products['basicwhiteslimfit']
-		},
-		{
-			product: Data.products['cup']
-		},
-		{
-			product: Data.products['kingoftokyo']
-		},
-		{
-			product: Data.products['leathercollarDH']
-		},
-		{
-			product: Data.products['mathsnerdwhitetee']
-		},
-		{
-			product: Data.products['mightymug']
-		},
-		{
-			product: Data.products['poloralphlauren']
-		},
-		{
-			product: Data.products['spacerockettent']
-		},
-		{
-			product: Data.products['topmanshirt']
-		},
-		{
-			product: Data.products['womenlongformalshirt']
-		}
-	]
-}
+Data.timeline = function () {
+	var that = {};
+	that.everything = [];
+	for (var product in Data.products) {
+		that.everything.push({product: Data.products[product]});
+	}
+	that.everything.shift();
+
+	return that;
+}();
 
 Data.clipping = {
 	total: 0
