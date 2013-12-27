@@ -740,18 +740,15 @@ Data.owned.ownedlist_items = [
 	Data.products.brickwatchstrap
 ]
 
-Data.fravlist = {
-	total: 7,
-};
-
-Data.fravlist.fravlist_items = [
+Data.fravlist = [
 	Data.products.mightymug,
 	Data.products.brickwatchstrap,
 	Data.products.basicwhiteslimfit,
 	Data.products.Sandwichcutter,
 	Data.products.kingoftokyo,
 	Data.products.NarutoTee,
-	Data.products.IWCbigpilot
+	Data.products.IWCbigpilot,
+	Data.products.CannondaleRacer
 ]
 //Default data end
 

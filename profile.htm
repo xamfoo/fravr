@@ -53,7 +53,7 @@
 			<div class="tab-pane active" id="fravlist">
 				<div class="fravr-timeline profile-fravlist">
 					<div class="row">
-						{{#each fravlist.fravlist_items}}
+						{{#each fravlist}}
 						<div class="col-xs-4 col-md-3">
 							<div class="item">
 								<a href="./product.htm?product=mightymug">
@@ -121,7 +121,7 @@
 		<!-- to do: change styles of side panel -->
 		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
 			<div class="list-group">
-				<a href="#fravlist" data-toggle="tab" class="list-group-item active">{{fravlist.total}} Fravs </a>
+				<a href="#fravlist" data-toggle="tab" class="list-group-item active">{{#arraylength fravlist}}{{/arraylength}} Fravs </a>
 				<a href="#following" data-toggle="tab" class="list-group-item">{{#arraylength profile.following}}{{/arraylength}} Following </a>
 				<a href="#followers" data-toggle="tab" class="list-group-item">{{#arraylength profile.followers}}{{/arraylength}} Followers </a>
 			</div>
@@ -137,12 +137,17 @@
 </script>
 <script src=data/data.js></script>
 <script src=js/main.js></script>
+<script src=js/bootstrap.min.js></script>
 <!-- Page specific script -->
 <script>
 $(document).ready(function() {
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
+		$('[data-toggle=offcanvas]').click(function() {
+			$('.row-offcanvas').toggleClass('active');
+		});
+		$('.list-group-item').click(function(){
+			$('.list-group .active').toggleClass('active');
+			$(this).toggleClass('active');
+		});
 });
 </script>
 </head>
