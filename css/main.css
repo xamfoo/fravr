@@ -340,6 +340,11 @@ a:hover {
 .fravr-profile .users .fravs {
 	display: block;
 }
+.fravr-profile .users .btn-following, .btn-friends {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
 .fravr-profile .activities {
 	padding: 400px 100px;
 	background-color: #fff;
