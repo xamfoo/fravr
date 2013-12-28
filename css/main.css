@@ -379,3 +379,14 @@ a:hover {
     width: 50%; /* 6 columns */
   }
 }
+
+/*messages.htm*/
+.msg .msger {
+	display:inline-block;
+}
+.msger {
+	color: red;
+}
+.msg {
+	padding-left: 10px;
+}
