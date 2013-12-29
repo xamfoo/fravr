@@ -32,7 +32,7 @@
 	</h5></div>
 	<div>
 		{{#each this.conversation_msges}}
-		<p><span style="color:red">{{this.by}}</span> : {{this.msg}} </p>
+		<div><span class="msger">{{this.by}}</span> :<span class="msg"> {{{this.msg}}}</span> </div>
 		{{/each}}
 	</div>
 	<hr style="border-color:red">
