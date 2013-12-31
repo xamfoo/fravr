@@ -12,22 +12,22 @@ Data.messages = {
 Data.users = {
 	paklun: {
 		name: 'Pak Lun',
-		img_url: 'img/users/pak lun.jpg',
+		img_url: 'img/users/Pak Lun.jpg',
 		fravs: 10
 	},
 	wenting: {
 		name: 'Wen Ting',
-		img_url: 'img/users/wenting.jpg',
+		img_url: 'img/users/Wen Ting.jpg',
 		fravs: 6
 	},
 	jiahe: {
 		name: 'Jiahe',
-		img_url: 'img/users/jiahe.jpg',
+		img_url: 'img/users/Jiahe.jpg',
 		fravs: 10
 	},
 	alexkhow: {
 		name: 'Alex',
-		img_url: 'img/users/alex.jpg',
+		img_url: 'img/users/Alex.jpg',
 		fravs: 32
 	},
 	Sera: {
@@ -52,7 +52,7 @@ Data.users = {
 	},
 	Max: {
 		name: 'Max Foo',
-		img_url: 'img/users/max.jpg',
+		img_url: 'img/users/Max.jpg',
 		fravs: 22
 	},
 	Vince: {
@@ -77,12 +77,12 @@ Data.users = {
 	},
 	ColinTan: {
 		name: 'Colin Tan',
-		img_url: 'img/users/ColinTan.jpg',
+		img_url: 'img/users/Colin Tan.jpg',
 		fravs: 10
 	},
 	yuri: {
 		name: 'Yuri',
-		img_url: 'img/users/yuri.jpg',
+		img_url: 'img/users/Yuri.jpg',
 		fravs: 10
 	},
 	Liza: {
@@ -97,7 +97,7 @@ Data.users = {
 	},
 	sethrogen: {
 		name: 'Seth Rogen',
-		img_url: 'img/users/sethrogen.jpg',
+		img_url: 'img/users/Seth Rogen.jpg',
 		fravs: 21
 	},
 	mizutani: {
@@ -112,12 +112,12 @@ Data.users = {
 	},
 	JulieBowen: {
 		name: 'Julie Bowen',
-		img_url: 'img/users/JulieBowen.jpg',
+		img_url: 'img/users/Julie Bowen.jpg',
 		fravs: 8
 	},
 	Hyori: {
 		name: 'Lee Hyori',
-		img_url: 'img/users/Hyorilee.jpg',
+		img_url: 'img/users/Hyori Lee.jpg',
 		fravs: 10
 	},
 	TakuyaS: {
@@ -127,12 +127,12 @@ Data.users = {
 	},
 	Boa: {
 		name: 'BoA',
-		img_url: 'img/users/BoA.jpg',
+		img_url: 'img/users/Boa.jpg',
 		fravs: 20
 	},
 	takeshi: {
 		name: 'Takeshi Kaneshiro',
-		img_url: 'img/users/takeshiro.jpg',
+		img_url: 'img/users/Takeshiro.jpg',
 		fravs: 31
 	},
 	Tyra: {
@@ -147,7 +147,7 @@ Data.users = {
 	},
 	kleine: {
 		name: 'Kleine',
-		img_url: 'img/users/kleine.jpg',
+		img_url: 'img/users/Kleine.jpg',
 		fravs: 16
 	},
 	priya: {
@@ -157,12 +157,12 @@ Data.users = {
 	},
 	xiaoqian: {
 		name: 'Xiao Qian',
-		img_url: 'img/users/xiaoqian.jpg',
+		img_url: 'img/users/Xiao Qian.jpg',
 		fravs: 62
 	},
 	bridgette: {
 		name: 'Bridgette',
-		img_url: 'img/users/bridgette.jpg',
+		img_url: 'img/users/Bridgette.jpg',
 		fravs: 76
 	},
 	Kloc: {
