@@ -120,30 +120,14 @@ var Timeline = function (opt) {
 
 	that.getPLeft = function (rw,pLeft_old) {
 		var	pattern = [
-			{
-				p: [6,6],
-			},
-			{
-				p: [3,3,3,3],
-			},
-			{
-				p: [4,4,4],
-			},
-			{
-				p: [3,9],
-			},
-			{
-				p: [4,8],
-			},
-			{
-				p: [3,3,6],
-			},
-			{
-				p: [5,7],
-			},
-			{
-				p: [3,4,5],
-			}
+			{ p: [6,6], },
+			{ p: [3,3,3,3], },
+			{ p: [4,4,4], },
+			{ p: [3,9], },
+			{ p: [4,8], },
+			{ p: [3,3,6], },
+			{ p: [5,7], },
+			{ p: [3,4,5], }
 		];
 		var pLeft = [];
 
@@ -199,8 +183,14 @@ var Timeline = function (opt) {
 								p: p[k],
 								r: rw.r*(pattern[j].p[index]/12*vw-20)/(p[k]/12*vw-20)
 							});
+							if (obj.pr[obj.pr.length-1].r > 2 || obj.pr[obj.pr.length-1].r < 1/3) {
+								k = null;
+								break;
+							}
 						}
-						pLeft.push(obj);
+						if (!(k === null)) {
+							pLeft.push(obj);
+						}
 					}
 				}
 			}
@@ -216,7 +206,7 @@ var Timeline = function (opt) {
 		completePattern = array;
 	};
 
-	that.loadSize = function (num, successCallback) {
+	that.loadSize = function (num, successCallback, endCallback) {
 		var imgLoadCount = 0;
 		for (var y=pointer+num; pointer<y; pointer+=1) {
 			if (typeof data[pointer] === 'undefined') break;
@@ -245,6 +235,7 @@ var Timeline = function (opt) {
 		// When loop is broken prematurely
 		if (pointer != y) {
 			that.allSizesLoaded = true;
+			endCallback();
 			return 'All sizes loaded';
 		}
 	}
@@ -282,6 +273,12 @@ var Timeline = function (opt) {
 			if (typeof callBack === 'object') {
 				if (typeof callBack.done === 'function') {
 					callBack.done();
+				}
+			}
+		}, function () {
+			if (typeof callBack === 'object') {
+				if (typeof callBack.end === 'function') {
+					callBack.end();
 				}
 			}
 		});
@@ -438,7 +435,7 @@ var Timeline = function (opt) {
 	}
 
 	that.create = function () {
-		loadLoop = function () {
+		var loadLoop = function () {
 			that.loadNext({
 				done: function () {
 					// Check for completed patterns
@@ -453,48 +450,44 @@ var Timeline = function (opt) {
 					if (that.allSizesLoaded === false) {
 						loadLoop();
 					}
+				},
+				end: function () {
+					if (!buffer.length) {
+						console.log('no images left in buffer');
+					} else {
+						console.log(buffer.length + ' images left in buffer');
+						that.endCreate();
+					}
 				}
 			});
 		}
 		loadLoop();
 	}
 
+	that.endCreate = function () {
+		maxRDiff *= 2;
+		console.log(buffer);
+		var bufferLeft = $.extend(true, [], buffer);
+		for (var i=0; i<bufferLeft.length; i+=1) {
+			bufferLeft[i].pLeft = that.getPLeft(bufferLeft[i]);
+		}
+		console.log(bufferLeft);
+	}
+
 	return that;
 };
-
-var timeline,
-	loadLoop;
 
 $( document ).ready(function () {
 	$('a[data-toggle]').on('click', function (event) {
 		event.preventDefault();
 	});
 
-	timeline = new Timeline({
+	var timeline = new Timeline({
 		data: Data.timeline.everything,
-		width: 1170,
+		width: $('.fravr-timeline .container').width()+30,
 		container: '.fravr-timeline .container'
 	});
 	timeline.create();
-	// loadLoop = function () {
-	// 	timeline.loadNext({
-	// 		done: function () {
-	// 			// Check for completed patterns
-	// 			var cp = timeline.getCP();
-	// 			if (cp.length > 0) {
-	// 				timeline.addPatternToDom();
-	// 				// Add to DOM and pattern
-	// 				// Remove added index
-	// 				// Go through buffer and update possiblities
-	// 			} else {
-	// 			}
-	// 			if (timeline.allSizesLoaded === false) {
-	// 				loadLoop();
-	// 			}
-	// 		}
-	// 	});
-	// }
-	// loadLoop();
 });
 
 // window.onload(function () {
