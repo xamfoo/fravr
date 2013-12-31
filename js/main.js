@@ -6,7 +6,7 @@ var Main = {},
 //Compile and store template function in closure
 Template = function () {
 	var that = {};
-	var body = Handlebars.compile( $('script[data-body]').html() );
+	var body;
 	var template = {};
 
 	//Register all Handlebars partials
@@ -14,12 +14,15 @@ Template = function () {
 		$("script[data-name][type='text/x-handlebars-template']").each(function(){
 			Handlebars.registerPartial($(this).attr('data-name'), $(this).html());
 		});
-		$("script[data-name][src]").each(function(){
-			Handlebars.registerPartial($(this).attr('data-name'), $(this).html());
-		});
+		// $("script[data-name][src]").each(function(){
+		// 	Handlebars.registerPartial($(this).attr('data-name'), $(this).html());
+		// });
 	}
 
 	that.render = function () {
+		if (!body) {
+			body = Handlebars.compile( $('script[data-body]').html() );
+		}
 		var html = body(Data);
 		$('body').html(html);
 	}

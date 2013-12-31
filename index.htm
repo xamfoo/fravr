@@ -8,6 +8,8 @@
 <script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
 <script src=js/handlebars-v1.1.2.js></script>
 <script src=js/amplify.min.js></script>
+<script src=data/data.js></script>
+<script src=js/main.js></script>
 
 <!-- Define default template -->
 <script data-body type="text/x-handlebars-template">
@@ -16,6 +18,7 @@
 </script>
 <!-- Include header -->
 <script data-name="header" src="tmpl/header.tmpl"></script>
+<script src="tmpl/timelineItem.tmpl"></script>
 
 <script data-name="body" type="text/x-handlebars-template">
 <div class="page-header" style="background:#fff">
@@ -34,146 +37,39 @@
 <div class="container">
 </div>
 </div>
-<!--
-<div class="fravr-timeline">
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">
-		</div>
-		<div class="col-md-6">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="item">
-				<img src="img/products/Brick Full Grain NYC NATO Watch Strap by Worn & Wound 59.jpg">
-				<span class="title">Brick Full Grain NYC NATO Watch Strap</span>
-				<span class="subtitle">by Sinn</span>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
--->
 </script>
-<script data-item type="text/x-handlebars-template">
-<div class="item">
-	<div class="crop"><img src="{{product.img_urls.0.url}}"></div>
-	<span class="title">{{product.name}}</span>
-	{{#if actions}}
-		{{#ifequals actions.length 0}}
-		<span class="subtitle">by {{product.merchant}}</span>
-		{{else}}
-			{{#ifequals actions.length 1}}
-				{{#ifequals actions.0.action 'purchase'}}
-					<span class="subtitle">by {{product.merchant}}</span>
-				{{/ifequals}}
-			{{else}}
-			<span class="subtitle">by {{product.merchant}}</span>
-			{{/ifequals}}
-		{{/ifequals}}
-	{{else}}
-	<span class="subtitle">by {{product.merchant}}</span>
-	{{/if}}
-</div>
-</script>
-<script src=data/data.js></script>
-<script src=js/main.js></script>
 <!-- Events -->
 <script>
-//Compile timeline template
-Template.set('timeline', $('script[data-item]').html());
-
 //Generate html code in body and register partial 'timeline'
-var Timeline = function (type) {
+// Options:
+var Timeline = function (opt) {
+	if (typeof opt != 'undefined') {
+		if (typeof opt.data === 'object' && typeof opt.data.length === 'number') {
+			var data = opt.data;
+		}
+		if (typeof opt.width === 'number') {
+			var vw = opt.width;
+		}
+		if (typeof opt.container === 'string') {
+			var container = opt.container;
+		}
+		if (!(data && vw && container)) {
+			console.log('Error: Missing parameters');
+			return;
+		}
+	} else {
+		console.log('Error: Missing parameters');
+		return;
+	}
+	
 	var that = {};
-	var count = Data.timeline[type].length,
+	var count = data.length,
 		pointer = 0,
 		buffer = [],
 		completePattern = [],
 		maxRDiff = 0.05,
 		lastPattern = [];
+
 
 	that.allSizesLoaded = false; // flag to stop loop
 
@@ -250,7 +146,6 @@ var Timeline = function (type) {
 			}
 		];
 		var pLeft = [];
-		var vw = $('.fravr-timeline > div').width()+30; // Width of pattern row in pixels
 
 		if (typeof pLeft_old === 'object') {
 			for (var i=0; i<pLeft_old.length; i+=1) {
@@ -324,13 +219,13 @@ var Timeline = function (type) {
 	that.loadSize = function (num, successCallback) {
 		var imgLoadCount = 0;
 		for (var y=pointer+num; pointer<y; pointer+=1) {
-			if (typeof Data.timeline[type][pointer] === 'undefined') break;
+			if (typeof data[pointer] === 'undefined') break;
 			var image = new Image();
 			$(image).load(function (timelineItem) {
 					var that = function () {
 						var width = $(this).width();
 						var height = $(this).height();
-						Data.timeline[type][timelineItem].product.img_urls[0].size = {
+						data[timelineItem].product.img_urls[0].size = {
 							width: width,
 							height: height,
 							hdw: height/width
@@ -344,7 +239,7 @@ var Timeline = function (type) {
 					return that;
 				}(pointer));
 			$(image).css('display','none')
-				.attr('src', Data.timeline[type][pointer].product.img_urls[0].url)
+				.attr('src', data[pointer].product.img_urls[0].url)
 				.appendTo('body');
 		}
 		// When loop is broken prematurely
@@ -357,7 +252,7 @@ var Timeline = function (type) {
 	that.loadNext = function (callBack) {
 		that.loadSize(1, function (pointer) {
 			// Add image to buffer
-			buffer.push(Data.timeline[type][pointer-1].product.img_urls[0].size);
+			buffer.push(data[pointer-1].product.img_urls[0].size);
 			var rw = that.getRW({
 				h: buffer[buffer.length-1].height,
 				w: buffer[buffer.length-1].width
@@ -447,8 +342,8 @@ var Timeline = function (type) {
 			var row = $("<div class='row'></div>");
 			for (var i=0; i<wt.length; i+=1) {
 				var col=$("<div class='col-md-" + wt[i].w +"'></div>");
-				var item = $(Template.get('timeline')(Data.timeline[type][wt[i].t]));
-				var size = Data.timeline[type][wt[i].t].product.img_urls[0].size;
+				var item = $(Template.get('timelineItem')(data[wt[i].t]));
+				var size = data[wt[i].t].product.img_urls[0].size;
 				if (size.hdw < wt[i].r) {
 					// Crop width
 					var width = (wt[i].r - size.hdw)/wt[i].r*100+100;
@@ -465,7 +360,7 @@ var Timeline = function (type) {
 				col.append(item);
 				row.append(col);
 			}
-			row.appendTo(".fravr-timeline .container");
+			row.appendTo(container);
 
 			that.onUsePattern(bestCP.i);
 		}
@@ -542,6 +437,28 @@ var Timeline = function (type) {
 		console.log(buffer);
 	}
 
+	that.create = function () {
+		loadLoop = function () {
+			that.loadNext({
+				done: function () {
+					// Check for completed patterns
+					var cp = that.getCP();
+					if (cp.length > 0) {
+						that.addPatternToDom();
+						// Add to DOM and pattern
+						// Remove added index
+						// Go through buffer and update possiblities
+					} else {
+					}
+					if (that.allSizesLoaded === false) {
+						loadLoop();
+					}
+				}
+			});
+		}
+		loadLoop();
+	}
+
 	return that;
 };
 
@@ -553,27 +470,31 @@ $( document ).ready(function () {
 		event.preventDefault();
 	});
 
-	timeline = new Timeline('everything');
-	// timeline.create();
-	loadLoop = function () {
-		timeline.loadNext({
-			done: function () {
-				// Check for completed patterns
-				var cp = timeline.getCP();
-				if (cp.length > 0) {
-					timeline.addPatternToDom();
-					// Add to DOM and pattern
-					// Remove added index
-					// Go through buffer and update possiblities
-				} else {
-				}
-				if (timeline.allSizesLoaded === false) {
-					loadLoop();
-				}
-			}
-		});
-	}
-	loadLoop();
+	timeline = new Timeline({
+		data: Data.timeline.everything,
+		width: 1170,
+		container: '.fravr-timeline .container'
+	});
+	timeline.create();
+	// loadLoop = function () {
+	// 	timeline.loadNext({
+	// 		done: function () {
+	// 			// Check for completed patterns
+	// 			var cp = timeline.getCP();
+	// 			if (cp.length > 0) {
+	// 				timeline.addPatternToDom();
+	// 				// Add to DOM and pattern
+	// 				// Remove added index
+	// 				// Go through buffer and update possiblities
+	// 			} else {
+	// 			}
+	// 			if (timeline.allSizesLoaded === false) {
+	// 				loadLoop();
+	// 			}
+	// 		}
+	// 	});
+	// }
+	// loadLoop();
 });
 
 // window.onload(function () {
