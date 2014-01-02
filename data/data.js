@@ -882,7 +882,8 @@ Data.chat = [
 			{	by: "Paklun",
 				msg: "Tested",
 				unread: 0},
-		]
+		],
+		active: true
 	},
 	{	conversation_name: "Jesslyn, Cynthia & Me",
 		conversation_participants: [	
