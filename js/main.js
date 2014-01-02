@@ -131,8 +131,8 @@ Main.clearData = function () {
 // container - a string that contains the css selector for the container
 var Timeline = function (opt) {
 	// Comment 2 lines below to enable debugging
-	var console = {};
-	console.log = function() {};
+	// var console = {};
+	// console.log = function() {};
 	if (typeof opt != 'undefined') {
 		if (typeof opt.data === 'object' && typeof opt.data.length === 'number') {
 			var data = opt.data;
@@ -435,6 +435,33 @@ var Timeline = function (opt) {
 			for (var i=0; i<wt.length; i+=1) {
 				var col=$("<div class='col-md-" + wt[i].w +"'></div>");
 				var item = $(Template.get('timelineItem')(data[wt[i].t]));
+				item.first().hover(function () {
+					$(this).find('.fravr-btn').show();
+					$(this).find('img').css('opacity','0.75');
+				},function () {
+					$(this).find('.fravr-btn').hide();
+					$(this).find('img').css('opacity','1');
+				});
+				item.on('click', function (evt) {
+					var tt = $(evt.target).first();
+					if (tt.hasClass('btn-share')) {
+						tt.html("Shared").addClass('disabled');
+					} else if (tt.hasClass('btn-frav')) {
+						tt.html("Frav'd").addClass('disabled');
+					} else if (tt.hasClass('btn-clip')) {
+						tt.html("Clipped").addClass('disabled');
+					} else if (tt.hasClass('btn-cart')) {
+						var cartCount = tt.html().match(/[(].+[)]/g);
+						if (cartCount) {
+							tt.html("Carted (" + (Number(cartCount[0].replace(/[()]/g,"")) + 1) + ")");
+						} else {
+							tt.html("Carted (1)");
+						}
+					}
+				});
+				item.find('div.fravr-btn').on('click', function() {
+					window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
+				});
 				console.log(wt[i].t);
 				var size = data[wt[i].t].product.img_urls[0].size;
 				if (size.hdw < wt[i].r) {
@@ -573,6 +600,33 @@ var Timeline = function (opt) {
 			var row = $("<div class='row'></div>");
 			var col=$("<div class='col-md-" + buffer[0].w[buffer[0].w.length-1] +"'></div>");
 			var item = $(Template.get('timelineItem')(data[buffer[0].t]));
+			item.first().hover(function () {
+				$(this).find('.fravr-btn').show();
+				$(this).find('img').css('opacity','0.75');
+			},function () {
+				$(this).find('.fravr-btn').hide();
+				$(this).find('img').css('opacity','1');
+			});
+			item.on('click', function (evt) {
+				var tt = $(evt.target).first();
+				if (tt.hasClass('btn-share')) {
+					tt.html("Shared").addClass('disabled');
+				} else if (tt.hasClass('btn-frav')) {
+					tt.html("Frav'd").addClass('disabled');
+				} else if (tt.hasClass('btn-clip')) {
+					tt.html("Clipped").addClass('disabled');
+				} else if (tt.hasClass('btn-cart')) {
+					var cartCount = tt.html().match(/[(].+[)]/g);
+					if (cartCount) {
+						tt.html("Carted (" + (Number(cartCount[0].replace(/[()]/g,"")) + 1) + ")");
+					} else {
+						tt.html("Carted (1)");
+					}
+				}
+				item.find('div.fravr-btn').on('click', function() {
+					window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
+				});
+			});
 			col.append(item);
 			row.append(col);
 			row.appendTo(container);
