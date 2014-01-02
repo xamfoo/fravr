@@ -131,8 +131,8 @@ Main.clearData = function () {
 // container - a string that contains the css selector for the container
 var Timeline = function (opt) {
 	// Comment 2 lines below to enable debugging
-	// var console = {};
-	// console.log = function() {};
+	var console = {};
+	console.log = function() {};
 	if (typeof opt != 'undefined') {
 		if (typeof opt.data === 'object' && typeof opt.data.length === 'number') {
 			var data = opt.data;
