@@ -19,12 +19,16 @@ Template = function () {
 		// });
 	}
 
-	that.render = function () {
+	that.render = function (f) {
 		if (!body) {
 			body = Handlebars.compile( $('script[data-body]').html() );
 		}
 		var html = body(Data);
 		$('body').html(html);
+		$(document).ready(function () {
+			Main.ready();
+			if (typeof f === 'function') f();
+		});
 	}
 
 	that.set = function (name, html) {
@@ -45,10 +49,23 @@ Template = function () {
 
 Main = function () {
 	var that = {};
-	var ready = function () {};
+	var onDataReady = function () {};
+	var onDomReady = function () {};
 	
 	Data.ready = function (f) {
-		if (typeof f === 'function') ready = f;
+		if (typeof f === 'function') {
+			onDataReady = f;
+		} else {
+			onDataReady();
+		}
+	}
+
+	that.ready = function (f) {
+		if (typeof f === 'function') {
+			onDomReady = f;
+		} else {
+			onDomReady();
+		}
 	}
 
 	// Execute when DOM is ready
@@ -57,8 +74,9 @@ Main = function () {
 		Main.url.parse();
 		if (Main.url.get().reset === true) Main.clearData();
 		if (Main.url.get().default != true) Main.loadData();
-		ready(); // Run user-defined function
+		onDataReady(); // Run user-defined function
 		Template.render();
+		onDomReady(); // Run user-defined function
 	});
 	
 	return that;
@@ -641,7 +659,6 @@ var Timeline = function (opt) {
 
 // Custom Handlebars helpers
 Handlebars.registerHelper ("ifequals", function (obj, val, options) {
-	console.log(obj);
 	if (obj === val) {
 		return options.fn(this);
 	} else {
