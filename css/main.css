@@ -9,6 +9,12 @@ body {
 footer {
   padding: 60px 0;
 }
+.default-border {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 1px solid #c9c9c9;
+}
 a:link, a:visited, a:active {
 	text-decoration: none;
 	color:blue;
@@ -17,6 +23,21 @@ a:hover {
 	text-decoration: underline;
 	color:blue;
 }
+
+/* Helper Classes */
+.rm-right-padding {
+	padding-right: 0px;
+}
+.rm-left-padding {
+	padding-left: 0px;
+}
+.rm-padding {
+	padding: 0;
+}
+.rm-border {
+	border: none;
+}
+
 
 /* Overide bootstrap heading style */
 /* h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { */
@@ -140,12 +161,10 @@ a:hover {
 }
 .fravr-productpage .product-page-container {
 	background: #FFFFFF;
-	border-style: solid;
-	border-width: thin;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	border-color: #b3b3b3;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 1px solid #c9c9c9;
 	margin-bottom: 100px;
 }
 .fravr-productpage .content-body {
@@ -288,21 +307,16 @@ a:hover {
   -moz-border-radius: 6px;
   border-radius: 6px;
   max-width: 100%;
+  border-bottom: 1px solid #c9c9c9;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px){}
-.fravr-profile  .rm-right-padding {
-	padding-right: 0px;
-}
-.fravr-profile  .rm-left-padding {
-	padding-left: 0px;
-}
 .fravr-profile .profile-banner .profile-text {
 	text-align: center;
 }
 .fravr-profile .profile-banner .profile-text .name-title {
 	font-weight: 600;
 }
-
 .fravr-profile .profile-fravlist .row {
 	padding: 0 5px;
 }
@@ -348,9 +362,6 @@ a:hover {
 .fravr-profile .activities {
 	padding: 400px 100px;
 	background-color: #fff;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
 }
 
 /* profile page - off canvas */
@@ -381,6 +392,10 @@ a:hover {
 }
 
 /*messages.htm*/
+.fravr-messages .messages-head {
+	background-color: white;
+}
+
 .msg .msger {
 	display:inline-block;
 }
