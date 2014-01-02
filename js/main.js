@@ -459,8 +459,10 @@ var Timeline = function (opt) {
 						}
 					}
 				});
-				item.find('div.fravr-btn').on('click', function() {
-					window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
+				item.find('div.fravr-btn').on('click', function(evt) {
+					if (evt.target.nodeName === 'DIV') {
+						window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
+					}
 				});
 				console.log(wt[i].t);
 				var size = data[wt[i].t].product.img_urls[0].size;
