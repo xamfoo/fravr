@@ -39,7 +39,7 @@ Template = function () {
 			return template[name];
 		}
 	}
-
+	
 	return that;
 }();
 
@@ -134,6 +134,14 @@ Handlebars.registerHelper ("ifequals", function (obj, val, options) {
 	}
 });
 
-Handlebars.registerHelper ("arraylength", function (obj) {
+// returns array length of input json data array
+Handlebars.registerHelper ("arraylength", function (obj, options) {
 	return obj.length;
 });
+
+// returns value of the last entry of input json data array as an object to be used in handlebars block
+Handlebars.registerHelper ("lastvalue", function (obj_in, options) {
+	var obj_out = obj_in[obj_in.length-1];
+	return options.fn(obj_out);
+});
+

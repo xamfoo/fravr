@@ -1,7 +1,4 @@
 /* set default styles */
-html, body {
-	overflow-x: hidden; /* Prevent scroll on narrow devices */
-}
 body {
 	padding-top: 80px;
 	background:#f1f1f1;
@@ -15,13 +12,18 @@ footer {
 	border-radius: 5px;
 	border-bottom: 1px solid #c9c9c9;
 }
+.text-ellipsis {
+	white-space:nowrap; 
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
 a:link, a:visited, a:active {
 	text-decoration: none;
-	color:blue;
+	color:#36d792;
+	font-weight: 400;
 }
 a:hover {
 	text-decoration: underline;
-	color:blue;
 }
 
 /* Helper Classes */
@@ -119,6 +121,9 @@ a:hover {
 }
 .fravr-timeline .crop {
 	overflow: hidden;
+}
+.fravr-timeline .item  > a:hover {
+	text-decoration: none;
 }
 .fravr-timeline .item  img {
 	width: 100%;
@@ -346,9 +351,6 @@ a:hover {
   margin-bottom: 10px;
 }
 .fravr-profile .users .name {
-	white-space:nowrap; 
-	overflow: hidden;
-	text-overflow:ellipsis;
 	font-weight: 600;
 }
 .fravr-profile .users .fravs {
@@ -392,10 +394,39 @@ a:hover {
 }
 
 /*messages.htm*/
+.fravr-messages {
+	height: 100%;
+}
 .fravr-messages .messages-head {
 	background-color: white;
+	overflow: hidden;
+	padding-left: 15px;
+	padding-right: 15px;
 }
-
+.fravr-messages .messages-head .title {
+	display: inline-block;
+	border-bottom: 1px solid #c9c9c9;
+	font-weight: 400;
+	padding: 8px 0px;
+	margin:0;
+	
+}
+.fravr-messages .messages-head .subtitle > h5 {
+	display:inline;
+	color: #36d792;
+}
+.fravr-messages .chat-tabs {
+	background-color: #ffffff;
+	margin-top: 15px;
+	height: 100%;
+	overflow-y: scroll;
+}
+.fravr-messages .chat-screen {
+	background-color: #ffffff;
+	margin-top: 15px;
+	padding-top: 10px;
+	height: 100%;
+}
 .msg .msger {
 	display:inline-block;
 }
