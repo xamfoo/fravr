@@ -1,0 +1,22 @@
+Template.set('timelineItem',
+(function () {/*
+<div class="item">
+	<div class="crop"><img src="{{product.img_urls.0.url}}"></div>
+	<span class="title">{{product.name}}</span>
+	{{#if actions}}
+		{{#ifequals actions.length 0}}
+		<span class="subtitle">by {{product.merchant}}</span>
+		{{else}}
+			{{#ifequals actions.length 1}}
+				{{#ifequals actions.0.action 'purchase'}}
+					<span class="subtitle">by {{product.merchant}}</span>
+				{{/ifequals}}
+			{{else}}
+			<span class="subtitle">by {{product.merchant}}</span>
+			{{/ifequals}}
+		{{/ifequals}}
+	{{else}}
+	<span class="subtitle">by {{product.merchant}}</span>
+	{{/if}}
+</div>
+*/}).toString().split('\n').slice(1, -1).join('\n'));

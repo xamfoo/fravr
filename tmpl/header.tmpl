@@ -1,4 +1,4 @@
-$("script[src]").last().html(
+Handlebars.registerPartial($("script[src]").last().attr('data-name'),
 (function () {/*
 <header class="navbar navbar-inverse navbar-fixed-top fravr-nav" role="navigation">
   <div class="container">

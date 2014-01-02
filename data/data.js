@@ -307,6 +307,120 @@ Data.products = {
 					review: null}],
 		product_url: null
 		},
+CoolFaucet:
+		{
+		id: "CoolFaucet",
+		name: "HANSALATRAVA Faucet",
+		price: 999.0,
+		currency: "SGD",
+		merchant: "Octopus Designs",
+		merchant_url: "#",
+		description: "<p>Sleek. Minimalistic. Smart. Add designer flair to your bathroom with HANSALATRAVA faucets. Crafted out of stainless steel and featuring our built-in sensor to activate the tap.</p>\
+		<p>A perfect design complement to HANSALATRAVA sinks.</p>\
+		",
+		img_urls: [{url:"img/products/HANSALATRAVA Faucet by Octopus Design 3150.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
+		},
+EggWhiteSeparator:
+		{
+		id: "EggWhiteSeparator",
+		name: "Egg White Separator",
+		price: 15.00,
+		currency: "SGD",
+		merchant: "Bakerz",
+		merchant_url: "#",
+		description: "<p>Bakers, we hear your pains. Here we have a simple contraption to help separate the yolks and the eggs for your baking sessions. Just give the pump a squeeze and go for the yolk. Next thing you know, the yolk is sucked into the pump where you can easily release it elsewhere.</p>\
+		<p>Available in White only.</p>\
+		",
+		img_urls: [{url:"img/products/Pluck Egg White Separator 15.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
+		},
+FeatherBookmark:
+		{
+		id: "FeatherBookmark",
+		name: "Exquisite Feather Bookmark",
+		price: 14.00,
+		currency: "SGD",
+		merchant: "iMaculate",
+		merchant_url: "#",
+		description: "<p>The perfect gift for the bookworm - a bird feather cut out of aluminium, complete with tassel. Weighs 75g.</p>\
+		",
+		img_urls: [{url:"img/products/feather bookmark 14.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
+		},
+RaybanAviators:
+		{
+		id: "RaybanAviators",
+		name: "Aviators LARGE METAL II Gold/Brown",
+		price: 235.0,
+		currency: "SGD",
+		merchant: "Rayban",
+		merchant_url: "#",
+		description: "<p>CLASSIC COOL<br>The spontaneous choice of artists and celebrities, Ray-Ban has become a true worldwide phenomenon. Ray-Ban is preferred by legends, loved by individualists and imitated by everyone. With 70 years of authenticity, tradition and quality to its name, Ray-Ban will continue to look to its past to envision its future. For anyone who simply wants to be real, Ray-Ban believes the most fashionable thing to be is yourself.</p>\
+		<p>The classic Aviators were made legendary by Tom Cruise in TOP GUN and were representative of the official military eyepiece design of the era. The iconic large teardrop shades provide glare-protection and better vision for the pilots in the cockpits.</p>\
+		<p>Go On. Own an Icon</p>\
+		",
+		img_urls: [{url:"img/products/Rayban Aviator LARGE METAL Gold Brown.png"},{url:"img/products/Rayban aviators large metal gold brown 2.jpg"},{url:"img/products/Tom-Cruise-Top-Gun-031.jpg"},{url:"img/products/Jennifer-Aniston-Ray-Ban-Aviator-Sunglasses.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
+		},
+SkullcandyAviators:
+		{
+		id: "SkullcandyAviators",
+		name: "ROCNation Aviators Brown/Gold",
+		price: 247.00,
+		currency: "SGD",
+		merchant: "SkullCandy",
+		merchant_url: "#",
+		description: "<p>Go back to the era of TOPGUN with this classic-looking Aviators-inspired headphones. A product borne out of Skullcandy\'s collaboration with Jay-Z\'s ROCNation, it boasts comfortable earpads and exceptional bass response. Removable tangle-free cords also includes in-line mics and remote controls for IOS devices.</p>\
+		",
+		img_urls: [{url:"img/products/Skullcandy Aviator Brown.jpg"},{url:"img/products/Skullcandy Aviator Brown 2.jpg"},{url:"img/products/Skullcandy Aviator Brown 3.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: "PCMAG.COM",
+					review: "Cool design based on Aviator sunglasses. Quality bass response with barely any distortion at maximum volume.\
+<p>Integrated Apple iPhone/iPod mic and controls.<br>Skullcandy\'s Roc Nation Aviator headphones take design cues from that staple of American style, Ray-Ban Aviator sunglasses, and branding from Jay-Z's music and entertainment company. Somewhere in the earpieces, which are shaped like Aviator lenses, there are drivers that pump out audio, too. Needless to say, the Aviator is quite the fashion statement. At $149.99 (direct), however, they need to deliver quality audio performance as well, and the Aviator offers a hit-and-miss experience, mixing deep bass that generally does not distort, with treble that seems a bit too sculpted and boosted. The built-in microphone and playback controls for the Apple iPhone (4 stars, $199 and up) and iPods are a nice touch, but the Aviator suffers from a weak physical construction and is not a serious choice for audiophiles.</p>\
+<p>Design.<br>The Roc Nation Aviator comes in three styles—white, brown and gold, and black. The headphones truly look cool. Our black test unit features transparent \"lenses\" as the plastic covering over the earpieces, allowing for a glimpse at the innards of the headphones. On the inside of the rounded-triangles that form the ear cups, there is plush padding that comfortably envelopes your ear. This type of headphone, which creates a loose seal, is called circumaural.</p>\
+<p>The headphones are easily adjustable and feature cushioned, pseudo-suede padding on the inside of the headband. The logo for Roc Nation appears on each ear piece, and the Skullcandy logo—an ominous upper half of a human skull—appears above each ear on the headband and once again on the 3.5-inch cable connection. The nylon cable extends from the left ear, and roughly four inches below the ear cup, the mic, and Apple playback controls (for Volume, Play, Pause, Fast Forward, Rewind, as well a button for starting and ending calls) are built into a silver-colored plastic compartment. The headphones fold up into a more portable size and they come with a stylish zip-up, pseudo-leather pouch.</p>\
+<p>While the headphones manage to look exceedingly cool without screaming for attention—kind of like the real Aviator sunglasses—the actual construction is a little flimsy for a $150 investment. Lightly pressing on the inside of the left ear cup lightly—where there happens to be yet another emblazoned Skull logo—temporarily disabled the left ear's drivers. Another press, and the music came back, but I had to repeat this step a few times before the nuisance permanently ceased. A $150 pair of headphones should be able to withstand this sort of activity. When I got the headphones working properly again, the Aviators were comfortable and offered a very solid listening experience. But I'd be remiss if I didn't point out that they're not exactly durable.</p>\
+<p>Performance.<br>Unfortunately, the Apple controls and mic don't mix well with our HEAD Acoustics frequency-response tests, so we are unable to run frequency response graphs. I can tell you that the performance, from ear-to-ear, is reasonably well-matched—it's quite similar to the KRK Systems KNS-8400 (4 stars, $149) linear frequency response, which is a more-than-acceptable result.</p>\
+<p>Bass response is on par with headphones in this price range. The Knife's \"Silent Shout\" which has tremendous low end, can be played at maximum volume without serious distortion. Occasionally, I heard the synth drum hits distort slightly, but only at the very highest level, and even this was minor. At normal-to-loud listening levels, the Aviator has no problem reproducing heavy bass, but the treble can often be too bright and intense. Ironically, on Jay-Z's \"99 Problems\", this is one problem that is apparent—at moderate-to-high volumes, it is almost uncomfortable to listen because the treble is so boosted in certain ranges. On orchestral music, like John Adams's \"The Chairman Dances\" the high end is still quite present but seems less tweaked and the overall balance is more agreeable. It's probable that pop music, which often has modified high frequencies to begin with, is going to suffer from the inherent brightness the most.</p>\
+<p>In this general price range, you have a couple more music-friendly headphone options (and plenty of in-ear options), but nothing quite so visually arresting. The same-price KRK Systems KNS-8400 is a great option for home studio engineers and audiophiles on a budget, but it looks like a pair of studio monitors. The Denon AH-D1100 (4.5 stars, $199.99) splits the difference, from a design standpoint, between a more stylish pair of headphones and a studio monitor look, and the extra $50 gets you audio performance worthy of our Editors' Choice. Still, for bridging an oft-ignored gap between style and performance, the Skullcandy Roc Nation Aviator is to be commended—but I still think it's a bit overpriced.</p>\
+"}],
+		product_url: null
+		},
+MarshallMajors:
+		{
+		id: "MarshallMajors",
+		name: "'Major' On-Ear Headphones (Black)",
+		price: 140.0,
+		currency: "SGD",
+		merchant: "Marshall",
+		merchant_url: "#",
+		description: "<p>THE MAJOR ENCLOSES VAST AMOUNTS OF THE MASSIVE MARSHALL LEGACY. THE EXTERIOR OF THE HEADBAND IS MADE OUT OF THE SAME VINYL USED IN MARSHALL AMPLIFIERS AND IT BEARS THE ORIGINAL MARSHALL TEXTURE. BESIDES BEING STRAIGHT UP DAZZLING. THE MAJOR IS A SOLID WORKHORSE WITH GREAT STAMINA, DESIGNED WITH NON-STOP, ALL-DAY LISTENING IN MIND.</p>\
+		<p>SUPER SOFT EAR CUSHIONS<br>FULLY COLLAPSIBLE CONSTRUCTION<br>MIC & REMOTE<br>COMPATIBLE WITH MOST DEVICES USING THE 3.5MM STANDARD PLUG</p>",
+		img_urls: [{url:"img/products/Marshall Major Headphones 1.jpg"},{url:"img/products/Marshall Major Headphones 2.jpg"},{url:"img/products/Marshall Major Headphone.jpg"}],
+		comments: [{commenter: null,
+					comment: null}],
+		reviews: [{	reviewer: null,
+					review: null}],
+		product_url: null
+		},
 CrochetHighNeck:
 		{
 		id: "CrochetHighNeck",
