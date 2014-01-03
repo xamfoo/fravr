@@ -587,9 +587,9 @@ var Timeline = function (opt) {
 Handlebars.registerHelper ("ifequals", function (obj, val, options) {
 	console.log(obj);
 	if (obj === val) {
-		return options.fn(this);
+		return options.fn(obj);
 	} else {
-		return "";
+		return options.inverse(obj);
 	}
 });
 

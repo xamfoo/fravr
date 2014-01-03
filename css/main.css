@@ -40,7 +40,6 @@ a:hover {
 	border: none;
 }
 
-
 /* Overide bootstrap heading style */
 /* h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { */
 /* 	font-weight: 300; */
@@ -427,12 +426,12 @@ a:hover {
 	padding-top: 10px;
 	height: 100%;
 }
-.msg .msger {
-	display:inline-block;
+.fravr-messages .chat-screen .msg_you {
+	text-align: right;
 }
-.msger {
-	color: red;
+.fravr-messages .chat-screen .msg_by {
+	text-align: right;
 }
-.msg {
-	padding-left: 10px;
+.fravr-messages .chat-screen .msg_others {
+	text-align: left;
 }
