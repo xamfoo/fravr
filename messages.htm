@@ -43,8 +43,7 @@
 			<div class="col-sm-4">
 				<div class="list-group chat-tabs default-border">
 				{{#each chat}}
-					{{#if @first}}
-					<a href="#" class="list-group-item active">
+					<a href="#" class="list-group-item {{#ifequals this.active true}}active{{/ifequals}}">
 						 <div class="row">
 							<div class="col-xs-2 rm-right-padding">
 								<img src="{{this.conversation_participants.0.img_url}}" class="img-responsive">
@@ -62,26 +61,6 @@
 							 </div>
 						 </div>
 					</a>
-					{{else}}
-					<a href="#" class="list-group-item">
-						 <div class="row">
-							<div class="col-xs-2 rm-right-padding">
-								<img src="{{this.conversation_participants.0.img_url}}" class="img-responsive">
-							</div>
-							<div class="col-xs-10">
-								<h4 class="list-group-item-heading">
-									{{this.conversation_name}}
-									<span class="unread_flag">
-										{{#countunread this.conversation_msges}}
-											{{#if this}} ({{this}}){{/if}}
-										{{/countunread}}
-									</span>
-								</h4>
-								<p class="list-group-item-text text-ellipsis">{{#lastvalue conversation_msges}}{{this.msg}}{{/lastvalue}}</p>
-							 </div>
-						 </div>
-					</a>
-					{{/if}}
 				{{/each}}
 				</div>
 			</div>
@@ -119,18 +98,17 @@ Handlebars.registerHelper ("countunread", function (obj, options) {
 	return options.fn(unread);
 });
 
-$(document).ready(function(){
-	console.log( "document loaded" );
-	$('.list-group-item').click(function(){
-			var idx = $(this).index();
-			console.log(idx);
-			Data.chat_current = Data.chat[idx];
-			Template.render();
-			console.log(idx);
+Main.ready(function () {
+	$('.list-group-item').click(function(evt){
+		evt.preventDefault();
+		var idx = $(this).index();
+		Data.chat_current.active = false;
+		Data.chat_current = Data.chat[idx];
+		Data.chat_current.active = true;
+		Template.render();
 			$('.list-group .active').toggleClass('active');
-			$(this).toggleClass('active');	
+			$('.list-group-item').eq(idx).toggleClass('active');	
 	});
-	console.log( "jquery ending" );
 });
 
 </script>

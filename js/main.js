@@ -19,12 +19,16 @@ Template = function () {
 		// });
 	}
 
-	that.render = function () {
+	that.render = function (f) {
 		if (!body) {
 			body = Handlebars.compile( $('script[data-body]').html() );
 		}
 		var html = body(Data);
 		$('body').html(html);
+		$(document).ready(function () {
+			Main.ready();
+			if (typeof f === 'function') f();
+		});
 	}
 
 	that.set = function (name, html) {
@@ -45,10 +49,23 @@ Template = function () {
 
 Main = function () {
 	var that = {};
-	var ready = function () {};
+	var onDataReady = function () {};
+	var onDomReady = function () {};
 	
 	Data.ready = function (f) {
-		if (typeof f === 'function') ready = f;
+		if (typeof f === 'function') {
+			onDataReady = f;
+		} else {
+			onDataReady();
+		}
+	}
+
+	that.ready = function (f) {
+		if (typeof f === 'function') {
+			onDomReady = f;
+		} else {
+			onDomReady();
+		}
 	}
 
 	// Execute when DOM is ready
@@ -57,8 +74,9 @@ Main = function () {
 		Main.url.parse();
 		if (Main.url.get().reset === true) Main.clearData();
 		if (Main.url.get().default != true) Main.loadData();
-		ready(); // Run user-defined function
+		onDataReady(); // Run user-defined function
 		Template.render();
+		onDomReady(); // Run user-defined function
 	});
 	
 	return that;
@@ -435,6 +453,35 @@ var Timeline = function (opt) {
 			for (var i=0; i<wt.length; i+=1) {
 				var col=$("<div class='col-md-" + wt[i].w +"'></div>");
 				var item = $(Template.get('timelineItem')(data[wt[i].t]));
+				item.first().hover(function () {
+					$(this).find('.fravr-btn').show();
+					$(this).find('img').css('opacity','0.75');
+				},function () {
+					$(this).find('.fravr-btn').hide();
+					$(this).find('img').css('opacity','1');
+				});
+				item.on('click', function (evt) {
+					var tt = $(evt.target).first();
+					if (tt.hasClass('btn-share')) {
+						tt.html("Shared").addClass('disabled');
+					} else if (tt.hasClass('btn-frav')) {
+						tt.html("Frav'd").addClass('disabled');
+					} else if (tt.hasClass('btn-clip')) {
+						tt.html("Clipped").addClass('disabled');
+					} else if (tt.hasClass('btn-cart')) {
+						var cartCount = tt.html().match(/[(].+[)]/g);
+						if (cartCount) {
+							tt.html("Carted (" + (Number(cartCount[0].replace(/[()]/g,"")) + 1) + ")");
+						} else {
+							tt.html("Carted (1)");
+						}
+					}
+				});
+				item.find('div.fravr-btn').on('click', function(evt) {
+					if (evt.target.nodeName === 'DIV') {
+						window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
+					}
+				});
 				console.log(wt[i].t);
 				var size = data[wt[i].t].product.img_urls[0].size;
 				if (size.hdw < wt[i].r) {
@@ -573,6 +620,33 @@ var Timeline = function (opt) {
 			var row = $("<div class='row'></div>");
 			var col=$("<div class='col-md-" + buffer[0].w[buffer[0].w.length-1] +"'></div>");
 			var item = $(Template.get('timelineItem')(data[buffer[0].t]));
+			item.first().hover(function () {
+				$(this).find('.fravr-btn').show();
+				$(this).find('img').css('opacity','0.75');
+			},function () {
+				$(this).find('.fravr-btn').hide();
+				$(this).find('img').css('opacity','1');
+			});
+			item.on('click', function (evt) {
+				var tt = $(evt.target).first();
+				if (tt.hasClass('btn-share')) {
+					tt.html("Shared").addClass('disabled');
+				} else if (tt.hasClass('btn-frav')) {
+					tt.html("Frav'd").addClass('disabled');
+				} else if (tt.hasClass('btn-clip')) {
+					tt.html("Clipped").addClass('disabled');
+				} else if (tt.hasClass('btn-cart')) {
+					var cartCount = tt.html().match(/[(].+[)]/g);
+					if (cartCount) {
+						tt.html("Carted (" + (Number(cartCount[0].replace(/[()]/g,"")) + 1) + ")");
+					} else {
+						tt.html("Carted (1)");
+					}
+				}
+				item.find('div.fravr-btn').on('click', function() {
+					window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
+				});
+			});
 			col.append(item);
 			row.append(col);
 			row.appendTo(container);
@@ -585,7 +659,6 @@ var Timeline = function (opt) {
 
 // Custom Handlebars helpers
 Handlebars.registerHelper ("ifequals", function (obj, val, options) {
-	console.log(obj);
 	if (obj === val) {
 		return options.fn(obj);
 	} else {
