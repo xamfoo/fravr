@@ -842,6 +842,47 @@ Data.timeline = function () {
 	return that;
 }();
 
+Data.search = {
+	results: [
+		{
+			product: Data.products['topmanshirt']
+		},
+		{
+			product: Data.products['NarutoTee']
+		},
+		{
+			product: Data.products['womenlongformalshirt']
+		},
+		{
+			product: Data.products['poloralphlauren']
+		},
+		{
+			product: Data.products['leathercollarDH']
+		},
+		{
+			product: Data.products['mathsnerdwhitetee']
+		},
+		{
+			product: Data.products['basicwhiteslimfit']
+		},
+		{
+			product: Data.products['CrochetHighNeck']
+		},
+		{
+			product: Data.products['WhiteLaceTop']
+		},
+		{
+			product: Data.products['Owlhalfsleeve']
+		},
+		{
+			product: Data.products['WhiteEmbroideredDress']
+		},
+		{
+			product: Data.products['Tuxedotee']
+		}
+	]
+}
+
 Data.clipping = {
 	total: 0
 }
