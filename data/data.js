@@ -896,14 +896,30 @@ Data.owned.ownedlist_items = [
 ]
 
 Data.fravlist = [
-	Data.products.mightymug,
-	Data.products.brickwatchstrap,
-	Data.products.basicwhiteslimfit,
-	Data.products.Sandwichcutter,
-	Data.products.kingoftokyo,
-	Data.products.NarutoTee,
-	Data.products.IWCbigpilot,
-	Data.products.CannondaleRacer
+{
+	product: Data.products.mightymug
+},
+{
+	product: Data.products.brickwatchstrap
+},
+{
+	product: Data.products.basicwhiteslimfit
+},
+{
+	product: Data.products.Sandwichcutter
+},
+{
+	product: Data.products.kingoftokyo
+},
+{
+	product: Data.products.NarutoTee
+},
+{
+	product: Data.products.IWCbigpilot
+},
+{
+	product: Data.products.CannondaleRacer
+}
 ]
 //Default data end
 

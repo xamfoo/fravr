@@ -451,7 +451,7 @@ var Timeline = function (opt) {
 			// Add pattern to DOM
 			var row = $("<div class='row'></div>");
 			for (var i=0; i<wt.length; i+=1) {
-				var col=$("<div class='col-md-" + wt[i].w +"'></div>");
+				var col=$("<div class='col-sm-" + wt[i].w +"'></div>");
 				var item = $(Template.get('timelineItem')(data[wt[i].t]));
 				item.first().hover(function () {
 					$(this).find('.fravr-btn').show();
@@ -618,7 +618,7 @@ var Timeline = function (opt) {
 		if (buffer.length === 1) {
 			console.log('left one');
 			var row = $("<div class='row'></div>");
-			var col=$("<div class='col-md-" + buffer[0].w[buffer[0].w.length-1] +"'></div>");
+			var col=$("<div class='col-sm-" + buffer[0].w[buffer[0].w.length-1] +"'></div>");
 			var item = $(Template.get('timelineItem')(data[buffer[0].t]));
 			item.first().hover(function () {
 				$(this).find('.fravr-btn').show();
