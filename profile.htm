@@ -8,6 +8,8 @@
 <script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
 <script src=js/handlebars-v1.1.2.js></script>
 <script src=js/amplify.min.js></script>
+<script src=data/data.js></script>
+<script src=js/main.js></script>
 
 <!-- Define default template -->
 <script data-body type="text/x-handlebars-template">
@@ -16,6 +18,7 @@
 </script>
 <!-- Include header -->
 <script data-name="header" src="tmpl/header.tmpl"></script>
+<script src="tmpl/timelineItem.tmpl"></script>
 
 <script data-name="body" type="text/x-handlebars-template">
 <div class="fravr-profile">
@@ -52,19 +55,8 @@
 			<!--fravlist tab-->
 			<div class="tab-pane active" id="fravlist">
 				<div class="fravr-timeline profile-fravlist">
-					<div class="row">
-						{{#each fravlist}}
-						<div class="col-xs-4 col-md-3">
-							<div class="item">
-								<a href="./product.htm?product=mightymug">
-									<img src="{{this.img_urls.0.url}}">
-									<span class="title">{{this.name}}</span>
-								</a>
-								<span class="subtitle"> by <a href="#">{{this.merchant}}</a> </span>
-							</div>
-						</div><!--/col-->
-						{{/each}}
-					</div><!--/fravr-timeline-->
+				<div class="fravr-profile">
+				</div><!--/fravr-timeline-->
 				</div><!--/row-->
 			</div><!--/fravlist tab-->
 			<!--following tab-->
@@ -135,8 +127,6 @@
 </div><!--/.container-->
 </div><!--/.fravr-profile-->
 </script>
-<script src=data/data.js></script>
-<script src=js/main.js></script>
 <!-- Page specific script -->
 <script>
 $(document).ready(function() {
@@ -160,6 +150,13 @@ $(document).ready(function() {
 		$('.btn-following').mouseleave(function(){
 			$(this).removeClass('btn-danger').addClass('btn-success').text("Following");
 		});
+
+		var timeline = new Timeline({
+			data: Data.fravlist,
+			width: $('.fravr-timeline .fravr-profile').width()+30,
+			container: '.fravr-timeline .fravr-profile'
+		});
+		timeline.create();
 });
 </script>
 </head>
