@@ -395,7 +395,7 @@ a:hover {
 	width: 100%;
 }
 .fravr-profile .activities {
-	padding: 400px 100px;
+	padding: 400px 10px;
 	background-color: #fff;
 }
 
@@ -451,21 +451,28 @@ a:hover {
 .fravr-messages .chat-tabs {
 	background-color: #ffffff;
 	margin-top: 15px;
-	height: 100%;
+	height: 300px;
 	overflow-y: scroll;
 }
 .fravr-messages .chat-screen {
 	background-color: #ffffff;
 	margin-top: 15px;
-	padding-top: 10px;
-	height: 100%;
+	padding: 10px 15px;;
 }
-.fravr-messages .chat-screen .msg_you {
-	text-align: right;
+.fravr-messages .chat-screen h5 {
+	display: block;
+	margin: 0.5em 0 1em 0;
 }
-.fravr-messages .chat-screen .msg_by {
+.fravr-messages .chat-screen .msg_self {
+	display: block;
 	text-align: right;
 }
 .fravr-messages .chat-screen .msg_others {
-	text-align: left;
+	display: block;
+	text-align: left; 	
+}
+.fravr-messages .chat-screen .msg_others .name {
+	font-weight: 600;
+	color: 	#36d792;
+	/* color: blue; */
 }

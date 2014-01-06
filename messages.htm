@@ -67,16 +67,32 @@
 			<div class="col-sm-8 ">
 				<div class="chat-screen default-border">
 				{{#each chat_current.conversation_msges}}
-					<div class="row">
 						{{#ifequals this.by "Paklun"}}
-							<div class="col-xs-12 msg_you"><h5>{{{../msg}}}</h5></div>
+							<div class="msg_self"><h5>{{{../msg}}}</h5></div>
+							<hr/>
 						{{else}}
-							<div class="col-xs-2 col-md-1 msg_by"><h5>{{this}}</h5></div>
-							<div class="col-xs-10 col-md-11 msg_others"><h5>{{{../msg}}}</h5></div>
+							<div class="msg_others">
+								<h5 class="name">{{this}}</h5>
+								<h5 class="msg">{{{../msg}}}</h5>
+							</div>
+							<hr/>
 						{{/ifequals}}
-					</div>
 				{{/each}}
-				</div>
+				<div class="row">
+					<div class="col-sm-11 rm-right-padding">
+						<textarea class="form-control" rows="3"> Type your message here </textarea>
+					</div>
+					<div class="col-sm-1 rm-left-padding">
+						<button type="button" class="btn btn-default btn-lg rm-padding">
+							<span class="glyphicon glyphicon-paperclip btn-lg"></span>
+						</button>
+						<button type="button" class="btn btn-default btn-lg rm-padding">
+							<span class="glyphicon glyphicon-send btn-lg"></span>
+						</button>
+					</div>
+				</div>	
+				
+				
 			</div>
 		</div>
 		
@@ -99,6 +115,12 @@ Handlebars.registerHelper ("countunread", function (obj, options) {
 });
 
 Main.ready(function () {
+	// adjust chat window height to viewport 
+	var ht = $(window).height() - '120' - $('.messages-head').height();
+	console.log($('.messages-head').height());
+	console.log($(window).height());
+	$('.chat-tabs').height(ht);
+
 	$('.list-group-item').click(function(evt){
 		evt.preventDefault();
 		var idx = $(this).index();
@@ -106,8 +128,6 @@ Main.ready(function () {
 		Data.chat_current = Data.chat[idx];
 		Data.chat_current.active = true;
 		Template.render();
-			$('.list-group .active').toggleClass('active');
-			$('.list-group-item').eq(idx).toggleClass('active');	
 	});
 });
 
