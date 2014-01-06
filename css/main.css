@@ -469,3 +469,61 @@ a:hover {
 .fravr-messages .chat-screen .msg_others {
 	text-align: left;
 }
+
+.fravr-fravlist .row {
+	background-color: #fff;
+	margin: 0 0 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 1px solid #c9c9c9;
+	overflow:hidden;
+}
+
+.fravr-fravlist .item {
+	padding:0;
+}
+.fravr-fravlist .item img {
+	max-width:100%;
+	max-height:100%;
+}
+.fravr-fravlist .title {
+	display: block;
+	padding-top: 15px;
+	font-weight: 600;
+	color: #243136;
+}
+.fravr-fravlist .subtitle {
+	display:block;
+	font-weight: 600;
+	color: #585a5c;
+}
+.fravr-fravlist .price {
+	display:block;
+	margin-bottom: 10px;
+}
+/* .fravr-fravlist .col-sm-6 { */
+/* 	display:inline-block !important; */
+/* 	vertical-align: middle; */
+/* 	background-color: red; */
+/* } */
+.fravr-fravlist .span3 {
+	display: inline-block !important;
+	border: solid 1px red;
+	vertical-align: middle;
+	float:none;
+}
+.fravr-fravlist .annotate {
+}
+.fravr-fravlist .annotate span {
+}
+
+.price .old {
+	text-decoration: line-through;
+}
+.price .new {
+}
+.price .decrease {
+	color: #00896b;
+	font-weight: 600;
+}
