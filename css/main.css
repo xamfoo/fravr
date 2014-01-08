@@ -19,7 +19,7 @@ footer {
 }
 a:link, a:visited, a:active {
 	text-decoration: none;
-	color:#36d792;
+	color:#02a585;
 	font-weight: 400;
 }
 a:hover {
@@ -470,7 +470,7 @@ a:hover {
 	text-align: left;
 }
 
-.fravr-fravlist .row {
+.fravr-fravlist .frav-item {
 	background-color: #fff;
 	margin: 0 0 5px;
 	-webkit-border-radius: 5px;
@@ -502,20 +502,40 @@ a:hover {
 	display:block;
 	margin-bottom: 10px;
 }
-/* .fravr-fravlist .col-sm-6 { */
-/* 	display:inline-block !important; */
-/* 	vertical-align: middle; */
-/* 	background-color: red; */
-/* } */
-.fravr-fravlist .span3 {
-	display: inline-block !important;
-	border: solid 1px red;
-	vertical-align: middle;
-	float:none;
+.fravr-fravlist .left-right {
+	overflow:auto;
+	margin-bottom: 10px;
+}
+.fravr-fravlist .frav-count {
+	display:block;
+	float:right;
+	color: #999;
+	font-size: 11px;
+}
+.fravr-fravlist .comment {
+	display:block;
+	float:left;
+	color: #999;
+	font-size: 11px;
+}
+@media (min-width:750px) {
+	.fravr-fravlist .col-bottom{
+		display: inline-block;
+		vertical-align:bottom;
+		float: none;
+	}
+	.fravr-fravlist .col-middle{
+		display: inline-block;
+		vertical-align:middle;
+		float: none;
+	}
 }
 .fravr-fravlist .annotate {
+	font-weight:300;
+	text-overflow: ellipsis;
 }
-.fravr-fravlist .annotate span {
+.fravr-fravlist .frav-comments {
+	margin-top: 10px;
 }
 
 .price .old {

@@ -27,52 +27,43 @@
 	</div>
 </div>
 <div class="fravr-fravlist container">
-<div class="row">
-	<div class="item col-sm-2">
-		<img src="img/products/Pluck Egg White Separator 15.jpg">
-	</div>
-	<div class="col-sm-4">
-		<span class="title">Egg White Separator</span>
-		<span class="subtitle">by Pluck</span>
-		<span class="price">
-			<span class="old">12.50</span>
-			<span class="new">10.00</span>
-			<span class="decrease">-20%</span>
-		</span>
-		<span>17 fravs</span><span> 2 comments</span>
-	</div>
-	<div class="span3">
-	<div class="col-sm-6">
-		<div class="annotate">
-			<span>"Simplicity is the ultimate sophiscation"</span>
+	<div class="frav-item">
+	<div class="row">
+		<div class="item col-sm-2 col-middle">
+			<img src="img/products/Pluck Egg White Separator 15.jpg">
+		</div><div class="col-sm-4 col-bottom">
+			<span class="title">Egg White Separator</span>
+			<span class="subtitle">by Pluck</span>
+			<span class="price">
+				<span class="old">12.50</span>
+				<span class="new">10.00</span>
+				<span class="decrease">-20%</span>
+			</span>
+			<div class="left-right">
+				<a href="#" class="frav-count"><span class="glyphicon glyphicon-star"></span>14 friends frav'd this</a>
+				<a href="#" class="comment">2 comments <span class="glyphicon glyphicon-chevron-up" style="font-size:smaller"></span></a>
+			</div>
+		</div><div class="col-sm-6 col-middle">
+			<span class="annotate h4"><span class="glyphicon glyphicon-pencil"></span> Add a note</span>
 		</div>
 	</div>
+	<div class="frav-comments row">
+		<div class="col-sm-12">
+		<p>Testing</p>
+		</div>
+		<div class="col-sm-12">
+		<p>Testing</p>
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="item col-sm-2">
-		<img src="img/products/Pluck Egg White Separator 15.jpg">
-	</div>
-	<div class="col-sm-10">
-		<span class="title">asdf</span>
-		<span class="subtitle">by asdf</span>
-	</div>
-</div>
-<div class="row">
-<div class="span3">
-	<p>asdf</p>
-	<p>asdf</p>
-</div>
-<div class="col-sm-2 span3">
-<p>adsf</p>
-</div>
+	</div> <!-- Row Wrapper -->
 </div>
 </script>
 <!-- Events -->
 <script>
-$( document ).ready(function () {
-	$('a[data-toggle]').on('click', function (event) {
+Main.ready(function () {
+	$('.fravr-fravlist .comment').on('click', function (event) {
 		event.preventDefault();
+		console.log('test');
 	});
 
 	// var timeline = new Timeline({
