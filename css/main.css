@@ -457,7 +457,16 @@ a:hover {
 .fravr-messages  .chat-tabs .title {
 	font-weight: 400;
 }
-.fravr-messages  .chat-tabs .unread_highlight {
+.fravr-messages .unread_highlight{
+	z-index: 2;
+	background-color: rgba(225, 255, 225, 0.6);
+	border-color: rgba(225, 255, 225, 0.8);
+}
+.fravr-messages .unread_highlight:hover,
+.fravr-messages .unread_highlight:focus{
+	background-color: rgba(215, 255, 215, 1);
+}
+.fravr-messages  .chat-tabs .unread_highlight span {
 	font-weight: 600;
 }
 .fravr-messages  .chat-tabs .last_msg {
@@ -483,9 +492,14 @@ a:hover {
 .fravr-messages .chat-screen .chat-head > div {
 	display: inline-block;
 }
-.fravr-messages .chat-screen .chat-head > div > span {
-	margin-left: 5px;
-	margin-right: 5px;
+.fravr-messages .chat-screen .chat-head > div > button{
+	padding: 0;
+	margin: 0 5px;
+	border: none;
+	background-color: #fff;
+}
+.fravr-messages .chat-screen .chat-head > div > button > img{
+	vertical-align: top;
 }
 .fravr-messages .chat-screen .chat-scroll {
 	overflow-y: scroll;

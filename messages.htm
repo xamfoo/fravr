@@ -30,7 +30,7 @@
 						<div class="col-xs-12">
 							<h3 class="title">Conversations</h3>
 							<div class="subtitle">
-								<h5><a href="#">x unread </a></h5> 
+								<h5><a href="#"><span id="num_unread">0</span> unread </a></h5> 
 								:
 								<h5><a href="#">{{#arraylength chat}}{{/arraylength}} Total </a></h5>
 							</div>
@@ -39,7 +39,7 @@
 				</div> <!--/messages-head-->
 				<div class="list-group chat-tabs default-border">
 				{{#each chat}}
-					<a href="#" class="list-group-item {{#ifequals this.active true}}active{{/ifequals}}">
+					<a href="#" class="list-group-item {{#ifequals this.active true}}active{{/ifequals}}{{#countunread this.conversation_msges}} unread_highlight{{/countunread}} fravr-style">
 						<div class="row">
 							<div class="col-md-2 col-sm-4 rm-right-padding">
 								<img src="{{this.conversation_participants.0.img_url}}" class="img-responsive">
@@ -47,11 +47,9 @@
 							<div class="col-md-10 col-sm-8">
 								<h5 class="list-group-item-heading">
 									{{#countunread this.conversation_msges}}
-												{{#if this}} 
-													<span class="title unread_highlight">{{../../this.conversation_name}} ({{this}})</span>
-												{{else}}
-													<span class="title">{{../../this.conversation_name}}</span>
-												{{/if}}
+										<span class="title">{{../this.conversation_name}} ({{this}})</span>
+									{{else}}
+										<span class="title">{{../this.conversation_name}}</span>		
 									{{/countunread}}
 								</h5>
 								<p class="list-group-item-text text-ellipsis last_msg">
@@ -70,8 +68,13 @@
 					<div class="chat-head h4">
 							<div>{{chat_current.conversation_name}}</div>
 							<div class="pull-right">
-								<span class="glyphicon glyphicon-user"></span>
-								<span class="glyphicon glyphicon-remove"></span>
+								<button type="button" class="btn-lg">
+									<!-- <span class="glyphicon glyphicon-user" title="add friends to conversation"></span> -->
+									<img src="img/add-people.png" title="add friends to conversation">
+								</button>
+								<button type="button" class="btn-lg">		
+									<span class="glyphicon glyphicon-remove" title="leave conversation"></span>
+								</button> 
 							</div>							
 					</div><!--/chat-head-->
 					<div class="chat-scroll">
@@ -95,10 +98,11 @@
 							</div>
 							<div class="col-sm-1 rm-padding">
 								<button type="button" class="btn-lg chat-icon">
-									<span class="glyphicon glyphicon-paperclip btn-lg center-block"></span>
+									<img src="img/add-clippings.png" title="add clippings to conversation">
+									<!-- <span class="glyphicon glyphicon-paperclip btn-lg center-block" title="add products from clippings to conversation"></span> -->
 								</button>
 								<button type="button" class="btn-lg chat-icon">
-									<span class="glyphicon glyphicon-send btn-lg center-block"></span>
+									<span class="glyphicon glyphicon-send btn-lg center-block" title="send message"></span>
 								</button>
 							</div>
 						</div><!--/row-->
@@ -121,7 +125,11 @@ Handlebars.registerHelper ("countunread", function (obj, options) {
 			unread++;
 		}
 	}
-	return options.fn(unread);
+	if (unread) {
+		return options.fn(unread); 
+	} else {
+		return options.inverse(unread); 
+	}
 });
 
 Main.ready(function () {
@@ -132,6 +140,21 @@ Main.ready(function () {
 	ht-= '15';
 	$('.chat-tabs').height(ht);
 
+	// edit conversation name
+	
+	// update unread number
+	var num_unread = $('.list-group .unread_highlight').length;
+	$('#num_unread').text(num_unread.toString());
+	
+	// flag unread to read
+	$('.list-group .unread_highlight').click(function(){
+		var idx = $(this).index(); 
+		for (var i = (Data.chat[idx].conversation_msges.length-1); i>=0; i--) {
+			Data.chat[idx].conversation_msges[i].unread = 0;
+		} 
+	});
+	
+	// toggle between conversations 
 	$('.list-group-item').click(function(evt){
 		evt.preventDefault();
 		var idx = $(this).index();
@@ -140,6 +163,8 @@ Main.ready(function () {
 		Data.chat_current.active = true;
 		Template.render();
 	});
+	
+	
 });
 
 </script>
