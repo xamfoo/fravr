@@ -19,7 +19,7 @@ footer {
 }
 a:link, a:visited, a:active {
 	text-decoration: none;
-	color:#36d792;
+	color:#02a585;
 	font-weight: 400;
 }
 a:hover {
@@ -552,4 +552,82 @@ a:hover {
 }
 .fravr-messages .chat-screen .chat-comment-box .chat-icon .glyphicon-send {
 	padding: 22px 0 0 0;
+}
+
+.fravr-fravlist .frav-item {
+	background-color: #fff;
+	margin: 0 0 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 1px solid #c9c9c9;
+	overflow:hidden;
+}
+
+.fravr-fravlist .item {
+	padding:0;
+}
+.fravr-fravlist .item img {
+	max-width:100%;
+	max-height:100%;
+}
+.fravr-fravlist .title {
+	display: block;
+	padding-top: 15px;
+	font-weight: 600;
+	color: #243136;
+}
+.fravr-fravlist .subtitle {
+	display:block;
+	font-weight: 600;
+	color: #585a5c;
+}
+.fravr-fravlist .price {
+	display:block;
+	margin-bottom: 10px;
+}
+.fravr-fravlist .left-right {
+	overflow:auto;
+	margin-bottom: 10px;
+}
+.fravr-fravlist .frav-count {
+	display:block;
+	float:right;
+	color: #999;
+	font-size: 11px;
+}
+.fravr-fravlist .comment {
+	display:block;
+	float:left;
+	color: #999;
+	font-size: 11px;
+}
+@media (min-width:750px) {
+	.fravr-fravlist .col-bottom{
+		display: inline-block;
+		vertical-align:bottom;
+		float: none;
+	}
+	.fravr-fravlist .col-middle{
+		display: inline-block;
+		vertical-align:middle;
+		float: none;
+	}
+}
+.fravr-fravlist .annotate {
+	font-weight:300;
+	text-overflow: ellipsis;
+}
+.fravr-fravlist .frav-comments {
+	margin-top: 10px;
+}
+
+.price .old {
+	text-decoration: line-through;
+}
+.price .new {
+}
+.price .decrease {
+	color: #00896b;
+	font-weight: 600;
 }
