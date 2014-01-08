@@ -222,6 +222,7 @@ a:hover {
 .fravr-productpage .product-img-side {
 	width: 100%;
 	margin-bottom: 13%;
+	cursor:pointer;
 }
 .fravr-productpage .product-description {
 	margin-bottom: 50px;  
@@ -395,7 +396,7 @@ a:hover {
 	width: 100%;
 }
 .fravr-profile .activities {
-	padding: 400px 100px;
+	padding: 400px 10px;
 	background-color: #fff;
 }
 
@@ -442,7 +443,6 @@ a:hover {
 	font-weight: 400;
 	padding: 8px 0px;
 	margin:0;
-	
 }
 .fravr-messages .messages-head .subtitle > h5 {
 	display:inline;
@@ -451,21 +451,105 @@ a:hover {
 .fravr-messages .chat-tabs {
 	background-color: #ffffff;
 	margin-top: 15px;
-	height: 100%;
+	height: auto;
 	overflow-y: scroll;
+}
+.fravr-messages  .chat-tabs .title {
+	font-weight: 400;
+}
+.fravr-messages .unread_highlight{
+	z-index: 2;
+	background-color: rgba(225, 255, 225, 0.6);
+	border-color: rgba(225, 255, 225, 0.8);
+}
+.fravr-messages .unread_highlight:hover,
+.fravr-messages .unread_highlight:focus{
+	background-color: rgba(215, 255, 215, 1);
+}
+.fravr-messages  .chat-tabs .unread_highlight span {
+	font-weight: 600;
+}
+.fravr-messages  .chat-tabs .last_msg {
+	/* color: #585a5c; */
+	color: rgba(0,0,0,0.65);
+	font-weight: 300;
 }
 .fravr-messages .chat-screen {
 	background-color: #ffffff;
-	margin-top: 15px;
-	padding-top: 10px;
-	height: 100%;
+	padding: 0;
+	height: auto;
+	position: relative;
 }
-.fravr-messages .chat-screen .msg_you {
+.fravr-messages .chat-screen .chat-head {
+	height: 50px;
+	text-align: center;
+	font-weight: 500;
+	display: block;
+	padding: 15px;
+	margin: 0;
+	border-bottom: 1px solid #c9c9c9;
+}
+.fravr-messages .chat-screen .chat-head > div {
+	display: inline-block;
+}
+.fravr-messages .chat-screen .chat-head > div > button{
+	padding: 0;
+	margin: 0 5px;
+	border: none;
+	background-color: #fff;
+}
+.fravr-messages .chat-screen .chat-head > div > button > img{
+	vertical-align: top;
+}
+.fravr-messages .chat-screen .chat-scroll {
+	overflow-y: scroll;
+	position: absolute;
+	width: 100%;
+	bottom: 106px;
+	top: 50px;
+}
+.fravr-messages .chat-screen .chat-scroll h5 {
+	display: block;
+	margin: 0.5em 0 1em 0;
+}
+.fravr-messages .chat-screen .chat-comment-box {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	margin: 0;
+	padding: 15px;
+	border-top: 1px solid #c9c9c9 ;
+}
+.fravr-messages .chat-screen .chat-content{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.fravr-messages .chat-screen  .chat-content .msg_self {
+	display: block;
 	text-align: right;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	padding-right: 10px;
+	background-color: rgba(225, 255, 225, 0.5);
 }
-.fravr-messages .chat-screen .msg_by {
-	text-align: right;
+.fravr-messages .chat-screen  .chat-content .msg_others {
+	display: block;
+	text-align: left; 	
+	padding-bottom: 3px;
 }
-.fravr-messages .chat-screen .msg_others {
-	text-align: left;
+.fravr-messages .chat-screen .chat-content .msg_others .name {
+	font-weight: 600;
+	color: 	#36d792;
+}
+.fravr-messages .chat-screen .chat-comment-box .chat-icon {
+	width: 100%;
+	padding: 0;
+	background: white;
+	border: none;
+}
+.fravr-messages .chat-screen .chat-comment-box .chat-icon .glyphicon-paperclip {
+	padding: 5px 0 0 0;
+}
+.fravr-messages .chat-screen .chat-comment-box .chat-icon .glyphicon-send {
+	padding: 22px 0 0 0;
 }

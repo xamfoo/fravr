@@ -20,66 +20,96 @@
 <script data-name="body" type="text/x-handlebars-template">
 <div class="container">
 	<div class="fravr-messages">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="messages-head default-border">
-					<div class="row">		
-						<div class="col-sm-2 col-md-1 ">
-							<img src="{{profile.img_url}}" class="img-responsive">
-						</div>
-						<div class="col-sm-10 col-md-11">
-							<h3 class="title">{{profile.name}}'s Messages</h3>
-							<div class="subtitle">
-								<h5><a href="#">x unread </a></h5> 
-								:
-								<h5><a href="#">{{#arraylength chat}}{{/arraylength}} conversations </a></h5>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> <!--/messages-head-->
-		</div> <!--/row-->
+		
+			
+		
 		<div class="row">
 			<div class="col-sm-4">
+				<div class="messages-head default-border">
+					<div class="row">		
+						<div class="col-xs-12">
+							<h3 class="title">Conversations</h3>
+							<div class="subtitle">
+								<h5><a href="#"><span id="num_unread">0</span> unread </a></h5> 
+								:
+								<h5><a href="#">{{#arraylength chat}}{{/arraylength}} Total </a></h5>
+							</div>
+						</div>
+					</div>
+				</div> <!--/messages-head-->
 				<div class="list-group chat-tabs default-border">
 				{{#each chat}}
-					<a href="#" class="list-group-item {{#ifequals this.active true}}active{{/ifequals}}">
-						 <div class="row">
-							<div class="col-xs-2 rm-right-padding">
+					<a href="#" class="list-group-item {{#ifequals this.active true}}active{{/ifequals}}{{#countunread this.conversation_msges}} unread_highlight{{/countunread}} fravr-style">
+						<div class="row">
+							<div class="col-md-2 col-sm-4 rm-right-padding">
 								<img src="{{this.conversation_participants.0.img_url}}" class="img-responsive">
 							</div>
-							<div class="col-xs-10">
-								<h4 class="list-group-item-heading">
-									{{this.conversation_name}}
-									<span class="unread_flag">
-										{{#countunread this.conversation_msges}}
-											{{#if this}} ({{this}}){{/if}}
-										{{/countunread}}
-									</span>
-								</h4>
-								<p class="list-group-item-text text-ellipsis">{{#lastvalue conversation_msges}}{{this.msg}}{{/lastvalue}}</p>
-							 </div>
-						 </div>
+							<div class="col-md-10 col-sm-8">
+								<h5 class="list-group-item-heading">
+									{{#countunread this.conversation_msges}}
+										<span class="title">{{../this.conversation_name}} ({{this}})</span>
+									{{else}}
+										<span class="title">{{../this.conversation_name}}</span>		
+									{{/countunread}}
+								</h5>
+								<p class="list-group-item-text text-ellipsis last_msg">
+									{{#lastvalue conversation_msges}}
+										{{this.msg}}
+									{{/lastvalue}}
+								</p>
+							</div>
+						</div><!--/row-->
 					</a>
 				{{/each}}
-				</div>
-			</div>
+				</div><!--/chat-tabs-->
+			</div><!--/col 4-->
 			<div class="col-sm-8 ">
 				<div class="chat-screen default-border">
-				{{#each chat_current.conversation_msges}}
-					<div class="row">
-						{{#ifequals this.by "Paklun"}}
-							<div class="col-xs-12 msg_you"><h5>{{{../msg}}}</h5></div>
-						{{else}}
-							<div class="col-xs-2 col-md-1 msg_by"><h5>{{this}}</h5></div>
-							<div class="col-xs-10 col-md-11 msg_others"><h5>{{{../msg}}}</h5></div>
-						{{/ifequals}}
-					</div>
-				{{/each}}
-				</div>
-			</div>
-		</div>
-		
+					<div class="chat-head h4">
+							<div>{{chat_current.conversation_name}}</div>
+							<div class="pull-right">
+								<button type="button" class="btn-lg">
+									<!-- <span class="glyphicon glyphicon-user" title="add friends to conversation"></span> -->
+									<img src="img/add-people.png" title="add friends to conversation">
+								</button>
+								<button type="button" class="btn-lg">		
+									<span class="glyphicon glyphicon-remove" title="leave conversation"></span>
+								</button> 
+							</div>							
+					</div><!--/chat-head-->
+					<div class="chat-scroll">
+						<div class="chat-content">
+						{{#each chat_current.conversation_msges}}
+								{{#ifequals this.by "Paklun"}}
+									<div class="msg_self"><h5>{{{../msg}}}</h5></div>
+								{{else}}
+									<div class="msg_others">
+										<h5 class="name">{{this}}</h5>
+										<h5 class="msg">{{{../msg}}}</h5>
+									</div>
+								{{/ifequals}}
+						{{/each}}
+						</div><!--/chat-content-->
+					</div><!--/chat-scroll-->
+					<div class="chat-comment-box">
+						<div class="row">
+							<div class="col-sm-11 rm-right-padding">
+								<textarea class="form-control" rows="3" placeholder="Send a message!"></textarea>
+							</div>
+							<div class="col-sm-1 rm-padding">
+								<button type="button" class="btn-lg chat-icon">
+									<img src="img/add-clippings.png" title="add clippings to conversation">
+									<!-- <span class="glyphicon glyphicon-paperclip btn-lg center-block" title="add products from clippings to conversation"></span> -->
+								</button>
+								<button type="button" class="btn-lg chat-icon">
+									<span class="glyphicon glyphicon-send btn-lg center-block" title="send message"></span>
+								</button>
+							</div>
+						</div><!--/row-->
+					</div><!--/chat-comment-box-->
+				</div><!--/chat-screen-->
+			</div><!--/col 8-->
+		</div><!--/row-->
 	</div> <!--/fravr-messages-->
 </div> <!--/container-->
 
@@ -95,10 +125,36 @@ Handlebars.registerHelper ("countunread", function (obj, options) {
 			unread++;
 		}
 	}
-	return options.fn(unread);
+	if (unread) {
+		return options.fn(unread); 
+	} else {
+		return options.inverse(unread); 
+	}
 });
 
 Main.ready(function () {
+	// adjust chat window height to viewport 
+	var ht = $(window).height() - '80' -'15' ;
+	$('.chat-screen').height(ht);
+	ht-= $('.messages-head').height();
+	ht-= '15';
+	$('.chat-tabs').height(ht);
+
+	// edit conversation name
+	
+	// update unread number
+	var num_unread = $('.list-group .unread_highlight').length;
+	$('#num_unread').text(num_unread.toString());
+	
+	// flag unread to read
+	$('.list-group .unread_highlight').click(function(){
+		var idx = $(this).index(); 
+		for (var i = (Data.chat[idx].conversation_msges.length-1); i>=0; i--) {
+			Data.chat[idx].conversation_msges[i].unread = 0;
+		} 
+	});
+	
+	// toggle between conversations 
 	$('.list-group-item').click(function(evt){
 		evt.preventDefault();
 		var idx = $(this).index();
@@ -106,9 +162,9 @@ Main.ready(function () {
 		Data.chat_current = Data.chat[idx];
 		Data.chat_current.active = true;
 		Template.render();
-			$('.list-group .active').toggleClass('active');
-			$('.list-group-item').eq(idx).toggleClass('active');	
 	});
+	
+	
 });
 
 </script>
