@@ -921,7 +921,22 @@ Data.fravlist = [
 	product: Data.products.CannondaleRacer
 }
 ]
-//Default data end
+Data.fravlist[0].product.discount = -20;
+Data.fravlist[0].comments = {
+	total: 2,
+	commentList: [
+		{
+			user: Data.users.Sera,
+			time: Main.readTime("04/12/2012 07:00"),
+			comment: "I have one in my office!"
+		},
+		{
+			user: Data.users.Sera,
+			time: Main.readTime("04/12/2012 07:00"),
+			comment: "I have one in my office!"
+		}
+	]
+}
 
 Data.chat = [ 
 	{	conversation_name: "Dumbcycle test chat",

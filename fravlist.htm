@@ -8,8 +8,8 @@
 <script src=http:////netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js></script>
 <script src=js/handlebars-v1.1.2.js></script>
 <script src=js/amplify.min.js></script>
-<script src=data/data.js></script>
 <script src=js/main.js></script>
+<script src=data/data.js></script>
 
 <!-- Define default template -->
 <script data-body type="text/x-handlebars-template">
@@ -28,7 +28,7 @@
 </div>
 <div class="fravr-fravlist container">
 	<div class="frav-item">
-	<div class="row">
+	<div class="frav-info row">
 		<div class="item col-sm-2 col-middle">
 			<img src="img/products/Pluck Egg White Separator 15.jpg">
 		</div><div class="col-sm-4 col-bottom">
@@ -41,29 +41,104 @@
 			</span>
 			<div class="left-right">
 				<a href="#" class="frav-count"><span class="glyphicon glyphicon-star"></span>14 friends frav'd this</a>
-				<a href="#" class="comment">2 comments <span class="glyphicon glyphicon-chevron-up" style="font-size:smaller"></span></a>
+				<a href="#" class="comment">2 comments <span class="glyphicon glyphicon-chevron-up" style="font-size:9px; display:none;"></span><span class="glyphicon glyphicon-chevron-down" style="font-size:9px;"></span></a>
 			</div>
 		</div><div class="col-sm-6 col-middle">
-			<span class="annotate h4"><span class="glyphicon glyphicon-pencil"></span> Add a note</span>
+			<span class="add-desc h4"><span class="glyphicon glyphicon-pencil"></span> Click to add description</span>
 		</div>
 	</div>
 	<div class="frav-comments row">
 		<div class="col-sm-12">
-		<p>Testing</p>
+			<div class="frav-comment">
+				<a href="#" class="avatar"><img src="img/users/no face.jpg" width="28px" height="28px"></a>
+				<div class="text">
+				<a href="#" class="name">Jane</a>
+				<span class="time">10:15</span>
+				<div>Sometimes I get a good feeling...</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-12">
-		<p>Testing</p>
+			<div class="frav-comment input">
+			<input type="comment" class="form-control" id="inputComment" placeholder="Add a comment">
+			</div>
 		</div>
 	</div>
 	</div> <!-- Row Wrapper -->
+	{{>frav-item}}
 </div>
+</script>
+
+<script data-name="frav-item" type="text/x-handlebars-template">
+{{#each fravlist}}
+<div class="frav-item">
+<div class="frav-info row">
+	<div class="item col-sm-2 col-middle">
+		<img src="{{product.img_urls.0.url}}">
+	</div><div class="col-sm-4 col-bottom">
+		<a href="#"><span class="title">{{product.name}}</span></a>
+		<span class="subtitle">by <a href="#">{{product.merchant}}</a></span>
+		<span class="price">
+			{{#if product.discount}}
+			<span class="old">{{pricefix product.price}}</span>
+			<span class="new">{{discountprice product.price product.discount}}</span>
+			<span class="decrease">{{product.discount}}%</span>
+			{{else}}
+			<span class="new">{{pricefix product.price}}</span>
+			{{/if}}
+		</span>
+		<div class="left-right">
+			<a href="#" class="comment">{{#if comments}}{{comments.total}} comments <span class="glyphicon glyphicon-chevron-up" style="font-size:9px; display:none;"></span><span class="glyphicon glyphicon-chevron-down" style="font-size:9px;"></span>{{else}}Add a comment{{/if}}</a>
+			<a href="#" class="frav-count"><span class="glyphicon glyphicon-star"></span>14 friends frav'd this</a>
+		</div>
+	</div><div class="col-sm-6 col-middle">
+		<span class="add-desc h4"><span class="glyphicon glyphicon-pencil"></span> Click to add description</span>
+	</div>
+</div>
+<div class="frav-comments row">
+{{#each comments.commentList}}
+	<div class="col-sm-12">
+		<div class="frav-comment">
+			<a href="#" class="avatar"><img src="{{user.img_url}}" width="28px" height="28px"></a>
+			<div class="text">
+			<a href="#" class="name">{{user.name}}</a>
+			<span class="time">{{time}}</span>
+			<div>Sometimes I get a good feeling...</div>
+			</div>
+		</div>
+	</div>
+{{/each}}
+	<div class="col-sm-12">
+		<div class="frav-comment input">
+		<input type="comment" class="form-control" id="inputComment" placeholder="Add a comment">
+		</div>
+	</div>
+</div>
+</div> <!-- Row Wrapper -->
+{{/each}}
 </script>
 <!-- Events -->
 <script>
 Main.ready(function () {
+	$('.frav-info').hover(function (event) {
+		$(this).find('.add-desc').show();
+	}, function (event) {
+		$(this).find('.add-desc').hide();
+	});
 	$('.fravr-fravlist .comment').on('click', function (event) {
 		event.preventDefault();
-		console.log('test');
+		$(this).parentsUntil('.frav-item').last().parent().find('.frav-comments').toggle();
+		$(this).parentsUntil('.fravr-item').last().find('.glyphicon-chevron-up').toggle();
+		$(this).parentsUntil('.fravr-item').last().find('.glyphicon-chevron-down').toggle();
+	});
+
+	$('input[type=comment]').on('keyup', function (e) {
+		var code = e.which; // recommended to use e.which, it's normalized across browsers
+		if(code==13) e.preventDefault();
+		if(code==32||code==13||code==188||code==186){
+			console.log($(this).val()); // add to data
+			$(this).val('');
+		}
 	});
 
 	// var timeline = new Timeline({
