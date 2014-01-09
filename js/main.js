@@ -76,7 +76,6 @@ Main = function () {
 		if (Main.url.get().default != true) Main.loadData();
 		onDataReady(); // Run user-defined function
 		Template.render();
-		onDomReady(); // Run user-defined function
 	});
 	
 	return that;
@@ -140,6 +139,11 @@ Main.clearData = function () {
 	for (var obj in amplify.store()) {
 		amplify.store(obj, null);
 	}
+}
+
+Main.readTime = function (dateString) {
+	var someDate = new Date(dateString);
+	return someDate.getTime();
 }
 
 // Timeline - Constructor to generate html code for timeline
@@ -663,6 +667,20 @@ Handlebars.registerHelper ("ifequals", function (obj, val, options) {
 		return options.fn(obj);
 	} else {
 		return options.inverse(obj);
+	}
+});
+
+// Convert price to 2 decimal place
+Handlebars.registerHelper ("pricefix", function (num, options) {
+	if (typeof num === 'number') {
+		return num.toFixed(2);
+	}
+});
+
+// Calculate discounted price
+Handlebars.registerHelper ("discountprice", function (price, discount, options) {
+	if (typeof price === 'number' && typeof discount === 'number') {
+		return (price + discount * price/100).toFixed(2);
 	}
 });
 
