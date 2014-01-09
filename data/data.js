@@ -828,6 +828,28 @@ mightymug:
 					{	reviewer: "TheProductMagazine",
 						review: "Practical design with a touch of elegance"}
 					],
+		},
+SonyNex7:
+		{
+		id: "SonyNex7",
+		name: "Sony Alpha NEX-7 Mirrorless Camera",
+		price: 1549,
+		currency: "SGD",
+		merchant: "Sony",
+		description: "<p>Experience speed and style meet performance and control with the &#945;  NEX-7, \
+		which comes with a large APS-C size sensor to produce superb, high-quality images. \
+		It features the world's fastest release time lag of 0.02 second and high-speed AF for lightning-quick response.</p>\
+		<ul>\
+		<li>Ultra-High 24.3MP \"Exmor\" APS HD CMOS sensor</li>\
+		<li>World's fastest release time lag of 0.02 second (as of August 2011)</li>\
+		<li>Customizable and intuitive TRINAVI operation</li>\
+		<li>High resolution XGA OLED Tru-Finder and built-in flash</li>\
+		<li>10fps continuous shooting (Speed priority continuous mode)</li>\
+		<br><br><br><br>\
+		",
+		img_urls: [{url:"img/products/Sony Nex 7 (1).jpg"},{url:"img/products/Sony Nex 7 (2).jpg"},{url:"img/products/Sony Nex 7 (3).jpg"},{url:"img/products/Sony Nex 7 (4).jpg"},{url:"img/products/Sony Nex 7 (5).jpg"},{url:"img/products/Sony Nex 7 (6).jpg"},{url:"img/products/Sony Nex 7 (7).jpg"},{url:"img/products/Sony Nex 7 (8).jpg"},{url:"img/products/Sony Nex 7 (9).jpg"}],
+		comments: null,
+		reviews: null
 		}
 };
 
@@ -939,24 +961,6 @@ Data.fravlist[0].comments = {
 }
 
 Data.chat = [ 
-	{	conversation_name: "Dumbcycle test chat",
-		conversation_participants: [
-			Data.users.wenting,
-			Data.users.Max,
-			Data.users.paklun],
-		conversation_msges: [
-			{	by: "Wenting",
-				msg: "Hi.",	
-				unread: 0},
-			{	by: "Max",
-				msg: "Testing..",	
-				unread: 0},
-			{	by: "Paklun",
-				msg: "Tested",
-				unread: 0},
-		],
-		active: true
-	},
 	{	conversation_name: "Jesslyn, Cynthia & Me",
 		conversation_participants: [	
 		Data.users.Jesslyn,
@@ -977,7 +981,40 @@ Data.chat = [
 			{	by: "Paklun",
 				msg: "Sure, show us what you've picked!",
 				unread: 0},
-		]
+			{	by: "Jesslyn",
+				msg: "\
+				<div class=\"row\">\
+				<div class=\"col-xs-10 col-xs-offset-1\">\
+					<div class=\"col-xs-4\">\
+						<a href=\"product.htm?product=WhiteLaceTop\" title=\""+Data.products.WhiteLaceTop.name+"\">\
+							<img src=\""+Data.products.WhiteLaceTop.img_urls[0].url+"\" class=\"img-responsive border-radius-5\" style=\"height:209px;\">\
+							<div class=\"tc text-ellipsis ptop10\">"+Data.products.WhiteLaceTop.name+"</div>\
+							<div class=\"tl ptop5\">"+Data.products.WhiteLaceTop.price+" "+Data.products.WhiteLaceTop.currency+"</div>\
+						</a>\
+					</div>\
+					<div class=\"col-xs-4\">\
+						<a href=\"product.htm?product=womenlongformalshirt\" title=\""+Data.products.womenlongformalshirt.name+"\">\
+							<img src=\""+Data.products.womenlongformalshirt.img_urls[0].url+"\" class=\"img-responsive border-radius-5\" style=\"height:209px;\">\
+							<div class=\"tc text-ellipsis ptop10\">"+Data.products.womenlongformalshirt.name+"</div>\
+							<div class=\"tl ptop5\">"+Data.products.womenlongformalshirt.price+" "+Data.products.womenlongformalshirt.currency+"</div>\
+						</a>\
+					</div>\
+					<div class=\"col-xs-4\">\
+						<a href=\"product.htm?product=Owlhalfsleeve\" title=\""+Data.products.Owlhalfsleeve.name+"\">\
+							<img src=\""+Data.products.Owlhalfsleeve.img_urls[0].url+"\" class=\"img-responsive border-radius-5\" style=\"height:209px;\">\
+							<div class=\"tl text-ellipsis ptop10\">"+Data.products.Owlhalfsleeve.name+"</div>\
+							<div class=\"tl ptop5\">"+Data.products.Owlhalfsleeve.price+" "+Data.products.Owlhalfsleeve.currency+"</div>\
+						</a>\
+					</div>\
+				</div>\
+				</div>\
+				",
+				unread: 1},
+			{	by: "Cynthia",
+				msg: "I like the Owl Print. My taste haha :P",	
+				unread: 1},
+		],
+		active:true
 	},
 	{	conversation_name: "Wenting",
 		conversation_participants: [
@@ -1015,6 +1052,29 @@ Data.chat = [
 				unread: 0},
 			{	by: "Jiahe",
 				msg: "Maybe you can look at micro 4/3s and adapt your lenses..",
+				unread: 1},
+			{	by: "Jiahe",
+				msg: "Or you can try Sony Nex Mirrorless Series. APSC sensor. Good stuff. I share you the link and you can take a look and buy.",
+				unread: 1},
+			{	by: "Jiahe",
+				msg: "\
+				<div class=\"row\">\
+				<div class=\"col-xs-10 col-xs-offset-1\">\
+					<div class=\"col-xs-4 \">\
+						<a href=\"product.htm?product=SonyNex7\" title=\""+Data.products.SonyNex7.name+"\">\
+							<img src=\""+Data.products.SonyNex7.img_urls[0].url+"\" class=\"img-responsive border-radius-5\">\
+							<div class=\"tc text-ellipsis ptop10\">"+Data.products.SonyNex7.name+"</div>\
+							<div class=\"tl ptop5\">"+Data.products.SonyNex7.price+" "+Data.products.SonyNex7.currency+"</div>\
+						</a>\
+					</div>\
+					<div class=\"col-xs-8\" style=\"height: 154px; overflow:hidden;\">\
+						<div>"+Data.products.SonyNex7.description+"</div>\
+					</div>\
+				</div>\
+				</div>",
+				unread: 1},
+			{	by: "Jiahe",
+				msg: "I heard Wenting has a Nex 5R. You can ask him about it",
 				unread: 1},
 		]
 	},
@@ -1136,13 +1196,39 @@ Data.chat = [
 				msg: "Just clipped some from his fravlist, we'll get one of these ok?",
 				unread: 1},
 			{	by: "Jesslyn",
-				msg: "LINKS 3 ITEMS! FIND A WAY TO LINK IT NOW! MUST BE CLICKABLE TO POPUP PRODUCTPAGE!",
+				msg: "\
+				<div class=\"row\">\
+				<div class=\"col-xs-10 col-xs-offset-1\">\
+					<div class=\"col-xs-4\">\
+						<a href=\"product.htm?product=NarutoTee\" title=\""+Data.products.NarutoTee.name+"\">\
+							<img src=\""+Data.products.NarutoTee.img_urls[0].url+"\" class=\"img-responsive border-radius-5\">\
+							<div class=\"tc text-ellipsis ptop10\">"+Data.products.NarutoTee.name+"</div>\
+							<div class=\"tl ptop5\">"+Data.products.NarutoTee.price+" "+Data.products.NarutoTee.currency+"</div>\
+						</a>\
+					</div>\
+					<div class=\"col-xs-4\">\
+						<a href=\"product.htm?product=CannondaleRacer\" title=\""+Data.products.CannondaleRacer.name+"\">\
+							<img src=\""+Data.products.CannondaleRacer.img_urls[0].url+"\" class=\"img-responsive border-radius-5\">\
+							<div class=\"tc text-ellipsis ptop10\">"+Data.products.CannondaleRacer.name+"</div>\
+							<div class=\"tl ptop5\">"+Data.products.CannondaleRacer.price+" "+Data.products.CannondaleRacer.currency+"</div>\
+						</a>\
+					</div>\
+					<div class=\"col-xs-4\">\
+						<a href=\"product.htm?product=spacerockettent\" title=\""+Data.products.spacerockettent.name+"\">\
+							<img src=\""+Data.products.spacerockettent.img_urls[0].url+"\" class=\"img-responsive border-radius-5\">\
+							<div class=\"tl text-ellipsis ptop10\">"+Data.products.spacerockettent.name+"</div>\
+							<div class=\"tl ptop5\">"+Data.products.spacerockettent.price+" "+Data.products.spacerockettent.currency+"</div>\
+						</a>\
+					</div>\
+				</div>\
+				</div>\
+				",
 				unread: 1},
 			{	by: "Alex",
 				msg: "Wah fruck so costly!",
 				unread: 1},
 			{	by: "Wenting",
-				msg: "The bike looks good but... $5300..<br>The tent doesn't looks all too useful all the time eh..",
+				msg: "The bike looks good but... $5300.. <p class=\"ptop5\">The tent doesn't looks all too useful all the time eh..</p>",
 				unread: 1},
 			{	by: "Jiahe",
 				msg: "I think can get the 'Naruto Kyubi Seal Custom White Tee' plus some food!",
