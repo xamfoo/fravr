@@ -786,7 +786,7 @@ basicwhiteslimfit:
 		},
 mightymug: 
 		{
-		id: "mightymug:",
+		id: "mightymug",
 		name: "Mighty Mug (Grip Base Mug)",
 		price: 29.9,
 		currency: "SGD",
