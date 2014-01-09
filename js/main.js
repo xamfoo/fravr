@@ -52,7 +52,7 @@ Main = function () {
 	var onDataReady = function () {};
 	var onDomReady = function () {};
 	
-	Data.ready = function (f) {
+	that.dataReady = function (f) {
 		if (typeof f === 'function') {
 			onDataReady = f;
 		} else {
