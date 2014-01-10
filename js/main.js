@@ -141,11 +141,6 @@ Main.clearData = function () {
 	}
 }
 
-Main.readTime = function (dateString) {
-	var someDate = new Date(dateString);
-	return someDate.getTime();
-}
-
 // Timeline - Constructor to generate html code for timeline
 // Options:
 // data - an array of objects that contain keys "product" and "actions" (optional)
@@ -681,6 +676,55 @@ Handlebars.registerHelper ("pricefix", function (num, options) {
 Handlebars.registerHelper ("discountprice", function (price, discount, options) {
 	if (typeof price === 'number' && typeof discount === 'number') {
 		return (price + discount * price/100).toFixed(2);
+	}
+});
+
+// Convert epoch to pretty date
+Handlebars.registerHelper ("printPrettyDate", function (d, options) {
+	if (typeof d === 'number') {
+		var ms = {
+			s: 1000,
+			m: 1000*60,
+			h: 1000*60*60,
+			d: 1000*60*60*24
+		}
+		var d = {
+			ms: new Date(d),
+			s: new Date(Math.floor(d/ms.s)*ms.s),
+			m: new Date(Math.floor(d/ms.m)*ms.m),
+			h: new Date(Math.floor(d/ms.h)*ms.h),
+			d: new Date(Math.floor(d/ms.d)*ms.d)
+		}
+		var t = (new Date).getTime();
+		var tNow = {
+			ms: new Date(t),
+			s: new Date(Math.floor(t/ms.s)*ms.s),
+			m: new Date(Math.floor(t/ms.m)*ms.m),
+			h: new Date(Math.floor(t/ms.h)*ms.h),
+			d: new Date(Math.floor(t/ms.d)*ms.d)
+		}
+		var monthNames = [ "January", "February", "March", "April", "May", "June",
+			"July", "August", "September", "October", "November", "December" ];
+
+		if (tNow.d.valueOf() - d.d.valueOf() > ms.d) {
+			var str = monthNames[d.ms.getMonth()] + " " + d.ms.getDate();
+			if (!(tNow.ms.getFullYear() === d.ms.getFullYear())) {
+				str += ", " + d.ms.getFullYear();
+			}
+		} else if (tNow.d.valueOf() - d.d.valueOf() === ms.d) {
+			var str = "Yesterday at " + d.ms.getHours() + ":" + d.ms.getMinutes();
+		} else if (tNow.d.valueOf() - d.d.valueOf() < ms.d) {
+			if (tNow.h.valueOf() - d.h.valueOf() > ms.h) {
+				var str = Math.floor((tNow.h.valueOf() - d.h.valueOf())/ms.h) + " hours ago";
+			} else if (tNow.m.valueOf() - d.m.valueOf() > ms.m) {
+				var str = Math.floor((tNow.m.valueOf() - d.m.valueOf())/ms.m) + " minutes ago";
+			} else {
+				var str = "Just now";
+			}
+		} else {
+			var str = "";
+		}
+		return str;
 	}
 });
 
