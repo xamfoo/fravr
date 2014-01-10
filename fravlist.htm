@@ -145,7 +145,12 @@ Main.ready(function () {
 
 	$('.fravr-fravlist .comment').on('click', function (event) {
 		event.preventDefault();
-		$(this).parentsUntil('.frav-item').last().parent().find('.frav-comments').toggle();
+		var c = $(this).parentsUntil('.frav-item').last().parent().find('.frav-comments')
+		if (c.is(':visible')) {
+			c.slideUp("fast");
+		} else {
+			c.slideDown("fast");
+		}
 		$(this).parentsUntil('.fravr-item').last().find('.glyphicon-chevron-up').toggle();
 		$(this).parentsUntil('.fravr-item').last().find('.glyphicon-chevron-down').toggle();
 		$(this).parentsUntil('.frav-item').last().parent().find('.frav-comment > input').focus();
