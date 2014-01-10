@@ -121,7 +121,26 @@ Main.ready(function () {
 		$(this).find('.fravr-btn').toggle();
 	});
 
-	$('.frav-info .item img').on('click', function (e) {
+	$('.frav-info .overlay-wrapper').on('click', function (evt) {
+		var tt = $(evt.target).first();
+		if (tt.hasClass('btn-share')) {
+			evt.preventDefault();
+			tt.html("Shared").addClass('disabled');
+		} else if (tt.hasClass('btn-frav')) {
+			evt.preventDefault();
+			tt.html("Frav'd").addClass('disabled');
+		} else if (tt.hasClass('btn-clip')) {
+			evt.preventDefault();
+			tt.html("Clipped").addClass('disabled');
+		} else if (tt.hasClass('btn-cart')) {
+			evt.preventDefault();
+			var cartCount = tt.html().match(/[(].+[)]/g);
+			if (cartCount) {
+				tt.html("Carted (" + (Number(cartCount[0].replace(/[()]/g,"")) + 1) + ")");
+			} else {
+				tt.html("Carted (1)");
+			}
+		}
 	});
 
 	$('.fravr-fravlist .comment').on('click', function (event) {
