@@ -27,56 +27,41 @@
 	</div>
 </div>
 <div class="fravr-fravlist container">
-	<div class="frav-item">
-	<div class="frav-info row">
-		<div class="item col-sm-2 col-middle">
-			<img src="img/products/Pluck Egg White Separator 15.jpg">
-		</div><div class="col-sm-4 col-bottom">
-			<span class="title">Egg White Separator</span>
-			<span class="subtitle">by Pluck</span>
-			<span class="price">
-				<span class="old">12.50</span>
-				<span class="new">10.00</span>
-				<span class="decrease">-20%</span>
-			</span>
-			<div class="left-right">
-				<a href="#" class="frav-count"><span class="glyphicon glyphicon-star"></span>14 friends frav'd this</a>
-				<a href="#" class="comment">2 comments <span class="glyphicon glyphicon-chevron-up" style="font-size:9px; display:none;"></span><span class="glyphicon glyphicon-chevron-down" style="font-size:9px;"></span></a>
-			</div>
-		</div><div class="col-sm-6 col-middle">
-			<span class="add-desc h4"><span class="glyphicon glyphicon-pencil"></span> Click to add description</span>
-		</div>
-	</div>
-	<div class="frav-comments row">
-		<div class="col-sm-12">
-			<div class="frav-comment">
-				<a href="#" class="avatar"><img src="img/users/no face.jpg" width="28px" height="28px"></a>
-				<div class="text">
-				<a href="#" class="name">Jane</a>
-				<span class="time">10:15</span>
-				<div>Sometimes I get a good feeling...</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-12">
-			<div class="frav-comment input">
-			<input type="comment" class="form-control" id="inputComment" placeholder="Add a comment">
-			</div>
-		</div>
-	</div>
-	</div> <!-- Row Wrapper -->
-	{{>frav-item}}
+	{{>frav-items}}
 </div>
 </script>
 
-<script data-name="frav-item" type="text/x-handlebars-template">
+<script data-name="frav-items" type="text/x-handlebars-template">
 {{#each fravlist}}
 <div class="frav-item">
 <div class="frav-info row">
 	<div class="item col-sm-2 col-middle">
+		<div class="overlay-wrapper">
+			<a href="product.htm?product={{product.id}}">
+			<div class="overlay-wrapper2">
+				<div class="overlay"></div>
+				<div class="fravr-btn">
+				<div class="map">
+					<button type="button" class="btn btn-default btn-sm btn-top btn-left btn-success disabled btn-frav">
+						Frav'd
+					</button>
+					<button type="button" class="btn btn-default btn-sm btn-top btn-right btn-share">
+						<span class="glyphicon glyphicon-share-alt"></span> Share
+					</button>
+					<button type="button" class="btn btn-default btn-sm btn-bottom btn-left btn-clip">
+						<span class="glyphicon glyphicon-paperclip"></span> Clip
+					</button>
+					<button type="button" class="btn btn-default btn-sm btn-bottom btn-right btn-cart">
+						<span class="glyphicon glyphicon-shopping-cart"></span> Cart
+					</button>
+				</div>
+				</div>
+			</div>
+			</a>
+		</div>
 		<img src="{{product.img_urls.0.url}}">
 	</div><div class="col-sm-4 col-bottom">
-		<a href="#"><span class="title">{{product.name}}</span></a>
+		<a href="product.htm?product={{product.id}}"><span class="title">{{product.name}}</span></a>
 		<span class="subtitle">by <a href="#">{{product.merchant}}</a></span>
 		<span class="price">
 			{{#if product.discount}}
@@ -89,10 +74,15 @@
 		</span>
 		<div class="left-right">
 			<a href="#" class="comment">{{#if comments}}{{comments.total}} comments <span class="glyphicon glyphicon-chevron-up" style="font-size:9px; display:none;"></span><span class="glyphicon glyphicon-chevron-down" style="font-size:9px;"></span>{{else}}Add a comment{{/if}}</a>
-			<a href="#" class="frav-count"><span class="glyphicon glyphicon-star"></span>14 friends frav'd this</a>
+			{{#if fravCount}}
+			<a href="#" class="frav-count"><span class="glyphicon glyphicon-star"></span>{{fravCount}} friend{{#ifequals fravCount 1}}{{else}}s{{/ifequals}} frav'd this</a>
+			{{/if}}
 		</div>
 	</div><div class="col-sm-6 col-middle">
+		{{#if desc}}<span class="desc h4">"{{desc}}"</span>
+		{{else}}
 		<span class="add-desc h4"><span class="glyphicon glyphicon-pencil"></span> Click to add description</span>
+		{{/if}}
 	</div>
 </div>
 <div class="frav-comments row">
@@ -102,14 +92,14 @@
 			<a href="#" class="avatar"><img src="{{user.img_url}}" width="28px" height="28px"></a>
 			<div class="text">
 			<a href="#" class="name">{{user.name}}</a>
-			<span class="time">{{time}}</span>
-			<div>Sometimes I get a good feeling...</div>
+			<span class="time">{{printPrettyDate time}}</span>
+			<div>{{comment}}</div>
 			</div>
 		</div>
 	</div>
 {{/each}}
 	<div class="col-sm-12">
-		<div class="frav-comment input">
+		<div class="frav-comment">
 		<input type="comment" class="form-control" id="inputComment" placeholder="Add a comment">
 		</div>
 	</div>
@@ -125,21 +115,97 @@ Main.ready(function () {
 	}, function (event) {
 		$(this).find('.add-desc').hide();
 	});
+
+	$('.frav-info .item').hover(function (e) {
+		$(this).find('.overlay-wrapper').toggle();
+		$(this).find('.fravr-btn').toggle();
+	});
+
+	$('.frav-info .item img').on('click', function (e) {
+	});
+
 	$('.fravr-fravlist .comment').on('click', function (event) {
 		event.preventDefault();
 		$(this).parentsUntil('.frav-item').last().parent().find('.frav-comments').toggle();
 		$(this).parentsUntil('.fravr-item').last().find('.glyphicon-chevron-up').toggle();
 		$(this).parentsUntil('.fravr-item').last().find('.glyphicon-chevron-down').toggle();
+		$(this).parentsUntil('.frav-item').last().parent().find('.frav-comment > input').focus();
 	});
 
-	$('input[type=comment]').on('keyup', function (e) {
+	$('input[type=comment]').on('keydown', function (e) {
 		var code = e.which; // recommended to use e.which, it's normalized across browsers
 		if(code==13) e.preventDefault();
 		if(code==32||code==13||code==188||code==186){
-			console.log($(this).val()); // add to data
 			$(this).val('');
 		}
 	});
+
+	var bindDesc = function () {
+		$('.fravr-fravlist .desc').on('click', function (e) {
+			var text = $(this).html().slice(1,-1);
+			var textarea = $("<textarea class='inputDesc'></textarea>");
+			textarea.on('keydown', function (e) {
+				var code = e.which;
+				if(code==13) e.preventDefault();
+				if(code==32||code==13||code==188||code==186){
+					if ($(this).val().length === 0) {
+						$(this).parent().append("<span class='add-desc h4'><span class='glyphicon glyphicon-pencil'></span> Click to add description</span>");
+						$(this).remove();
+						bindAddDesc();
+					} else {
+						$(this).parent().append("<span class='desc h4'>\""+ $(this).val() + "\"</span>")
+						$(this).remove();
+						bindDesc();
+					}
+				}
+			});
+			textarea.focusout(function (e) {
+				// if textarea is empty
+				if (!$(this).val().length) {
+					$(this).parent().append("<span class='add-desc h4'><span class='glyphicon glyphicon-pencil'></span> Click to add description</span>");
+					$(this).remove();
+					bindAddDesc();
+				}
+			});
+
+			textarea.appendTo($(this).parent()).focus().val(text).select();
+			$(this).remove();
+		});
+	};
+	bindDesc();
+
+	var bindAddDesc = function () {
+		$('.fravr-fravlist .add-desc').on('click', function (e) {
+			var textarea = $("<textarea class='inputDesc'></textarea>");
+			textarea.on('keydown', function (e) {
+				var code = e.which;
+				if(code==13) e.preventDefault();
+				if(code==32||code==13||code==188||code==186){
+					if ($(this).val().length === 0) {
+						$(this).parent().append("<span class='add-desc h4'><span class='glyphicon glyphicon-pencil'></span> Click to add description</span>");
+						$(this).remove();
+						bindAddDesc();
+					} else {
+						$(this).parent().append("<span class='desc h4'>\""+ $(this).val() + "\"</span>")
+						$(this).remove();
+						bindDesc();
+					}
+				}
+			});
+			textarea.focusout(function (e) {
+				// if textarea is empty
+				if (!$(this).val().length) {
+					$(this).parent().append("<span class='add-desc h4'><span class='glyphicon glyphicon-pencil'></span> Click to add description</span>");
+					$(this).remove();
+					bindAddDesc();
+				}
+			});
+
+			textarea.appendTo($(this).parent()).focus();
+			$(this).remove();
+		});
+	}
+	bindAddDesc();
 
 	// var timeline = new Timeline({
 	// 	data: Data.timeline.everything,

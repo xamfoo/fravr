@@ -919,46 +919,71 @@ Data.owned.ownedlist_items = [
 
 Data.fravlist = [
 {
-	product: Data.products.mightymug
+	product: Data.products.mightymug,
+	fravCount: 3
 },
 {
-	product: Data.products.brickwatchstrap
+	product: Data.products.brickwatchstrap,
+	fravCount: 14
 },
 {
-	product: Data.products.basicwhiteslimfit
+	product: Data.products.basicwhiteslimfit,
+	fravCount: 0,
 },
 {
-	product: Data.products.Sandwichcutter
+	product: Data.products.Sandwichcutter,
+	fravCount: 1,
 },
 {
-	product: Data.products.kingoftokyo
+	product: Data.products.kingoftokyo,
+	fravCount: 6
 },
 {
-	product: Data.products.NarutoTee
+	product: Data.products.NarutoTee,
+	fravCount: 3
 },
 {
-	product: Data.products.IWCbigpilot
+	product: Data.products.IWCbigpilot,
+	fravCount: 0
 },
 {
-	product: Data.products.CannondaleRacer
+	product: Data.products.CannondaleRacer,
+	fravCount: 1
 }
 ]
-Data.fravlist[0].product.discount = -20;
+Data.fravlist[0].product.discount = -50;
 Data.fravlist[0].comments = {
 	total: 2,
 	commentList: [
 		{
-			user: Data.users.Sera,
-			time: Main.readTime("04/12/2012 07:00"),
-			comment: "I have one in my office!"
+			user: Data.users.Jesslyn,
+			time: (new Date).setHours((new Date).getHours()-2),
+			comment: "Nice"
 		},
 		{
 			user: Data.users.Sera,
-			time: Main.readTime("04/12/2012 07:00"),
+			time: (new Date).setDate((new Date).getDate()-3),
 			comment: "I have one in my office!"
-		}
+		},
 	]
 }
+Data.fravlist[0].comments = {
+	total: 2,
+	commentList: [
+		{
+			user: Data.users.Jesslyn,
+			time: (new Date).setHours((new Date).getHours()-2),
+			comment: "Nice"
+		},
+		{
+			user: Data.users.Sera,
+			time: (new Date).setDate((new Date).getDate()-3),
+			comment: "I have one in my office!"
+		},
+	]
+}
+Data.fravlist[1].desc = "Love the watch";
+Data.fravlist[4].desc = "Gaming sessions!";
 
 Data.chat = [ 
 	{	conversation_name: "Jesslyn, Cynthia & Me",
