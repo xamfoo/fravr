@@ -14,16 +14,16 @@
 <!-- Define default template -->
 <script data-body type="text/x-handlebars-template">
 {{>header}}
+{{>clipping}}
 {{>body}}
 </script>
 <!-- Include header -->
 <script data-name="header" src="tmpl/header.tmpl"></script>
+<script data-name="clipping" src="tmpl/clipping.tmpl"></script>
 
 <script data-name="body" type="text/x-handlebars-template">
 <div class="container">
 	<div class="fravr-messages">
-		
-			
 		
 		<div class="row">
 			<div class="col-sm-4">
@@ -163,8 +163,53 @@ Main.ready(function () {
 		Data.chat_current.active = true;
 		Template.render();
 	});
-	
-	
+
+	$('.fravr-nav .clipping').on('click', function () {
+		var containerWidth;
+		var that = function (e) {
+			e.preventDefault();
+			var threads = $('.chat-tabs').parent();
+			if (!$('.fravr-clipping').is(':visible')) {
+				threads
+					.animate({width:3/12*100 + "%"})
+					.addClass('col-sm-3').removeClass('col-sm-4');
+				$('.chat-screen').parent()
+					.animate({width:6/12*100 + "%"})
+					.addClass('col-sm-6').removeClass('col-sm-8');
+				var container = $('.fravr-messages').parent();
+				containerWidth = container.css('width');
+				container.animate({
+					width:'100%'
+				});
+				$('.fravr-clipping').show().animate({
+					width:3/12*100 + "%",
+					opacity: 1
+				});
+				$('body').css('overflow','hidden');
+			} else {
+				threads
+					.animate({width:4/12*100 + "%"})
+					.addClass('col-sm-4').removeClass('col-sm-3');
+				$('.chat-screen').parent()
+					.animate({width:8/12*100 + "%"})
+					.addClass('col-sm-8').removeClass('col-sm-6');
+				$('.fravr-messages').parent().animate({
+					width:containerWidth
+				});
+				$('.fravr-clipping').animate({
+					width:0,
+					opacity:0
+				},
+				{
+					complete:function () {
+						$(this).hide();
+						$('body').css('overflow','visible');
+					}
+				});
+			}
+		}
+		return that;
+	}());
 });
 
 </script>

@@ -466,7 +466,7 @@ a:hover {
 	background-color: #ffffff;
 	margin-top: 15px;
 	height: auto;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .fravr-messages  .chat-tabs .title {
 	font-weight: 400;
@@ -711,7 +711,6 @@ a:hover {
 	font-size: 13px;
 }
 
-
 .price .old {
 	text-decoration: line-through;
 }
@@ -720,4 +719,30 @@ a:hover {
 .price .decrease {
 	color: #00896b;
 	font-weight: 600;
+}
+
+.fravr-clipping {
+	display:none;
+	position: fixed;
+	right:0;
+	margin-top: -30px;
+	height: 100%;
+	background-color: #243136;
+	color:#fff;
+	z-index: 100;
+	opacity:0;
+	border-left: 1px solid #c9c9c9;
+	overflow-y: auto;
+}
+.fravr-clipping .clipping-close {
+	position: absolute;
+	width: 30px;
+	background-color: #eee;
+}
+.fravr-clipping .clipping-container {
+	padding: 0 15px;
+	width:100%;
+}
+.fravr-clipping .row {
+	background-color: red;
 }
