@@ -906,7 +906,15 @@ Data.search = {
 }
 
 Data.clipping = {
-	total: 0
+	total: 0,
+	items: [
+		{
+			product: Data.products['SonyNex7']
+		},
+		{
+			product: Data.products['spacerockettent']
+		}
+	]
 }
 
 Data.owned = {
