@@ -164,7 +164,7 @@ Main.ready(function () {
 		Template.render();
 	});
 
-	$('.fravr-nav .clipping').on('click', function () {
+	var clippingToggle = function () {
 		var containerWidth;
 		var that = function (e) {
 			e.preventDefault();
@@ -181,9 +181,13 @@ Main.ready(function () {
 				container.animate({
 					width:'100%'
 				});
-				$('.fravr-clipping').show().animate({
+				$('.fravr-clipping').css('display','block').animate({
 					width:3/12*100 + "%",
 					opacity: 1
+				},{
+					complete: function () {
+						$('.fravr-clipping .clipping-container').show();
+					}
 				});
 				$('body').css('overflow','hidden');
 			} else {
@@ -196,9 +200,10 @@ Main.ready(function () {
 				$('.fravr-messages').parent().animate({
 					width:containerWidth
 				});
+				$('.fravr-clipping .clipping-container').hide();
 				$('.fravr-clipping').animate({
 					width:0,
-					opacity:0
+					opacity: 0
 				},
 				{
 					complete:function () {
@@ -209,7 +214,12 @@ Main.ready(function () {
 			}
 		}
 		return that;
-	}());
+	}();
+	$('.fravr-nav .clipping, .fravr-clipping .clipping-close').on('click', clippingToggle);
+	
+	$('.item-wrapper').on('click', function (e) {
+		console.log(e.target);
+	});
 });
 
 </script>

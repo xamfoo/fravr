@@ -1,13 +1,28 @@
 Handlebars.registerPartial($("script[src]").last().attr('data-name'),
 (function () {/*
 <div class="fravr-clipping">
-<span class="clipping-close">asdf</span>
-<h3>Example heading </h3>
 <div class="clipping-container">
 <div class="row">
-	<div class="col-sm-12">
-	<p>lorem ipsum</p>
+	<div class="col-sm-12 clipping-header">
+		<span class="clipping-title">Clippings
+			{{#if clipping.total}}
+			<span class="label label-default">{{clipping.total}}</span>
+			{{/if}}
+		</span>
+		<div class="pull-right"><span class="glyphicon glyphicon-remove clipping-close"></span></div>
 	</div>
+</div>
+<div class="row">
+{{#each clipping.items}}
+	<div class="col-sm-6 item-wrapper">
+		<div class="clipping-item">
+			<div class="img" style="background-image:url('{{product.img_urls.0.url}}');">
+				<img src="{{product.img_urls.0.url}}">
+			</div>
+			<span class="glyphicon glyphicon-plus-sign add-item"></span>
+		</div>
+	</div>
+{{/each}}
 </div>
 </div>
 </div>
