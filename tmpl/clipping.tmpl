@@ -2,24 +2,38 @@ Handlebars.registerPartial($("script[src]").last().attr('data-name'),
 (function () {/*
 <div class="fravr-clipping">
 <div class="clipping-container">
-<div class="row">
-	<div class="col-sm-12 clipping-header">
+<div class="row clipping-header">
+	<div class="col-sm-12">
 		<span class="clipping-title">Clippings
-			{{#if clipping.total}}
-			<span class="label label-default">{{clipping.total}}</span>
-			{{/if}}
+			<span class="label label-default" {{#if clipping.selected}}{{else}}style="display:none"{{/if}}>{{clipping.selected}}</span>
 		</span>
 		<div class="pull-right"><span class="glyphicon glyphicon-remove clipping-close"></span></div>
 	</div>
 </div>
-<div class="row">
+<div class="row clipping-items">
 {{#each clipping.items}}
 	<div class="col-sm-6 item-wrapper">
-		<div class="clipping-item">
+		<div class="clipping-item" data-id="{{product.id}}" data-selected='true'>
 			<div class="img" style="background-image:url('{{product.img_urls.0.url}}');">
 				<img src="{{product.img_urls.0.url}}">
 			</div>
-			<span class="glyphicon glyphicon-plus-sign add-item"></span>
+{{#if selected}}
+			<div class="grey-cover" style="display:none"></div>
+			<button type="button" class="btn btn-default btn-xs btn-success add-item disabled">
+				<span class="glyphicon glyphicon-ok"></span> Selected
+			</button>
+			<button type="button" class="btn btn-default btn-xs btn-danger remove-item">
+				<span class="glyphicon glyphicon-remove"></span>
+			</button>
+{{else}}
+			<div class="grey-cover"></div>
+			<button type="button" class="btn btn-default btn-xs add-item">
+				<span class="glyphicon glyphicon-ok"></span> Select
+			</button>
+			<button type="button" class="btn btn-default btn-xs btn-danger remove-item" style="display:none">
+				<span class="glyphicon glyphicon-remove"></span>
+			</button>
+{{/if}}
 		</div>
 	</div>
 {{/each}}

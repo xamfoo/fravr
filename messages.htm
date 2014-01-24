@@ -216,10 +216,86 @@ Main.ready(function () {
 		return that;
 	}();
 	$('.fravr-nav .clipping, .fravr-clipping .clipping-close').on('click', clippingToggle);
+
+	var bindClippingItem = function () {
+		// $('.clipping-item').hover(function (e) {
+		// 	if ($(this).attr('data-selected') === 'true') {
+		// 		$(this).find('.remove-item').show();
+		// 	} else {
+		// 		$(this).find('.add-item').show();
+		// 	}
+		// },
+		// function (e) {
+		// 	if ($(this).attr('data-selected') === 'true') {
+		// 		$(this).find('.add-item').show();
+		// 	} else {
+		// 	}
+		// 	$(this).find('.remove-item').hide();
+		// });
+
+		$('.clipping-item').on('click', function (e) {
+			var setItemSelect = function (id, val) {
+				for (var i=0; i<Data.clipping.items.length; i+=1) {
+					if (Data.clipping.items[i].product.id === id) {
+						Data.clipping.items[i].selected = val;
+						return Data.clipping.items[i];
+					}
+				}
+			}
+			var changeCount = function (d) {
+				Data.clipping.selected +=d;
+				$('.clipping-title .label').html(Data.clipping.selected);
+				if (Data.clipping.selected > 0) {
+					$('.clipping-title .label').show();
+				} else {
+					$('.clipping-title .label').hide();
+				}
+			}
+
+			var that = function (e) {
+				var target = $(e.target);
+				if (e.target.nodeName === 'SPAN') {
+					target = target.parent();
+				}
+				if (target.hasClass('add-item')){
+					setItemSelect($(this).attr('data-id'), true); // Update Data
+					$(this).attr('data-selected','true');
+					target.html("<span class='glyphicon glyphicon-ok'></span> Selected");
+					target.addClass('disabled');
+					target.addClass('btn-success');
+					$(this).find('.remove-item').show();
+					$(this).find('.grey-cover').hide();
+					changeCount(1);
+				} else if (target.hasClass('remove-item')) {
+					setItemSelect($(this).attr('data-id'), false); // Update Data
+					$(this).attr('data-selected','false');
+					$(this).find('.add-item').html("<span class='glyphicon glyphicon-ok'></span> Select");
+					$(this).find('.add-item').removeClass('disabled');
+					$(this).find('.add-item').removeClass('btn-success');
+					$(this).find('.grey-cover').show();
+					target.hide();
+					changeCount(-1);
+				} else if (target.hasClass('remove-item')) {
+				} else {
+				}
+				// // If adding item to selection
+				// if ($(this).find('.add-item').is(':visible')) {
+				// 	$(this).attr('data-selected','true');
+				// 	setItemSelect($(this).attr('data-id'), true);
+				// // If removing item from selection
+				// } else {
+				// 	$(this).attr('data-selected','false');
+				// 	setItemSelect($(this).attr('data-id'), null);
+				// }
+			}
+			return that;
+		}());
+	}
+	bindClippingItem();
 	
-	$('.item-wrapper').on('click', function (e) {
-		console.log(e.target);
-	});
+	// $('.item-wrapper').on('click', function (e) {
+	// 	console.log(e.target);
+	// });
 });
 
 </script>
