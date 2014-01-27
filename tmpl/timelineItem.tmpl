@@ -4,21 +4,22 @@ Template.set('timelineItem',
 	<div class="crop">
 		<div class="fravr-btn">
 		<div class="map">
-			<button type="button" class="btn btn-default btn-lg btn-top btn-left btn-success btn-frav">
+			<button type="button" class="btn btn-default btn-sm btn-top btn-left btn-success btn-frav">
 				<span class="glyphicon glyphicon-star"></span> Frav
 			</button>
-			<button type="button" class="btn btn-default btn-lg btn-top btn-right btn-share">
+			<button type="button" class="btn btn-default btn-sm btn-top btn-right btn-share">
 				<span class="glyphicon glyphicon-share-alt"></span> Share
 			</button>
-			<button type="button" class="btn btn-default btn-lg btn-bottom btn-left btn-clip">
+			<button type="button" class="btn btn-default btn-sm btn-bottom btn-left btn-clip">
 				<span class="glyphicon glyphicon-paperclip"></span> Clip
 			</button>
-			<button type="button" class="btn btn-default btn-lg btn-bottom btn-right btn-cart">
+			<button type="button" class="btn btn-default btn-sm btn-bottom btn-right btn-cart">
 				<span class="glyphicon glyphicon-shopping-cart"></span> Cart
 			</button>
 		</div>
 		</div>
 		<img src="{{product.img_urls.0.url}}">
+		<div class="overlay-effect"></div>
 	</div>
 	<a href="product.htm?product={{product.id}}"><span class="title">{{product.name}}</span></a>
 	{{#if actions}}

@@ -137,13 +137,22 @@ a:hover {
 .fravr-timeline .crop {
 	position: relative;
 	overflow: hidden;
-	background-color: #000;
 }
 .fravr-timeline .item  > a:hover {
 	text-decoration: none;
 }
 .fravr-timeline .item  img {
 	width: 100%;
+}
+.fravr-timeline .item .overlay-effect {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #000;
+	opacity: 0.25;
+	display: none;
 }
 .fravr-timeline .item .title{
 	display: block;

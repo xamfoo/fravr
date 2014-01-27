@@ -454,10 +454,10 @@ var Timeline = function (opt) {
 				var item = $(Template.get('timelineItem')(data[wt[i].t]));
 				item.first().hover(function () {
 					$(this).find('.fravr-btn').show();
-					$(this).find('img').css('opacity','0.75');
+					$(this).find('.overlay-effect').show();
 				},function () {
 					$(this).find('.fravr-btn').hide();
-					$(this).find('img').css('opacity','1');
+					$(this).find('.overlay-effect').hide();
 				});
 				item.on('click', function (evt) {
 					var tt = $(evt.target).first();
@@ -621,10 +621,10 @@ var Timeline = function (opt) {
 			var item = $(Template.get('timelineItem')(data[buffer[0].t]));
 			item.first().hover(function () {
 				$(this).find('.fravr-btn').show();
-				$(this).find('img').css('opacity','0.75');
+				$(this).find('.overlay-effect').show();
 			},function () {
 				$(this).find('.fravr-btn').hide();
-				$(this).find('img').css('opacity','1');
+				$(this).find('.overlay-effect').hide();
 			});
 			item.on('click', function (evt) {
 				var tt = $(evt.target).first();
