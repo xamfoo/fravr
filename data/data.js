@@ -907,12 +907,13 @@ Data.search = {
 
 Data.clipping = {
 	total: 0,
+	selected: 0,
 	items: [
 		{
 			product: Data.products['SonyNex7']
 		},
 		{
-			product: Data.products['spacerockettent']
+			product: Data.products['spacerockettent'],
 		}
 	]
 }
