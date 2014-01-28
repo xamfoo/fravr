@@ -38,12 +38,12 @@ Handlebars.registerPartial($("script[src]").last().attr('data-name'),
     </form>
       <ul class="nav navbar-nav navbar-right nav-icon">
         <li>
-		  <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>{{#if cart.total}}<sub>{{cart.total}}</sub>{{/if}}</a>
+		  <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span><sub class="cart-count">{{#if cart.total}}{{cart.total}}{{/if}}</sub></a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right nav-icon">
         <li>
-		  <a href="#" class="clipping"><span class="glyphicon glyphicon-paperclip"></span>{{#if clipping.total}}<sub>{{clipping.total}}</sub>{{/if}}</a>
+		  <a href="#" class="clipping"><span class="glyphicon glyphicon-paperclip"></span><sub class="clipping-count">{{#if clipping.total}}{{clipping.total}}{{/if}}</sub></a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
