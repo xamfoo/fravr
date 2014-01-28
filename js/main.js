@@ -27,6 +27,10 @@ Template = function () {
 		$('body').html(html);
 		$(document).ready(function () {
 			Main.ready();
+			// Temporary binding to fravr button
+			$('.navbar-brand').on('click', function () {
+				Main.clearData();
+			});
 			if (typeof f === 'function') f();
 		});
 	}
@@ -119,6 +123,7 @@ Main.url = function () {
 
 // Load all data from storage and replace existing data
 Main.loadData = function () {
+	console.log('Loading data');
 	for (var obj in amplify.store()) {
 		// If modified data exists in storage, update data
 		if (Data[obj]) {
@@ -130,12 +135,14 @@ Main.loadData = function () {
 // Save specified data to storage
 Main.saveData = function (key) {
 	if (typeof Data[key] != 'undefined') {
-		amplify.store('key', Data[key]);
+		console.log('Data saved: ' + key);
+		amplify.store(key, Data[key]);
 	}
 }
 
 // Clear all data from storage
 Main.clearData = function () {
+	console.log('Clearing data');
 	for (var obj in amplify.store()) {
 		amplify.store(obj, null);
 	}
@@ -491,6 +498,12 @@ var Timeline = function (opt) {
 						tt.html("Frav'd").addClass('disabled');
 					} else if (tt.hasClass('btn-clip')) {
 						tt.html("Clipped").addClass('disabled');
+						Data.clipping.items.unshift({
+							product: Data.products[$(this).attr('data-name')]
+						});
+						Data.clipping.total += 1;
+						Main.saveData('clipping');
+						$('.clipping-count').html(Data.clipping.total);
 					} else if (tt.hasClass('btn-cart')) {
 						var cartCount = tt.html().match(/[(].+[)]/g);
 						if (cartCount) {
@@ -658,6 +671,12 @@ var Timeline = function (opt) {
 					tt.html("Frav'd").addClass('disabled');
 				} else if (tt.hasClass('btn-clip')) {
 					tt.html("Clipped").addClass('disabled');
+					Data.clipping.items.unshift({
+						product: Data.products[$(this).attr('data-name')]
+					});
+					Data.clipping.total += 1;
+					Main.saveData('clipping');
+					$('.clipping-count').html(Data.clipping.total);
 				} else if (tt.hasClass('btn-cart')) {
 					var cartCount = tt.html().match(/[(].+[)]/g);
 					if (cartCount) {
@@ -665,6 +684,8 @@ var Timeline = function (opt) {
 					} else {
 						tt.html("Carted (1)");
 					}
+				} else {
+					alert('asdf');
 				}
 				item.find('div.fravr-btn').on('click', function() {
 					window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
