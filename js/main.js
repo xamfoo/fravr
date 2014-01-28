@@ -163,7 +163,7 @@ Main.product = function () {
 	}
 
 	return that;
-}
+}()
 
 // Timeline - Constructor to generate html code for timeline
 // Options:
@@ -686,6 +686,24 @@ Handlebars.registerHelper ("ifequals", function (obj, val, options) {
 		return options.fn(obj);
 	} else {
 		return options.inverse(obj);
+	}
+});
+
+// If product id is in fravlist
+Handlebars.registerHelper ("ifFrav", function (id, options) {
+	if (Main.product.inFravlist(id)) {
+		return options.fn(this);
+	} else {
+		return options.inverse(this);
+	}
+});
+
+// If product id is in clipping
+Handlebars.registerHelper ("ifClipping", function (id, options) {
+	if (Main.product.inClipping(id)) {
+		return options.fn(this);
+	} else {
+		return options.inverse(this);
 	}
 });
 

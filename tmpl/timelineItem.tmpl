@@ -4,15 +4,27 @@ Template.set('timelineItem',
 	<div class="crop">
 		<div class="fravr-btn">
 		<div class="map">
+			{{#ifFrav product.id}}
+			<button type="button" class="btn btn-default btn-sm btn-top btn-left btn-success btn-frav disabled">
+				Frav'd
+			</button>
+			{{else}}
 			<button type="button" class="btn btn-default btn-sm btn-top btn-left btn-success btn-frav">
 				<span class="glyphicon glyphicon-star"></span> Frav
 			</button>
+			{{/ifFrav}}
 			<button type="button" class="btn btn-default btn-sm btn-top btn-right btn-share">
 				<span class="glyphicon glyphicon-share-alt"></span> Share
 			</button>
+			{{#ifClipping product.id}}
+			<button type="button" class="btn btn-default btn-sm btn-bottom btn-left btn-clip disabled">
+				Clipped
+			</button>
+			{{else}}
 			<button type="button" class="btn btn-default btn-sm btn-bottom btn-left btn-clip">
 				<span class="glyphicon glyphicon-paperclip"></span> Clip
 			</button>
+			{{/ifClipping}}
 			<button type="button" class="btn btn-default btn-sm btn-bottom btn-right btn-cart">
 				<span class="glyphicon glyphicon-shopping-cart"></span> Cart
 			</button>
