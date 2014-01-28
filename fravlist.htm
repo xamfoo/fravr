@@ -158,8 +158,8 @@ Main.ready(function () {
 
 	$('input[type=comment]').on('keydown', function (e) {
 		var code = e.which; // recommended to use e.which, it's normalized across browsers
-		if(code==13) e.preventDefault();
-		if(code==32||code==13||code==188||code==186){
+		if(code==13) {
+			e.preventDefault();
 			$(this).val('');
 		}
 	});
@@ -171,7 +171,7 @@ Main.ready(function () {
 			textarea.on('keydown', function (e) {
 				var code = e.which;
 				if(code==13) e.preventDefault();
-				if(code==32||code==13||code==188||code==186){
+				if(code==13){
 					if ($(this).val().length === 0) {
 						$(this).parent().append("<span class='add-desc h4'><span class='glyphicon glyphicon-pencil'></span> Click to add description</span>");
 						$(this).remove();
@@ -204,7 +204,7 @@ Main.ready(function () {
 			textarea.on('keydown', function (e) {
 				var code = e.which;
 				if(code==13) e.preventDefault();
-				if(code==32||code==13||code==188||code==186){
+				if(code==13) {
 					if ($(this).val().length === 0) {
 						$(this).parent().append("<span class='add-desc h4'><span class='glyphicon glyphicon-pencil'></span> Click to add description</span>");
 						$(this).remove();
