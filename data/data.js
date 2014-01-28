@@ -926,42 +926,45 @@ Data.owned.ownedlist_items = [
 	Data.products.brickwatchstrap
 ]
 
-Data.fravlist = [
-{
-	product: Data.products.mightymug,
-	fravCount: 3
-},
-{
-	product: Data.products.brickwatchstrap,
-	fravCount: 14
-},
-{
-	product: Data.products.basicwhiteslimfit,
-	fravCount: 0,
-},
-{
-	product: Data.products.Sandwichcutter,
-	fravCount: 1,
-},
-{
-	product: Data.products.kingoftokyo,
-	fravCount: 6
-},
-{
-	product: Data.products.NarutoTee,
-	fravCount: 3
-},
-{
-	product: Data.products.IWCbigpilot,
-	fravCount: 0
-},
-{
-	product: Data.products.CannondaleRacer,
-	fravCount: 1
+Data.fravlist = {
+	total: 8,
+	items: [
+		{
+			product: Data.products.mightymug,
+			fravCount: 3
+		},
+		{
+			product: Data.products.brickwatchstrap,
+			fravCount: 14
+		},
+		{
+			product: Data.products.basicwhiteslimfit,
+			fravCount: 0,
+		},
+		{
+			product: Data.products.Sandwichcutter,
+			fravCount: 1,
+		},
+		{
+			product: Data.products.kingoftokyo,
+			fravCount: 6
+		},
+		{
+			product: Data.products.NarutoTee,
+			fravCount: 3
+		},
+		{
+			product: Data.products.IWCbigpilot,
+			fravCount: 0
+		},
+		{
+			product: Data.products.CannondaleRacer,
+			fravCount: 1
+		}
+	]
 }
-]
-Data.fravlist[0].product.discount = -50;
-Data.fravlist[0].comments = {
+Data.fravlist.items[0].product.discount = -50;
+Data.fravlist.items[0].comments = {
 	total: 2,
 	commentList: [
 		{
@@ -976,7 +979,7 @@ Data.fravlist[0].comments = {
 		},
 	]
 }
-Data.fravlist[0].comments = {
+Data.fravlist.items[0].comments = {
 	total: 2,
 	commentList: [
 		{
@@ -991,8 +994,8 @@ Data.fravlist[0].comments = {
 		},
 	]
 }
-Data.fravlist[1].desc = "Love the watch";
-Data.fravlist[4].desc = "Gaming sessions!";
+Data.fravlist.items[1].desc = "Love the watch";
+Data.fravlist.items[4].desc = "Gaming sessions!";
 
 Data.chat = [ 
 	{	conversation_name: "Jesslyn, Cynthia & Me",

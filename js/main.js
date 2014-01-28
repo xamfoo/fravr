@@ -141,6 +141,30 @@ Main.clearData = function () {
 	}
 }
 
+Main.product = function () {
+	var that = {};
+
+	that.inFravlist = function (id) {
+		for (var i=0; i<Data.fravlist.items.length; i+=1) {
+			if (Data.fravlist.items[i].product.id === id) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	that.inClipping = function (id) {
+		for (var i=0; i<Data.clipping.items.length; i+=1) {
+			if (Data.clipping.items[i].product.id === id) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	return that;
+}
+
 // Timeline - Constructor to generate html code for timeline
 // Options:
 // data - an array of objects that contain keys "product" and "actions" (optional)
