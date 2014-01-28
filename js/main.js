@@ -684,8 +684,6 @@ var Timeline = function (opt) {
 					} else {
 						tt.html("Carted (1)");
 					}
-				} else {
-					alert('asdf');
 				}
 				item.find('div.fravr-btn').on('click', function() {
 					window.location.href = "product.htm?product=" + $(this).parentsUntil('.item').parent().attr('data-name');
