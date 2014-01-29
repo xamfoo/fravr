@@ -499,6 +499,11 @@ var Timeline = function (opt) {
 						tt.html("Shared").addClass('disabled');
 					} else if (tt.hasClass('btn-frav')) {
 						tt.html("Frav'd").addClass('disabled');
+						Data.fravlist.items.unshift({
+							product: Data.products[$(this).attr('data-name')],
+							fravCount: Math.floor(Math.random()*11)
+						});
+						Main.saveData('fravlist');
 					} else if (tt.hasClass('btn-clip')) {
 						tt.html("Clipped").addClass('disabled');
 						Data.clipping.items.unshift({
@@ -675,6 +680,11 @@ var Timeline = function (opt) {
 					tt.html("Shared").addClass('disabled');
 				} else if (tt.hasClass('btn-frav')) {
 					tt.html("Frav'd").addClass('disabled');
+					Data.fravlist.items.unshift({
+						product: Data.products[$(this).attr('data-name')],
+						fravCount: Math.floor(Math.random()*11)
+					});
+					Main.saveData('fravlist');
 				} else if (tt.hasClass('btn-clip')) {
 					tt.html("Clipped").addClass('disabled');
 					Data.clipping.items.unshift({
