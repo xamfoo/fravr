@@ -44,7 +44,7 @@
 				<div class="map">
 			{{#ifFrav product.id}}
 			<button type="button" class="btn btn-default btn-sm btn-top btn-left btn-success btn-frav disabled">
-				Frav'd
+				<span class="glyphicon glyphicon-star"></span>
 			</button>
 			{{else}}
 			<button type="button" class="btn btn-default btn-sm btn-top btn-left btn-success btn-frav">
@@ -52,7 +52,7 @@
 			</button>
 			{{/ifFrav}}
 			<button type="button" class="btn btn-default btn-sm btn-top btn-right btn-share">
-				<span class="glyphicon glyphicon-share-alt"></span> Share
+				<span class="glyphicon glyphicon-share-alt"></span>
 			</button>
 			{{#ifClipping product.id}}
 			<button type="button" class="btn btn-default btn-sm btn-bottom btn-left btn-clip disabled">
@@ -60,11 +60,11 @@
 			</button>
 			{{else}}
 			<button type="button" class="btn btn-default btn-sm btn-bottom btn-left btn-clip">
-				<span class="glyphicon glyphicon-paperclip"></span> Clip
+				<span class="glyphicon glyphicon-paperclip"></span>
 			</button>
 			{{/ifClipping}}
 			<button type="button" class="btn btn-default btn-sm btn-bottom btn-right btn-cart">
-				<span class="glyphicon glyphicon-shopping-cart"></span> Cart
+				<span class="glyphicon glyphicon-shopping-cart"></span>
 			</button>
 				</div>
 				</div>
@@ -129,28 +129,35 @@ Main.ready(function () {
 	});
 
 	$('.frav-info .item').hover(function (e) {
-		$(this).find('.overlay-wrapper').toggle();
-		$(this).find('.fravr-btn').toggle();
+		$(this).find('.overlay-wrapper').show();
+		$(this).find('.fravr-btn').show();
+	}, function (e) {
+		$(this).find('.overlay-wrapper').hide();
+		$(this).find('.fravr-btn').hide();
 	});
 
 	$('.frav-info .overlay-wrapper').on('click', function (evt) {
 		var tt = $(evt.target).first();
+		if (tt.prop("tagName") === 'SPAN') {
+			tt = tt.parent();
+		}
 		if (tt.hasClass('btn-share')) {
 			evt.preventDefault();
-			tt.html("Shared").addClass('disabled');
+			console.log(tt);
+			tt.addClass('disabled');
 		} else if (tt.hasClass('btn-frav')) {
 			evt.preventDefault();
-			tt.html("Frav'd").addClass('disabled');
+			tt.addClass('disabled');
 		} else if (tt.hasClass('btn-clip')) {
 			evt.preventDefault();
-			tt.html("Clipped").addClass('disabled');
+			tt.addClass('disabled');
 		} else if (tt.hasClass('btn-cart')) {
 			evt.preventDefault();
 			var cartCount = tt.html().match(/[(].+[)]/g);
 			if (cartCount) {
-				tt.html("Carted (" + (Number(cartCount[0].replace(/[()]/g,"")) + 1) + ")");
+				tt.html("<span class='glyphicon glyphicon-shopping-cart'></span> (" + (Number(cartCount[0].replace(/[()]/g,"")) + 1 + ")"));
 			} else {
-				tt.html("Carted (1)");
+				tt.html("<span class='glyphicon glyphicon-shopping-cart'></span> (1)");
 			}
 		}
 	});

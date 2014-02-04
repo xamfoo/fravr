@@ -170,7 +170,41 @@ Main.product = function () {
 	}
 
 	return that;
-}()
+}();
+
+// A constructor for clipping animation in each page
+Main.clippingToggle = function (spec) {
+	var mem = {}; // container for private variables;
+	var that = function (e) {
+		e.preventDefault();
+		if (!$('.fravr-clipping').is(':visible')) {
+			spec.open(mem);
+			$('.fravr-clipping').css('display','block').animate({
+				width:3/12*100 + "%",
+				opacity: 1
+			},{
+				complete: function () {
+					$('.fravr-clipping .clipping-container').show();
+				}
+			});
+			$('body').css('overflow','hidden');
+		} else {
+			spec.close(mem);
+			$('.fravr-clipping .clipping-container').hide();
+			$('.fravr-clipping').animate({
+				width:0,
+				opacity: 0
+			},
+			{
+				complete:function () {
+					$(this).hide();
+					$('body').css('overflow','visible');
+				}
+			});
+		}
+	}
+	return that;
+};
 
 // Timeline - Constructor to generate html code for timeline
 // Options:

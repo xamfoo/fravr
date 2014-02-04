@@ -164,57 +164,33 @@ Main.ready(function () {
 		Template.render();
 	});
 
-	var clippingToggle = function () {
-		var containerWidth;
-		var that = function (e) {
-			e.preventDefault();
-			var threads = $('.chat-tabs').parent();
-			if (!$('.fravr-clipping').is(':visible')) {
-				threads
-					.animate({width:3/12*100 + "%"})
-					.addClass('col-sm-3').removeClass('col-sm-4');
-				$('.chat-screen').parent()
-					.animate({width:6/12*100 + "%"})
-					.addClass('col-sm-6').removeClass('col-sm-8');
-				var container = $('.fravr-messages').parent();
-				containerWidth = container.css('width');
-				container.animate({
-					width:'100%'
-				});
-				$('.fravr-clipping').css('display','block').animate({
-					width:3/12*100 + "%",
-					opacity: 1
-				},{
-					complete: function () {
-						$('.fravr-clipping .clipping-container').show();
-					}
-				});
-				$('body').css('overflow','hidden');
-			} else {
-				threads
-					.animate({width:4/12*100 + "%"})
-					.addClass('col-sm-4').removeClass('col-sm-3');
-				$('.chat-screen').parent()
-					.animate({width:8/12*100 + "%"})
-					.addClass('col-sm-8').removeClass('col-sm-6');
-				$('.fravr-messages').parent().animate({
-					width:containerWidth
-				});
-				$('.fravr-clipping .clipping-container').hide();
-				$('.fravr-clipping').animate({
-					width:0,
-					opacity: 0
-				},
-				{
-					complete:function () {
-						$(this).hide();
-						$('body').css('overflow','visible');
-					}
-				});
-			}
+
+	var clippingToggle = Main.clippingToggle({
+		open: function (mem) {
+			$('.chat-tabs').parent()
+				.animate({width:3/12*100 + "%"})
+				.addClass('col-sm-3').removeClass('col-sm-4');
+			$('.chat-screen').parent()
+				.animate({width:6/12*100 + "%"})
+				.addClass('col-sm-6').removeClass('col-sm-8');
+			var container = $('.fravr-messages').parent();
+			mem.containerWidth = container.css('width');
+			container.animate({
+				width:'100%'
+			});
+		},
+		close: function (mem) {
+			$('.chat-tabs').parent()
+				.animate({width:4/12*100 + "%"})
+				.addClass('col-sm-4').removeClass('col-sm-3');
+			$('.chat-screen').parent()
+				.animate({width:8/12*100 + "%"})
+				.addClass('col-sm-8').removeClass('col-sm-6');
+			$('.fravr-messages').parent().animate({
+				width:mem.containerWidth
+			});
 		}
-		return that;
-	}();
+	});
 	$('.fravr-nav .clipping, .fravr-clipping .clipping-close').on('click', clippingToggle);
 
 	var bindClippingItem = function () {
