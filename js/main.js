@@ -384,14 +384,30 @@ var Timeline = function (opt) {
 			if (typeof data[pointer] === 'undefined') break;
 			var img = data[pointer].product.img_urls[0]; // Alias
 			if (typeof img.width != 'undefined' && typeof img.height != 'undefined') {
-				img.size = {
-					width: img.width,
-					height: img.height,
-					hdw: img.height/img.width
-				}
-				successCallback(pointer);
+				// data[pointer].product.img_urls[0].size = {
+				// 	width: img.width,
+				// 	height: img.height,
+				// 	hdw: img.height/img.width
+				// }
+				setTimeout(function (timelineItem) {
+						var that = function () {
+							var width = data[timelineItem].product.img_urls[0].width;
+							var height = data[timelineItem].product.img_urls[0].height;
+							data[timelineItem].product.img_urls[0].size = {
+								width: width,
+								height: height,
+								hdw: height/width
+							}
+							imgLoadCount += 1;
+							if (imgLoadCount === num) {
+								successCallback(pointer);
+							};
+						};
+						return that;
+					}(pointer),0);
 			} else {
 				var image = new Image();
+				// Create DOM image and set load event
 				$(image).load(function (timelineItem) {
 						var that = function () {
 							var width = $(this).width();
