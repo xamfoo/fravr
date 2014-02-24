@@ -318,7 +318,7 @@ CoolFaucet:
 		description: "<p>Sleek. Minimalistic. Smart. Add designer flair to your bathroom with HANSALATRAVA faucets. Crafted out of stainless steel and featuring our built-in sensor to activate the tap.</p>\
 		<p>A perfect design complement to HANSALATRAVA sinks.</p>\
 		",
-		img_urls: [{url:"img/products/HANSALATRAVA Faucet by Octopus Design 3150.jpg"}],
+		img_urls: [{url:"img/products/HANSALATRAVA Faucet by Octopus Design 3150.jpg",width:630,height:561}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: null,
@@ -336,7 +336,7 @@ EggWhiteSeparator:
 		description: "<p>Bakers, we hear your pains. Here we have a simple contraption to help separate the yolks and the eggs for your baking sessions. Just give the pump a squeeze and go for the yolk. Next thing you know, the yolk is sucked into the pump where you can easily release it elsewhere.</p>\
 		<p>Available in White only.</p>\
 		",
-		img_urls: [{url:"img/products/Pluck Egg White Separator 15.jpg"}],
+		img_urls: [{url:"img/products/Pluck Egg White Separator 15.jpg",width:640,height:640}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: null,
@@ -353,7 +353,7 @@ FeatherBookmark:
 		merchant_url: "#",
 		description: "<p>The perfect gift for the bookworm - a bird feather cut out of aluminium, complete with tassel. Weighs 75g.</p>\
 		",
-		img_urls: [{url:"img/products/feather bookmark 14.jpg"}],
+		img_urls: [{url:"img/products/feather bookmark 14.jpg",width:639,height:639}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: null,
@@ -372,7 +372,7 @@ RaybanAviators:
 		<p>The classic Aviators were made legendary by Tom Cruise in TOP GUN and were representative of the official military eyepiece design of the era. The iconic large teardrop shades provide glare-protection and better vision for the pilots in the cockpits.</p>\
 		<p>Go On. Own an Icon</p>\
 		",
-		img_urls: [{url:"img/products/Rayban Aviator LARGE METAL Gold Brown.png"},{url:"img/products/Rayban aviators large metal gold brown 2.jpg"},{url:"img/products/Tom-Cruise-Top-Gun-031.jpg"},{url:"img/products/Jennifer-Aniston-Ray-Ban-Aviator-Sunglasses.jpg"}],
+		img_urls: [{url:"img/products/Rayban Aviator LARGE METAL Gold Brown.png",width:760,height:430},{url:"img/products/Rayban aviators large metal gold brown 2.jpg"},{url:"img/products/Tom-Cruise-Top-Gun-031.jpg"},{url:"img/products/Jennifer-Aniston-Ray-Ban-Aviator-Sunglasses.jpg"}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: null,
@@ -389,7 +389,7 @@ SkullcandyAviators:
 		merchant_url: "#",
 		description: "<p>Go back to the era of TOPGUN with this classic-looking Aviators-inspired headphones. A product borne out of Skullcandy\'s collaboration with Jay-Z\'s ROCNation, it boasts comfortable earpads and exceptional bass response. Removable tangle-free cords also includes in-line mics and remote controls for IOS devices.</p>\
 		",
-		img_urls: [{url:"img/products/Skullcandy Aviator Brown.jpg"},{url:"img/products/Skullcandy Aviator Brown 2.jpg"},{url:"img/products/Skullcandy Aviator Brown 3.jpg"}],
+		img_urls: [{url:"img/products/Skullcandy Aviator Brown.jpg",width:1400,height:1400},{url:"img/products/Skullcandy Aviator Brown 2.jpg"},{url:"img/products/Skullcandy Aviator Brown 3.jpg"}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: "PCMAG.COM",
@@ -414,7 +414,7 @@ MarshallMajors:
 		merchant_url: "#",
 		description: "<p>THE MAJOR ENCLOSES VAST AMOUNTS OF THE MASSIVE MARSHALL LEGACY. THE EXTERIOR OF THE HEADBAND IS MADE OUT OF THE SAME VINYL USED IN MARSHALL AMPLIFIERS AND IT BEARS THE ORIGINAL MARSHALL TEXTURE. BESIDES BEING STRAIGHT UP DAZZLING. THE MAJOR IS A SOLID WORKHORSE WITH GREAT STAMINA, DESIGNED WITH NON-STOP, ALL-DAY LISTENING IN MIND.</p>\
 		<p>SUPER SOFT EAR CUSHIONS<br>FULLY COLLAPSIBLE CONSTRUCTION<br>MIC & REMOTE<br>COMPATIBLE WITH MOST DEVICES USING THE 3.5MM STANDARD PLUG</p>",
-		img_urls: [{url:"img/products/Marshall Major Headphones 1.jpg"},{url:"img/products/Marshall Major Headphones 2.jpg"},{url:"img/products/Marshall Major Headphone.jpg"}],
+		img_urls: [{url:"img/products/Marshall Major Headphones 1.jpg",width:333,height:500},{url:"img/products/Marshall Major Headphones 2.jpg"},{url:"img/products/Marshall Major Headphone.jpg"}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: null,
@@ -431,7 +431,7 @@ CrochetHighNeck:
 		merchant_url: "#",
 		description: "<p>Full cotton 3/4 sleeved top with crochet lace high neck. Intricate crochet pattern and pearl adornments brings sophistication and elegance.</p>\
 		<p><strong>Sizes: S - XL</strong></p>",
-		img_urls: [{url:"img/products/crochet lace highneck white top1.jpg"},{url:"img/products/crochet lace highneck white top2.jpg"},{url:"img/products/crochet lace highneck white top3.jpg"}],
+		img_urls: [{url:"img/products/crochet lace highneck white top1.jpg",width:529,height:533},{url:"img/products/crochet lace highneck white top2.jpg"},{url:"img/products/crochet lace highneck white top3.jpg"}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: null,
@@ -448,7 +448,7 @@ WhiteLaceTop:
 		merchant_url: "#",
 		description: "<p>Full cotton long sleeved top with lace collar. Intricate lace embroidery with adornments lend an air of sophistication and understated elegance to a casual white top.</p>\
 		<p><strong>Sizes: S - XXL</strong></p>\ ",
-		img_urls: [{url:"img/products/esgesee white lace collar top1.jpg"},{url:"img/products/esgesee white lace collar top2.jpg"},{url:"img/products/esgesee white lace collar top3.jpg"}],
+		img_urls: [{url:"img/products/esgesee white lace collar top1.jpg",width:610,height:1125},{url:"img/products/esgesee white lace collar top2.jpg"},{url:"img/products/esgesee white lace collar top3.jpg"}],
 		comments: [{commenter: null,
 					comment: null}],
 		reviews: [{	reviewer: null,
@@ -466,7 +466,7 @@ Owlhalfsleeve:
 		<p>Available in Teal, Cyan, Fuchsia, Orange, White and Black</p>\
 		<p><strong>Sizes: XS - XL</strong></p>\
 		",
-		img_urls: [{url:"img/products/Vintage loose tee white owl print halfsleeve.jpg"}],
+		img_urls: [{url:"img/products/Vintage loose tee white owl print halfsleeve.jpg",width:447,height:455}],
 		comments: null,
 		reviews: null
 		},
@@ -480,7 +480,7 @@ WhiteEmbroideredDress:
 		description: "<p>A simple white dress can be a timeless fashion piece. Ella brings you another wardrobe must-haves with this lightweight, embroidered babydoll dress. Contrasted tribal lines of embroidery paired with like-colored lace pattern on the chest complete the look.</p>\
 		<p><strong>Sizes: XS - XXL</p>\
 		",
-		img_urls: [{url:"img/products/Ella Timeless White Embroidered Dress 20.jpg"}],
+		img_urls: [{url:"img/products/Ella Timeless White Embroidered Dress 20.jpg",width:500,height:747}],
 		comments: null,
 		reviews: null
 		},
@@ -494,7 +494,7 @@ Tuxedotee:
 		description: "<p>Dress like a sir even while you're in a simple tee shirt. Be smartly casual with this tee shirt with a tuxedo print, topped off with a big bright bowtie.</p>\
 		<p><strong>Sizes: XXS - XXL</strong></p>\
 		",
-		img_urls: [{url:"img/products/Lazy Oaf Tuxedo White Slob T-shirt (Lazy Oaf) 39.9.jpg"}],
+		img_urls: [{url:"img/products/Lazy Oaf Tuxedo White Slob T-shirt (Lazy Oaf) 39.9.jpg",width:302,height:362}],
 		comments: null,
 		reviews: null
 		},
@@ -514,7 +514,7 @@ CannondaleRacer:
 <p>HANDLEBAR: FSA ENERGY COMPACT; STEM: FSA SL-K, 31.8; HEADSET: CANNONDALE SUPERX, 1-1/8' TO 1-1/4', 15MM TOP CAP; GRIPS: CANNONDALE 3MM SUEDE W/ GEL BACKING BAR TAPE</p>\
 <p>SADDLE: FI'ZI:K TUNDRA 2; SEAT POST: FSA SLK, 27.2MMX250MM<p>\
 ",
-		img_urls: [{url:"img/products/cannondale_super_x_sram_red_carbon_2012_-_road_bike.jpg"}],
+		img_urls: [{url:"img/products/cannondale_super_x_sram_red_carbon_2012_-_road_bike.jpg",width:590,height:590}],
 		comments: null,
 		reviews: null
 		},
@@ -528,7 +528,7 @@ Sandwichcutter:
 		description: "<p>Make your daily breakfast more interesting and appealing with this Puzzle Sandwich Cutter. Made out of dishwasher-safe plastic and with no moving parts to maintain, the Puzzle Sandwich Cutter is a kitchen tool you should get. Cutting edges are sharp enough to cut through sandwich but safe enough for any stray fingers, perfect for kids!</p>\
 		<p>Available in Teal, Cyan, Fuchsia, Orange, White and Black</p>\
 		",
-		img_urls: [{url:"img/products/Bites _ Pieces Sandwich Cutter 9.jpg"}],
+		img_urls: [{url:"img/products/Bites _ Pieces Sandwich Cutter 9.jpg",width:640,height:640}],
 		comments: null,
 		reviews: null
 		},
@@ -544,7 +544,7 @@ spacerockettent:
 		<p>Gets yours today to enhance your adventures with the more futuristic tent!</p>\
 		<p>Dimensions: 1.9m x 1.9m x 2.2m</p>\
 		",
-		img_urls: [{url:"img/products/Space Rocket Tent $422.jpg"}],
+		img_urls: [{url:"img/products/Space Rocket Tent $422.jpg",width:640,height:640}],
 		comments: null,
 		reviews: null
 		},
@@ -559,7 +559,7 @@ MiaPinkFloralDress:
 		<p>Size S: PTP: 15'-15.5' ;Waist: 12'-12.5' ;Length: 33'</p>\
 		<p>Size M: PTP: 16'-16.5'; Waist: 13'-13.5'; Length: 33'</p>\
 ",
-		img_urls: [{url:"img/products/Mia Pink-Based Floral Dress 30.jpg"},{url:"img/products/mia pink floral dress AWE.jpg"}],
+		img_urls: [{url:"img/products/Mia Pink-Based Floral Dress 30.jpg",width:298,height:429},{url:"img/products/mia pink floral dress AWE.jpg"}],
 		comments: null,
 		reviews: null
 		},
@@ -575,7 +575,7 @@ CrochetDaisySweater:
 <p>Fits a UK 6-8 (FREE SIZE)</p>\
 <p>Model: Model is 160cm tall and wears a Size UK6</p>\
 ",
-		img_urls: [{url:"img/products/Crochet Daisy Sweater Black 20.9.jpg"}],
+		img_urls: [{url:"img/products/Crochet Daisy Sweater Black 20.9.jpg",width:298,height:429}],
 		comments: null,
 		reviews: null
 		},
@@ -589,7 +589,7 @@ Jumpwithpuppet:
 		description: "<p>Add color to your life with the wonderfully lively artwork on this handphone pouch from PickAStory. Made with PU leather and felt inner lining. Highly water and dirt resistant outer. Protect your handheld gadgets in style!</p>\
 		<p>Handphone holder suitable for Samsung Note 3 or smaller phones. Dimensions (15.5 x 9 cm).</p>\
 		",
-		img_urls: [{url:"img/products/Jump with the puppet (samsung note 3 case) 24.90.jpg"}],
+		img_urls: [{url:"img/products/Jump with the puppet (samsung note 3 case) 24.90.jpg",width:2600,height:2600}],
 		comments: null,
 		reviews: null
 		},
@@ -627,7 +627,7 @@ IWCbigpilot:
 <li>Case height 16 mm</li>\
 <li>Diameter 46 mm</li>\
 </ul>",
-		img_urls: [{url:"img/products/the-iwc-big-pilot-perpetual-calendar-edition-2011_4.jpg"},{url:"img/products/IWC bigpilot perpetual.jpg"}],
+		img_urls: [{url:"img/products/the-iwc-big-pilot-perpetual-calendar-edition-2011_4.jpg",width:600,height:355},{url:"img/products/IWC bigpilot perpetual.jpg"}],
 		comments: null,
 		reviews: null
 		},
@@ -644,7 +644,7 @@ Classicblazerladies:
 <p>Size M measures 14.5inch shoulder width, 18inch PTP, 16inch waist, 10inch arm opening, 23.5inch at the sleeve, 19.5inch down.</p>\
 <p>Model Karine stands at 160cm and a UK6/8.</p>\
 ",
-		img_urls: [{url:"img/products/Classic Coco Blazer Grey 35.00.jpg"}],
+		img_urls: [{url:"img/products/Classic Coco Blazer Grey 35.00.jpg",width:298,height:429}],
 		comments: null,
 		reviews: null
 		},
@@ -659,7 +659,7 @@ kingoftokyo:
 		<p>Top this off with special cards that you can purchase with energy and that have a permanent or temporary effect, such as the growing of a second head which grants you an additional die, body armor, nova death ray, and more.... and you hold one of the most explosive games of the year!</p>\
 		<p>In order to win the game, one must either destroy Tokyo by accumulating 20 destruction points, or be the only surviving monster once the fighting has ended.</p>\
 ",
-		img_urls: [{url:"img/products/king of tokyo 25.49.jpg"}],
+		img_urls: [{url:"img/products/king of tokyo 25.49.jpg",width:1500,height:1500}],
 		comments: null,
 		reviews: null
 		},
@@ -674,7 +674,7 @@ brickwatchstrap:
 		<p>Fits all 22mm casewidths.</p>\
 		<p>Designed and handmade in Ireland using Calf Leather and 6061-T6 Aluminium Alloy.</p>\
 		",
-		img_urls: [{url:"img/products/Brick Full Grain NYC NATO Watch Strap by Worn _ Wound 59.jpg"}],
+		img_urls: [{url:"img/products/Brick Full Grain NYC NATO Watch Strap by Worn _ Wound 59.jpg",width:640,height:640}],
 		comments: null,
 		reviews: null
 		},
@@ -689,7 +689,7 @@ topmanshirt:
 		<p>100% Cotton.</p>\
 		<p><strong>Sizes: S - XL</strong></p>\
 		",
-		img_urls: [{url:"img/products/Topman_ContrastCheckTrimShirt $79 2.jpg"},{url:"img/products/Topman_ContrastCheckTrimShirt $79.jpg"}],
+		img_urls: [{url:"img/products/Topman_ContrastCheckTrimShirt $79 2.jpg",width:420,height:483},{url:"img/products/Topman_ContrastCheckTrimShirt $79.jpg"}],
 		comments: null,
 		reviews: null
 		},
@@ -703,7 +703,7 @@ NarutoTee:
 		description: "<p>Keep your inner demons in check with this Custom Naruto Kyubi Seal Tee as you unleash your style and fanboy-ism on those around you.</p>\
 		<p>100% cotton provides cool and comfort in the heat of battle. Ninja tested, Kage-approved.</p>\
 		<p><strong>Sizes: XS - XXXL</strong></p>\ ",
-		img_urls: [{url:"img/products/Naruto 9 Tails Seal Custom White T-Shirt Tee Size XS-XXL - T-Shirts 26 (colenank).jpg"}],
+		img_urls: [{url:"img/products/Naruto 9 Tails Seal Custom White T-Shirt Tee Size XS-XXL - T-Shirts 26 (colenank).jpg",width:500,height:500}],
 		comments: null,
 		reviews: null
 		},
@@ -718,7 +718,7 @@ womenlongformalshirt:
 		<p>80% Cotton - 20% Synthetic Fibres</p>\
 		<p><strong>Sizes: XS - L</strong></p>\
 		",
-		img_urls: [{url:"img/products/women long sleeve leisure Formal White shirt (23.86) DHGate.jpg"},{url:"img/products/1.0x0.jpg"},{url:"img/products/1.0x0 (1).jpg"},{url:"img/products/1.0x0 (2).jpg"},{url:"img/products/1.0x0 (3).jpg"},{url:"img/products/1.0x0 (4).jpg"}],
+		img_urls: [{url:"img/products/women long sleeve leisure Formal White shirt (23.86) DHGate.jpg",width:600,height:652},{url:"img/products/1.0x0.jpg"},{url:"img/products/1.0x0 (1).jpg"},{url:"img/products/1.0x0 (2).jpg"},{url:"img/products/1.0x0 (3).jpg"},{url:"img/products/1.0x0 (4).jpg"}],
 		comments: null,
 		reviews: null
 		},
@@ -735,7 +735,7 @@ poloralphlauren:
 <p><strong>100% cotton.</strong> Machine washable. Imported.</p>\
 <p><strong>Sizes: S - XXL</strong></p>\
 ",
-		img_urls: [{url:"img/products/polo-ralph-lauren-white-slim-fit-polo-shirt-product-2-3177287-219127477_large_flex.jpeg"},{url:"img/products/polo-ralph-lauren-white-slim-fit-polo-shirt-product-3-3177287-157406102_large_flex.jpeg"},{url:"img/products/polo-ralph-lauren-white-slim-fit-polo-shirt-product-5-3177287-219102829_large_flex.jpeg"}],
+		img_urls: [{url:"img/products/polo-ralph-lauren-white-slim-fit-polo-shirt-product-2-3177287-219127477_large_flex.jpeg",width:449,height:600},{url:"img/products/polo-ralph-lauren-white-slim-fit-polo-shirt-product-3-3177287-157406102_large_flex.jpeg"},{url:"img/products/polo-ralph-lauren-white-slim-fit-polo-shirt-product-5-3177287-219102829_large_flex.jpeg"}],
 		comments: null,
 		reviews: null
 		},
@@ -751,7 +751,7 @@ leathercollarDH:
 		<p><strong>Trim: 100% leather</strong></p>\
 		<p><strong>Made in Italy</strong></p>\
 		",
-		img_urls: [{url:"img/products/diorhomme leathercollar $622.jpg"},{url:"img/products/diorhomme leathercollared $622 -2.jpg"}],
+		img_urls: [{url:"img/products/diorhomme leathercollar $622.jpg",width:518,height:680},{url:"img/products/diorhomme leathercollared $622 -2.jpg"}],
 		comments: null,
 		reviews: null
 		},
@@ -766,7 +766,7 @@ mathsnerdwhitetee:
 		<p>Made of 100% cotton. Also available in <strong>Black</strong> and <strong>Gray</strong>.</p>\
 		<p><strong>Sizes: XS - XXL</strong></p>\
 		",
-		img_urls: [{url:"img/products/New I ATE SUM PIE Custom White T-Shirt math nerd science algebra Tee All Size - T-Shirts (39.9) colenank.jpg"}],
+		img_urls: [{url:"img/products/New I ATE SUM PIE Custom White T-Shirt math nerd science algebra Tee All Size - T-Shirts (39.9) colenank.jpg",width:500,height:500}],
 		comments: null,
 		reviews: null
 		},
@@ -780,7 +780,7 @@ basicwhiteslimfit:
 		description: "<p>There can never be enough white shirts in a man's wardrobe. Go back to basics with Bombayduck's Basic Mens regular cut shirt.</p>\
 		<p>The shirt looks smart enough for work and casual enough for a good dinner gathering in the evening. Made to be comfortable with 100% cotton and matched with white buttons.</p>\
 		<p><strong>Sizes: XS - XXL</strong></p>\ ",
-		img_urls: [{url:"img/products/Basics white slimfit $37-3.jpg"},{url:"img/products/Basics white slimfit $37.jpg"},{url:"img/products/Basics white slimfit $37 -2.jpg"}],
+		img_urls: [{url:"img/products/Basics white slimfit $37-3.jpg",width:360,height:480},{url:"img/products/Basics white slimfit $37.jpg"},{url:"img/products/Basics white slimfit $37 -2.jpg"}],
 		comments: null,
 		reviews: null
 		},
@@ -799,7 +799,7 @@ mightymug:
 		<p>Inner body and lid are both top rack dishwasher safe</p>\
 		<p>Measures approximately 14cm(W) x 16cm(H) x 10cm(D)</p><br>\
 		<p><strong>Please allow 1 week for shipping.</strong></p> ",
-		img_urls: [{url:"img/products/Mighty Mug 01.jpg"}, {url:"img/products/Mighty Mug 02.jpg"}, {url:"img/products/Mighty Mug 03.jpg"}, {url:"img/products/Mighty Mug 04.jpg"}, {url:"img/products/Mighty Mug 05.jpg"}],
+		img_urls: [{url:"img/products/Mighty Mug 01.jpg",width:640,height:640}, {url:"img/products/Mighty Mug 02.jpg"}, {url:"img/products/Mighty Mug 03.jpg"}, {url:"img/products/Mighty Mug 04.jpg"}, {url:"img/products/Mighty Mug 05.jpg"}],
 		comments: [{	commenter: "Farhan Herab",
 						merchant: false,
 						img_url: "img/sonic.jpg",
@@ -847,7 +847,7 @@ SonyNex7:
 		<li>10fps continuous shooting (Speed priority continuous mode)</li>\
 		<br><br><br><br>\
 		",
-		img_urls: [{url:"img/products/Sony Nex 7 (1).jpg"},{url:"img/products/Sony Nex 7 (2).jpg"},{url:"img/products/Sony Nex 7 (3).jpg"},{url:"img/products/Sony Nex 7 (4).jpg"},{url:"img/products/Sony Nex 7 (5).jpg"},{url:"img/products/Sony Nex 7 (6).jpg"},{url:"img/products/Sony Nex 7 (7).jpg"},{url:"img/products/Sony Nex 7 (8).jpg"},{url:"img/products/Sony Nex 7 (9).jpg"}],
+		img_urls: [{url:"img/products/Sony Nex 7 (1).jpg",width:610,height:406},{url:"img/products/Sony Nex 7 (2).jpg"},{url:"img/products/Sony Nex 7 (3).jpg"},{url:"img/products/Sony Nex 7 (4).jpg"},{url:"img/products/Sony Nex 7 (5).jpg"},{url:"img/products/Sony Nex 7 (6).jpg"},{url:"img/products/Sony Nex 7 (7).jpg"},{url:"img/products/Sony Nex 7 (8).jpg"},{url:"img/products/Sony Nex 7 (9).jpg"}],
 		comments: null,
 		reviews: null
 		}

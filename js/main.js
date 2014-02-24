@@ -382,27 +382,37 @@ var Timeline = function (opt) {
 		var imgLoadCount = 0;
 		for (var y=pointer+num; pointer<y; pointer+=1) {
 			if (typeof data[pointer] === 'undefined') break;
-			var image = new Image();
-			$(image).load(function (timelineItem) {
-					var that = function () {
-						var width = $(this).width();
-						var height = $(this).height();
-						data[timelineItem].product.img_urls[0].size = {
-							width: width,
-							height: height,
-							hdw: height/width
-						}
-						$(this).remove(); //Remove this image from DOM
-						imgLoadCount += 1;
-						if (imgLoadCount === num) {
-							successCallback(pointer);
+			var img = data[pointer].product.img_urls[0]; // Alias
+			if (typeof img.width != 'undefined' && typeof img.height != 'undefined') {
+				img.size = {
+					width: img.width,
+					height: img.height,
+					hdw: img.height/img.width
+				}
+				successCallback(pointer);
+			} else {
+				var image = new Image();
+				$(image).load(function (timelineItem) {
+						var that = function () {
+							var width = $(this).width();
+							var height = $(this).height();
+							data[timelineItem].product.img_urls[0].size = {
+								width: width,
+								height: height,
+								hdw: height/width
+							}
+							$(this).remove(); //Remove this image from DOM
+							imgLoadCount += 1;
+							if (imgLoadCount === num) {
+								successCallback(pointer);
+							};
 						};
-					};
-					return that;
-				}(pointer));
-			$(image).css('display','none')
-				.attr('src', data[pointer].product.img_urls[0].url)
-				.appendTo('body');
+						return that;
+					}(pointer));
+				$(image).css('display','none')
+					.attr('src', data[pointer].product.img_urls[0].url)
+					.appendTo('body');
+			}
 		}
 		// When loop is broken prematurely
 		if (pointer != y) {
