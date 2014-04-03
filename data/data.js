@@ -12,7 +12,7 @@ Data.messages = {
 Data.users = {
 	paklun: {
 		name: 'Pak Lun',
-		img_url: 'img/users/Pak Lun.jpg',
+		img_url: 'img/users/pak lun.jpg',
 		fravs: 10
 	},
 	wenting: {
@@ -22,12 +22,12 @@ Data.users = {
 	},
 	jiahe: {
 		name: 'Jiahe',
-		img_url: 'img/users/Jiahe.jpg',
+		img_url: 'img/users/jiahe.jpg',
 		fravs: 10
 	},
 	alexkhow: {
 		name: 'Alex',
-		img_url: 'img/users/Alex.jpg',
+		img_url: 'img/users/alex.jpg',
 		fravs: 32
 	},
 	Sera: {
@@ -52,7 +52,7 @@ Data.users = {
 	},
 	Max: {
 		name: 'Max Foo',
-		img_url: 'img/users/Max.jpg',
+		img_url: 'img/users/max.jpg',
 		fravs: 22
 	},
 	Vince: {
@@ -67,7 +67,7 @@ Data.users = {
 	},
 	Theresa: {
 		name: 'Theresa Tong',
-		img_url: 'img/users/Theresa.jpg',
+		img_url: 'img/users/theresa.jpg',
 		fravs: 10
 	},
 	Cynthia: {
@@ -82,7 +82,7 @@ Data.users = {
 	},
 	yuri: {
 		name: 'Yuri',
-		img_url: 'img/users/Yuri.jpg',
+		img_url: 'img/users/yuri.jpg',
 		fravs: 10
 	},
 	Liza: {
@@ -127,12 +127,12 @@ Data.users = {
 	},
 	Boa: {
 		name: 'BoA',
-		img_url: 'img/users/Boa.jpg',
+		img_url: 'img/users/BoA.jpg',
 		fravs: 20
 	},
 	takeshi: {
 		name: 'Takeshi Kaneshiro',
-		img_url: 'img/users/Takeshiro.jpg',
+		img_url: 'img/users/takeshiro.jpg',
 		fravs: 31
 	},
 	Tyra: {
@@ -152,7 +152,7 @@ Data.users = {
 	},
 	priya: {
 		name: 'Priya',
-		img_url: 'img/users/priya.jpg',
+		img_url: 'img/users/Priya.jpg',
 		fravs: 44
 	},
 	xiaoqian: {
@@ -182,7 +182,7 @@ Data.users = {
 	},
 	Linh: {
 		name: 'Melissa Linh',
-		img_url: 'img/users/Linh.jpg',
+		img_url: 'img/users/linh.jpg',
 		fravs: 17
 	},
 	Shakir: {
