@@ -102,7 +102,7 @@ Data.users = {
 	},
 	mizutani: {
 		name: 'Masako Mizutani',
-		img_url: 'img/users/Mizutani.jpg',
+		img_url: 'img/users/mizutani.jpg',
 		fravs: 31
 	},
 	Tkimura: {
